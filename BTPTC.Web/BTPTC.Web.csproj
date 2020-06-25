@@ -89,6 +89,9 @@
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="MLISearch">
+      <HintPath>..\Lib\MLISearch.dll</HintPath>
+    </Reference>
     <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
       <HintPath>..\packages\Serilog.2.9.0\lib\net46\Serilog.dll</HintPath>
     </Reference>
@@ -318,6 +321,12 @@
     <Compile Include="Helpers\GetRemoteIp.cs" />
     <Compile Include="Helpers\Validator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
     <Compile Include="sms-alert.aspx.cs">
       <DependentUpon>sms-alert.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1890,6 +1899,7 @@
     <Content Include="Resources\Filepath\Project listing &amp; Maintenance Schedule.xlsx.be6d8da84a7a41309487a00e56ec74df" />
     <Content Include="Resources\Filepath\Project listing &amp; Maintenance Schedule.xlsx.c738e11f79ba4767b192421911b409fc" />
     <Content Include="Resources\Filepath\Project listing &amp; Maintenance Schedule.xlsx.d5fb68895e314e8982ebb5c650a89b7c" />
+    <Content Include="search.aspx" />
     <Content Include="sms-alert-thankyou.html" />
     <Content Include="sms-alert.aspx" />
     <Content Include="src\bulkyRemovalEmailTemplate.html" />
