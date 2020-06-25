@@ -1,0 +1,84 @@
+﻿@{
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+@model Facility
+<!-- Popup (delete) -->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content deletealert">
+            <div class="modal-header">
+                <div class="title">Delete Facility</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container" style="text-align:center;">
+                    <p><strong>Are you sure to delete this facility?</strong></p>
+                    <div class="padding10"></div>
+                    <input type="button" class="submitBtn" value="Delete">
+                    <div class="clear padding10"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Popup (edit) -->
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content editalert">
+            <div class="modal-header">
+                <div class="title">Edit Photo</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("AddPhotoFacility", "OurTown", FormMethod.Post, new { enctype = "multipart/form-data", id = "PhotoFacilityFrom" }))
+                {
+                    <div class="container">
+                        <table cellpadding="0" cellspacing="0" border="0" class="editBannerForm">
+                            <tr>
+                                <td class="fieldname">Description</td>
+                                <td>
+                                    @Html.TextArea("Description", new { placeholder = "Type your Title here" })
+                                    @Html.ValidationMessage("Description")
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fieldname">Photo <span class="importantNote">(1024px by 655px)</span></td>
+                                <td>
+                                    <div class="upload">
+                                        <input type="button" class="uploadBtn" value="Choose File">
+                                        <input type="file" id="LargeImage" name="LargeImage" data-imageWidth="" data-imageHeight="" />
+
+                                        <label>
+                                            @Html.TextBox("LargeImageFileName", (Model != null && !string.IsNullOrEmpty("ImageGUID") ? "ImageGUID" + "." + Model.ImageExtension.Trim('.') : ""), new { @type = "text", @placeholder = "No file chosen", @readonly = "true" })
+                                        </label>
+                                    </div>
+                                    @Html.ValidationMessage("LargeImage")
+                                    <div class="imgPreview"><img id="LargeImageFilePath" src="/Resources/Images/Facility/@Model.ImageGUID.Replace("-", "").@Model.ImageExtension"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fieldname">Photo Alt Tag</td>
+                                <td>
+                                    @Html.TextBox("ImageAltTag", null, new { placeholder = "Type your Title here" })
+                                    @Html.ValidationMessage("ImageAltTag")
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="padding10"></div>
+                        <input type="submit" class="submitBtn floatRight" id="FacilitySubmit" value="Save">
+                        <div class="clear padding10"></div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Popup (add) -->
+
+

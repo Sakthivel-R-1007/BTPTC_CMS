@@ -1,0 +1,39 @@
+﻿@{
+    UserAccount adminUser = (Session["UserAccount"] != null) ? (UserAccount)Session["UserAccount"] : null;
+    string userName = (adminUser == null ? "" : adminUser.UserName);
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+<img class="logo" src="@appPath/Contents/Admin/images/logo-img.png" alt="Bishan-Toa Payoh Town Council" />
+<nav>
+    <ul>
+        <li>
+            <a class="dropdown" href="javascript:void(0)">Our Town</a>
+            <ul>
+                <li><a href="@appPath/Admin/Facilities">Our Facilities</a></li>
+                <li><a href="@appPath/Admin/ViewTownImprovement">Town Improvement Project</a></li>
+                <li><a href="@appPath/Admin/Maintenance">Maintenance Schedule</a></li>
+                <li><a href="@appPath/Admin/ViewEvents">Our Events</a></li>
+            </ul>
+        </li>
+        <li>
+            <a class="dropdown" href="javascript:void(0)">Newsroom</a>
+            <ul>
+                <li><a href="javascript:void(0)">Newsletter</a></li>
+                <li><a href="javascript:void(0)">Media Release</a></li>
+                <li><a href="@appPath/Admin/AnnualReport">Annual Report</a></li>
+                <li><a href="javascript:void(0)">Tender</a></li>
+            </ul>
+        </li>
+        <li><a href="@appPath//Admin/Gallery/Index">Gallery</a></li>
+        <li><a href="#">Polls/Surveys</a></li>
+    </ul>
+    <div class="rightdetails">
+        <div class="logout"><a href="@appPath/Admin/Logout">Logout</a></div>
+        <div class="logout" style="padding-right:5px;"><a href="javascript:void(0)">Help</a></div>
+        <div class="setting"><a href="@appPath/Admin/ChangePassword">Profile Settings</a></div>
+        <div class="profile">Welcome, Administrator</div>
+    </div>
+    <div class="clear"></div>
+</nav>
+

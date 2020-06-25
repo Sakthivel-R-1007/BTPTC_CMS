@@ -1,0 +1,116 @@
+﻿
+@{
+    ViewBag.Title = "AddFacility";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+@model List<Facility>
+
+<div class="maincontents">
+    @using (Html.BeginForm("AddFacility", "OurTown", FormMethod.Post, new
+    {
+        enctype = "multipart/form-data",
+        id = "PhotoFacilityFrom"@*id = "AddFacilityFrom"*@ }))
+    {
+        <h1>Our Facilities</h1>
+
+        <div class="homepage">
+            <h2>Add Facility</h2>
+
+            <div class="formLayout">
+                <table cellpadding="0" cellspacing="0" border="0" class="tblcreate">
+                    <tr>
+                        <td class="fieldname">Facility Name</td>
+                        <td>
+                            @if (Model.Count() > 0)
+                            {
+                                string Name = Model[0].Name;
+                                @Html.TextBox(Name, Name, new { placeholder = "Type your Title here" })
+                                @Html.ValidationMessage("Name")
+                            }
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <div class="padding10"></div>
+            <div class="floatRight"><a href="#" class="editMetaBtn" data-toggle="modal" data-target="#imagemodeladd">Add Photo</a></div>
+            <div class="clear padding10"></div>
+
+
+
+            <table cellpadding="0" cellspacing="0" class="tblgrey" id="FacilityTbl">
+                <thead>
+                    <tr>
+                        <th width="60">S/N</th>
+                        <th>Photo</th>
+                        <th>Description</th>
+                        <th width="200">Modified Date</th>
+                        <th width="120">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="photos" id="imageadd">
+                    @if (Model.Count() > 0)
+                    {
+                        int SNo = 1;
+                        foreach (Facility ES in Model)
+                        {
+                            <tr>
+                                <td>@SNo</td>
+                                <td><img src="~/Resources/Images/Facility/@ES.ImageGUID.Replace("-", "").@ES.ImageExtension" height="100" width="100" /></td>
+                                <td>@ES.Description</td>
+                                <td>@ES.ModifiedOn</td>
+                                <td><a href="javascipt:void(0)" data-uniquecode="@ES.GUID" class="editFacility">Edit</a> | <a href="javascipt:void(0)" data-uniquecode="@ES.GUID">Delete</a></td>
+                            </tr>
+                            SNo++;
+                        }
+                    }
+
+                </tbody>
+            </table>
+
+            <div class="padding10"></div>
+            <!--div class="pagination"> <a href="#">&laquo;</a> <a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">...</a> <a href="#">7</a> <a href="#">8</a> <a href="#">9</a> <a href="#">&raquo;</a></div>
+            <div class="padding10"></div-->
+
+            <div class="floatRight">
+                <a href="javascript:void(0);" id="FacilitySubmit" class="submitBtn" aria-hidden="true">Save</a>&nbsp;
+                @*<input type="submit" class="submitBtn" id="FacilitySubmit" value="Save">&nbsp;*@
+                <input type="button" class="resetBtn" value="Back" onClick="location.href='@appPath/Admin/Facilities'">
+            </div>
+            <div class="clear"></div>
+        </div>
+    }
+
+
+</div>
+<div id="hiddenPopup">
+
+</div>
+
+
+@section scripts{
+
+
+    <script src="@appPath/Contents/Admin/js/jqueryValidate/jquery.validate.js"></script>
+    <script src="@appPath/Contents/Admin/js/jqueryValidate/additional-methods.js"></script>
+
+    <script src="@appPath/Contents/Admin/js/Custom/Edit-Facility.js"></script>
+
+
+
+    @*<script>
+            $('input[name=uploadAttach]').change(function () {
+                document.getElementById("uploadFile").value = $(this).val();
+            });
+
+            $('input[name=uploadAttach_add]').change(function () {
+                document.getElementById("uploadFile_add").value = $(this).val();
+            });
+        </script>*@
+}
+
+
+

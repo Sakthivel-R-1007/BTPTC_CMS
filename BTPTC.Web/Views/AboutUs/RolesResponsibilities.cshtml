@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "RolesResponsibilities";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+    <div class="mainContents">
+        <div class="contactDetails desktopOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Num, Font size adjustment and Social Media)-->
+        <div class="contactDetails mobileOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Numbers)-->
+
+        <div class="pageBanner"><img src="@appPath/Contents/images/roles-responsibilities/banner-img.jpg" alt=""></div>
+
+        <div class="rolesRespons">
+            <div class="pageContents">
+                <div class="container">
+                    <div class="topBar">
+                        <div class="breadcrumb"><a href="@appPath/">Home</a><span></span><a href="#">About Us</a><span></span>Roles &amp; Responsibilities</div>
+                        <div class="socialShareBtns">
+                            <ul>
+                                <li>Share:</li>
+                                <li><a href="http://www.facebook.com/sharer.php?u=http://btptc.medialabsstreaming.com/roles-responsibilities.html" target="_blank"><img src="@appPath/Contents/images/common/fb-share-btn.png" alt=""></a></li>
+                                <li><a href="https://twitter.com/share?text=Roles and Responsibilities - Bishan-Toa Payoh Town Council, http://btptc.medialabsstreaming.com/roles-responsibilities.html" target="_blank"><img src="@appPath/Contents/images/common/twitter-share-btn.png" alt=""></a></li>
+                                <!--li><a href="#" target="_blank"><img src="images/common/google-share-btn.png" alt="" target="_blank"></a></li-->
+                                <li><a href="mailto:?subject=Roles & Responsibilities | Bishan-Toa Payoh Town Council&Body=I thought you might be interested in this article: http://btptc.medialabsstreaming.com/roles-responsibilities.html"><img src="@appPath/Contents/images/common/email-share-btn.png" alt="" target="_blank"></a></li>
+                                <li class="print"><a href="#" onclick="window.print();"><img src="@appPath/Contents/images/common/print-btn.png" alt="" target="_blank"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="rolesResponsContainer">
+                        <h1>Roles &amp; Responsibilities</h1>
+
+                        <p>In 1989, newly formed Town Councils took over from HDB the responsibility of managing the common areas of HDB estates. Led by the elected Members of Parliament, and supported by community leaders and residents, the Town Council has policy-implementation and decision-making powers to effectively perform the estate management functions.</p>
+
+                        <div class="imgContainer">
+                            <span><img src="@appPath/Contents/images/roles-responsibilities/img-01.jpg" alt=""></span>
+                            <span><img src="@appPath/Contents/images/roles-responsibilities/img-02.jpg" alt=""></span>
+                            <span><img src="@appPath/Contents/images/roles-responsibilities/img-03.jpg" alt=""></span>
+                        </div>
+
+                        <div class="textContainer">
+                            <p><strong>Roles and Duties of Bishan-Toa Payoh Town Council </strong></p>
+                            <ul>
+                                <li>Maintain the common areas outside the residential units but within the block, gardens, market & food centres, open spaces, shophouses and void decks.</li>
+                                <li>Supervise cleaning and landscaping works.</li>
+                                <li>Provide essential maintenance and lift rescue service (EMSU: 1800 241 7711).</li>
+                                <li>Improve estate with new facilities, for example, childrens playgrounds, covered linkways and many others. </li>
+                                <li>Control and manage the use of common areas, for example, social functions at void decks. </li>
+                                <li>Engage residents in community-related activities, for example, Project VisionScroll, Tour of Toa Payoh Trail and Tree Planting Day. </li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--End Roles & Responsibilities-->
+    </div><!-- End Main Contents -->

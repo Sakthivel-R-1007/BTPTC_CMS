@@ -1,0 +1,27 @@
+﻿
+
+@{
+    ViewBag.Title = "NewsLetter";
+
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+@*@model List<NewsLetter>*@
+@if (Model != null && Model.Count > 0)
+{
+    <ul class="@Model[0].Year">
+        @foreach (NewsLetter NL in Model)
+        {
+            <li>
+                <a href="@appPath/Resources/Documents/@NL.PdfFileGUID.@NL.PdfFileExtension" target="_blank">
+                    <div class="coverImg"><img src="@appPath/Resources/images/NewsLetter/@NL.ThumbnailImageGUID.@NL.ThumbnailImageExtension"></div>
+                    <h2>@NL.Title</h2>
+                    <p>(@NL.Quarter)</p>
+                </a>
+                <a href="@appPath/Resources/Documents/@NL.PdfFileGUID.@NL.PdfFileExtension" download="@appPath/Resources/Documents/@NL.PdfFileGUID.@NL.PdfFileExtension">
+                    <p class="downloadLink">Download <span>(@NL.FileSize)</span></p>
+                </a>
+            </li>
+        }
+    </ul>
+}

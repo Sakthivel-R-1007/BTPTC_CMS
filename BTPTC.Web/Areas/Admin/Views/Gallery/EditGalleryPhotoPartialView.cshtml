@@ -1,0 +1,36 @@
+﻿@{
+    Layout = null;
+    string appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model GalleryPhoto
+
+@Html.AntiForgeryToken()
+@Html.HiddenFor(m => m.GUID)
+@Html.HiddenFor(m => m.GalleryGuid)
+<table cellpadding="0" cellspacing="0" border="0" class="editBannerForm">
+    <tr>
+        <td class="fieldname">Photo <span class="importantNote">(Width: 1024px)</span></td>
+        <td>
+            @*<div class="upload">
+                    <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach" />
+                    <label><input type="text" name="uploadFile" id="uploadFile" value="img-01.jpg" placeholder="No file chosen"></label>
+                </div>*@
+            <div class="upload">
+                <input type="button" class="uploadBtn" value="Choose File"><input type="file" id="uploadAttach_2" name="uploadAttach_2" data-imageWidth="" data-imageHeight="" />
+                <label><input type="text" name="uploadFile_2" id="uploadFile_2" value="@((Model !=null && Model.ImageName!=null && Model.ImageExtension!=null) ? Model.ImageName+"."+Model.ImageExtension : "")" placeholder="No file chosen"></label>
+            </div>
+            @if (Model != null)
+            {
+                <div class="imgPreview"><img id="ImageFilePath2" src="@appPath/Resources/Images/Gallery/@Model.ImageGUID.@Model.ImageExtension"></div>
+            }
+            else
+            {
+                <div class="imgPreview"><img id="ImageFilePath2" src="@appPath/Contents/images/no-image.jpg" /></div>
+            }
+            @Html.ValidationMessage("uploadAttach_1")
+            @*<div class="imgPreview"><img src="images/gallery/img-01.jpg"></div>*@
+        </td>
+    </tr>
+</table>
+<div class="padding10"></div>
+<input type="button" class="submitBtn floatRight" id="editGalleryPhotoForm" value="Save">

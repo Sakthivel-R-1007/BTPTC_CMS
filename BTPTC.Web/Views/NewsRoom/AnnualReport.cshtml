@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "NEWSROOM    ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+@model IList<AnnualReport>
+
+    <div class="mainContents">
+        <div class="contactDetails desktopOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Num, Font size adjustment and Social Media)-->
+        <div class="contactDetails mobileOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Numbers)-->
+
+        <div class="pageBanner"><img src="@appPath/Contents/images/annual-report/banner-img.jpg" alt=""></div>
+
+        <div class="annualReport">
+            <div class="pageContents">
+                <div class="container">
+                    <div class="topBar">
+                        <div class="breadcrumb"><a href="@appPath">Home</a><span></span><a href="javascript:void(0)">Newsroom</a><span></span>Annual Report</div>
+                        <div class="socialShareBtns">
+                            <ul>
+                                <li>Share:</li>
+                                <li><a href="http://www.facebook.com/sharer.php?u=http://btptc.medialabsstreaming.com/annual-report.html" target="_blank"><img src="@appPath/Contents/images/common/fb-share-btn.png" alt=""></a></li>
+                                <li><a href="https://twitter.com/share?text=Annual Report - Bishan-Toa Payoh Town Council, http://btptc.medialabsstreaming.com/annual-report.html" target="_blank"><img src="@appPath/Contents/images/common/twitter-share-btn.png" alt=""></a></li>
+                                <!--li><a href="#" target="_blank"><img src="images/common/google-share-btn.png" alt="" target="_blank"></a></li-->
+                                <li><a href="mailto:?subject=Annual Report | Bishan-Toa Payoh Town Council&Body=I thought you might be interested in this article: http://btptc.medialabsstreaming.com/annual-report.html"><img src="@appPath/Contents/images/common/email-share-btn.png" alt="" target="_blank"></a></li>
+                                <li class="print"><a href="javascript:void(0)" onclick="window.print();"><img src="@appPath/Contents/images/common/print-btn.png" alt="" target="_blank"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="annualReportContainer">
+                        <h1>Annual Report</h1>
+                        <ul>
+                            @if (Model != null && Model.Count > 0)
+                            {
+                                //int SNo = 1;
+                                foreach (AnnualReport AR in Model)
+                                {
+                                    <li>
+                                        <a href="@appPath/Resources/Documents/AnnualReport/@AR.PDFGUID.@AR.PDFExtension" target="_blank">
+                                            <div class="coverImg"><img src="@appPath/Resources/Images/AnnualReport/@AR.ImageGUID.@AR.ImageExtension" alt="@AR.ImageAltTag"></div>
+                                            <h2>@AR.Title</h2>
+                                        </a>
+                                        <a href="@appPath/Resources/Documents/AnnualReport/@AR.PDFGUID.@AR.PDFExtension" download="@appPath/Resources/Documents/AnnualReport/@AR.PDFGUID.@AR.PDFExtension">
+                                            <p class="downloadLink">Download <span>(@(Math.Round(Convert.ToDouble(AR.PDFFileSize) / 1024 / 1024, 2).ToString()) MB)</span></p>
+                                        </a>
+                                    </li>
+                                }
+                            }
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div><!--End Annual Report-->
+    </div><!-- End Main Contents -->

@@ -1,0 +1,203 @@
+﻿
+@{
+    ViewBag.Title = "ViewAnnualReport";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="maincontents">
+    <form>
+        <h1>Annual Report</h1>
+
+        <div class="floatRight">
+            <a href="#" class="editMetaBtn" data-toggle="modal" data-target="#add">Add Annual Report</a>
+        </div>
+        <div class="clear padding10"></div>
+        <div class="homepage">
+            <table cellpadding="0" cellspacing="0" class="tblgrey">
+                <tr>
+                    <th width="60">S/N</th>
+                    <th>Title</th>
+                    <th>File Size</th>
+                    <th width="200">Modified Date</th>
+                    <th width="120">Action</th>
+                </tr>
+                <tr>
+                    <td>01</td>
+                    <td>Annual Report FY 2018 / 2019</td>
+                    <td>12.2MB</td>
+                    <td>06/05/2020 12:00:00 PM</td>
+                    <td><a href="#" data-toggle="modal" data-target="#edit">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>Annual Report FY 2017 / 2018</td>
+                    <td>12.2MB</td>
+                    <td>06/05/2020 12:00:00 PM</td>
+                    <td><a href="#" data-toggle="modal" data-target="#edit">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td>Annual Report FY 2016 / 2017</td>
+                    <td>12.2MB</td>
+                    <td>06/05/2020 12:00:00 PM</td>
+                    <td><a href="#" data-toggle="modal" data-target="#edit">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>04</td>
+                    <td>Annual Report FY 2015 / 2016</td>
+                    <td>12.2MB</td>
+                    <td>06/05/2020 12:00:00 PM</td>
+                    <td><a href="#" data-toggle="modal" data-target="#edit">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>05</td>
+                    <td>Annual Report FY 2014 / 2015</td>
+                    <td>12.2MB</td>
+                    <td>06/05/2020 12:00:00 PM</td>
+                    <td><a href="#" data-toggle="modal" data-target="#edit">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                </tr>
+            </table>
+            <div class="padding10"></div>
+            <!--div class="pagination"> <a href="#">&laquo;</a> <a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">...</a> <a href="#">7</a> <a href="#">8</a> <a href="#">9</a> <a href="#">&raquo;</a></div>
+            <div class="padding10"></div-->
+        </div>
+    </form>
+</div>
+
+<!-- Popup (delete) -->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content deletealert">
+            <div class="modal-header">
+                <div class="title">Delete Annual Report</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container" style="text-align:center;">
+                    <p><strong>Are you sure to delete this report?</strong></p>
+                    <div class="padding10"></div>
+                    <input type="button" class="submitBtn" value="Delete">
+                    <div class="clear padding10"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Popup (edit) -->
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content editalert">
+            <div class="modal-header">
+                <div class="title">Edit Annual Report</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <table cellpadding="0" cellspacing="0" border="0" class="editBannerForm">
+                        <tr>
+                            <td class="fieldname">Title</td>
+                            <td><input type="text" value="Annual Report FY 2018 / 2019"></td>
+                        </tr>
+                        <tr>
+                            <td class="fieldname">Image <span class="importantNote">(500px by 700px)</span></td>
+                            <td>
+                                <div class="upload">
+                                    <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach" />
+                                    <label><input type="text" name="uploadFile" id="uploadFile" value="FY-2018_2019_cover.jpg" placeholder="No file chosen"></label>
+                                </div>
+                                <div class="imgPreview"><img src="images/annual-report/FY-2018_2019_cover.jpg"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fieldname">Image Alt Tag</td>
+                            <td><input type="text" value="Annual Report FY 2018 / 2019"></td>
+                        </tr>
+                        <tr>
+                            <td class="fieldname">Upload PDF</td>
+                            <td>
+                                <div class="upload">
+                                    <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach_PDF" />
+                                    <label><input type="text" name="uploadFile_PDF" id="uploadFile_PDF" value="FY-2018_2019.pdf" placeholder="No file chosen"></label>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="padding10"></div>
+                    <input type="button" class="submitBtn floatRight" value="Save">
+                    <div class="clear padding10"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Popup (add) -->
+<div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content editalert">
+            <div class="modal-header">
+                <div class="title">Add Annual Report</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <table cellpadding="0" cellspacing="0" border="0" class="editBannerForm">
+                        <tr>
+                            <td class="fieldname">Title</td>
+                            <td><input type="text" value=""></td>
+                        </tr>
+                        <tr>
+                            <td class="fieldname">Image <span class="importantNote">(500px by 700px)</span></td>
+                            <td>
+                                <div class="upload">
+                                    <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach_2" />
+                                    <label><input type="text" name="uploadFile_2" id="uploadFile_2" value="" placeholder="No file chosen"></label>
+                                </div>
+                                <div class="imgPreview"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fieldname">Image Alt Tag</td>
+                            <td><input type="text" value=""></td>
+                        </tr>
+                        <tr>
+                            <td class="fieldname">Upload PDF</td>
+                            <td>
+                                <div class="upload">
+                                    <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach_PDF_2" />
+                                    <label><input type="text" name="uploadFile_PDF_2" id="uploadFile_PDF_2" value="" placeholder="No file chosen"></label>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="padding10"></div>
+                    <input type="button" class="submitBtn floatRight" value="Save">
+                    <div class="clear padding10"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+	$('input[name=uploadAttach]').change(function() {
+		document.getElementById("uploadFile").value = $(this).val();
+	});
+
+	$('input[name=uploadAttach_PDF]').change(function() {
+		document.getElementById("uploadFile_PDF").value = $(this).val();
+	});
+
+	$('input[name=uploadAttach_2]').change(function() {
+		document.getElementById("uploadFile_2").value = $(this).val();
+	});
+
+	$('input[name=uploadAttach_PDF_2]').change(function() {
+		document.getElementById("uploadFile_PDF_2").value = $(this).val();
+	});
+</script>
+

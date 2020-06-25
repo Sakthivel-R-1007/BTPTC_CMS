@@ -1,0 +1,118 @@
+﻿
+@{
+    ViewBag.Title = "PersonalDataProtectionPolicy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+    <div class="mainContents">
+        <div class="contactDetails desktopOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Num, Font size adjustment and Social Media)-->
+        <div class="contactDetails mobileOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Numbers)-->
+
+        <div class="pageBanner"><img src="@appPath/Contents/images/pdpp/banner-img.jpg" alt=""></div>
+
+        <div class="pdpp">
+            <div class="pageContents">
+                <div class="container">
+                    <div class="topBar">
+                        <div class="breadcrumb"><a href="@appPath/">Home</a><span></span><a href="#">About Us</a><span></span>Personal Data Protection Policy</div>
+                        <div class="socialShareBtns">
+                            <ul>
+                                <li>Share:</li>
+                                <li><a href="http://www.facebook.com/sharer.php?u=http://btptc.medialabsstreaming.com/our-history.html" target="_blank"><img src="@appPath/Contents/images/common/fb-share-btn.png" alt=""></a></li>
+                                <li><a href="https://twitter.com/share?text=Our History - Bishan-Toa Payoh Town Council, http://btptc.medialabsstreaming.com/our-history.html" target="_blank"><img src="@appPath/Contents/images/common/twitter-share-btn.png" alt=""></a></li>
+                                <!--li><a href="#" target="_blank"><img src="images/common/google-share-btn.png" alt="" target="_blank"></a></li-->
+                                <li><a href="mailto:?subject=Our History | Bishan-Toa Payoh Town Council&Body=I thought you might be interested in this article: http://btptc.medialabsstreaming.com/our-history.html"><img src="@appPath/Contents/images/common/email-share-btn.png" alt="" target="_blank"></a></li>
+                                <li class="print"><a href="#" onclick="window.print();"><img src="@appPath/Contents/images/common/print-btn.png" alt="" target="_blank"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pdppContainer">
+                        <h1>Personal Data Protection Policy</h1>
+
+                        <p>We will uphold your trust in us by protecting and using your personal data in a responsible manner. We work with key government agencies and our community partners to improve our customer service for municipal services, and your personal data plays a big role in making it happen.</p>
+
+                        <p>We value your trust and aim to be transparent in the ways we use your data to improve feedback management and allow you to report on municipal issue easily without the need to know which agency is responsible for the issue. Together, we aim to improve the living environment of our estates.</p>
+
+                        <p class="imgRight"><img src="@appPath/Contents/images/pdpp/img-01.jpg"></p>
+
+                        <h2>What type of Personal Data do we collect?</h2>
+
+                        <p>We want you to understand the types of data that we collect, so you can make the best decisions about what you share with us. Personal data is any information that relates to an identifiable individual and we may collect this information when you interact with us for municipal services:</p>
+
+                        <ul>
+                            <li>Personal particulars (e.g. name, address)</li>
+                            <li>Contact Information (e.g. mobile number)</li>
+                            <li>Your payment information</li>
+                            <li>Details of interactions with us (e.g. voice recordings, images)</li>
+                            <li>Information obtained from mobile device with your consent (e.g. location information) when you use our mobile application services</li>
+                        </ul>
+
+                        <h2>How do we collect your Personal Data?</h2>
+
+                        <p>Any personal information held by us will be committed to a high degree of protection. Here are the ways that we collect your data – through these touchpoints which are relevant to how you may interact with us:</p>
+
+                        <p><strong>Online &amp; Digital</strong></p>
+
+                        <p>Through OneService & iTown@SG applications, SMS Alert sign-ups, electronic payment arrangements, contests & giveaways, general / PRM email enquiries, our Town Council webpage.</p>
+
+                        <p><strong>Offline Interactions</strong></p>
+
+                        <p>Walk-in payments / enquiries / applications at our Bishan-Toa Payoh Town Council Branches, application for the use of common spaces, surveys and polls, phone enquiries and support (eg. Request for bulky item removal, incident reporting and feedback)</p>
+
+                        <h2>How do we use your Personal Data?</h2>
+
+                        <p>When you trust us with your personal data, it is only right that you understand how we may use it:</p>
+
+                        <p><strong>For General Support</strong></p>
+
+                        <p>Verify your identity before providing our services, or responding to any of your queries, applications, feed-back and complaints</p>
+
+                        <p><strong>For Our Internal Operations</strong></p>
+
+                        <p class="imgLeft"><img src="@appPath/Contents/images/pdpp/img-02.jpg"></p>
+
+                        <ul>
+                            <li>Ensure that the information we have about you is up-to-date</li>
+                            <li>Manage our day-to-day business operations</li>
+                            <li>Comply with obligations from any authorities</li>
+                            <li>Direct your report and feedback to the relevant agencies</li>
+                            <li>Employment and recruitment purposes</li>
+                        </ul>
+                        <div class="clear"></div>
+
+                        <p><strong>For Communication Purposes</strong></p>
+
+                        <ul>
+                            <li>Update you on changes and events happening in our Town</li>
+                            <li>Follow-up with you on your enquiries</li>
+                        </ul>
+
+                        <h2>Who do we share your Personal Data with?</h2>
+
+                        <p>To deliver on our services to you and allow your municipal services enquiry to be attended by the relevant agencies, we will only share your personal data with key government agencies and our community partners to serve you better.</p>
+
+                        <p><strong>Who:</strong></p>
+
+                        <p>Relevant government agencies or community partners</p>
+
+                        <p><strong>How:</strong></p>
+
+                        <ul>
+                            <li>We require all personnel of Bishan-Toa Payoh Town Council and third parties to ensure that any of your data disclosed to them is kept confidential and secure.</li>
+                            <li>We shall comply fully with any duty or obligation of confidentiality that governs our relationship with you.</li>
+                        </ul>
+
+                        <h2>Modifications</h2>
+
+                        <p>We reserve the right to modify or amend the policy at any time to ensure consistency with any developments to the way Bishan-Toa Payoh Town Council uses your data. The effective date will be displayed at the beginning of this policy. We will make the updated policy available on our Town Council website.</p>
+
+                        <h2>Contact Us</h2>
+
+                        <p>To speak to us regarding our data protection practices, you may contact our Data Protection Officer (DPO) at (65) 6259 6700 or email to <a href="mailto:prm@btptc.org.sg">prm@btptc.org.sg</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div><!--End Personal Data Protection Policy-->
+    </div>
+

@@ -1,0 +1,35 @@
+﻿@{
+
+    UserAccount UA = (UserAccount)HttpContext.Current.Session["UserAccount"];
+    if (UA == null)
+    {
+        Layout = null;
+    }
+    ViewBag.Title = "Error";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+</head>
+<body>
+    <hgroup>
+        <h1>Error.</h1>
+        <h2>An error occurred while processing your request.</h2>
+        @if (ViewData["Error"] != null)
+        {
+            <div id="ErrorMsgDiv">
+                <!--@{
+                    <text> Message : </text> @(((Exception)ViewData["Error"]).Message + "\n")
+                    <text> Source : </text> @(((Exception)ViewData["Error"]).Source + "\n")
+                    <text> Data : </text> @(((Exception)ViewData["Error"]).Data + "\n")
+                    <text> TargetSite : </text> @(((Exception)ViewData["Error"]).TargetSite + "\n")
+                    <text> StackTrace : </text> @(((Exception)ViewData["Error"]).StackTrace + "\n")
+                }-->
+            </div>
+        }
+    </hgroup>
+</body>
+</html>

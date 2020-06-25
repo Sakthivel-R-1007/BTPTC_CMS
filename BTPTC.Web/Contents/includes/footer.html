@@ -1,0 +1,27 @@
+<div class="footer">
+	<div class="backTopBtn" onClick="backToTop();"><img src="Contents/images/common/back-top-btn.png"></div>
+	<div class="bishanToaPayohImg"><img src="Contents/images/common/footer-img.png"></div>
+	<div class="termsConditions">
+		<div class="left">Copyright © 2020 Bishan-Toa Payoh Town Council. All Rights Reserved.</div>
+		<div class="right"><a href="#">Terms & Conditions</a><!--a href="#">Sitemap</a--><span>|</span><a href="personal-data-protection-policy.html">Privacy Policy</a><!--span>|</span><a href="#">Rate This Website</a--></div>
+		<div class="clear"></div>
+	</div>
+</div>
+
+<script>
+$(document).ready(function() {
+    var d = new Date();
+    var n = d.getHours();
+	
+	if (n > 19 || n < 6){
+  		// If time is after 7PM (19:00) or before 6AM (6:00), apply night theme to ‘body’
+		$(".backTopBtn img").attr("src","Contents/images/common/back-top-btn-night.png");
+		$(".bishanToaPayohImg img").attr("src","Contents/images/common/footer-img-night.png");
+		
+	}else{
+      	// Else use ‘day’ theme
+		$(".backTopBtn img").attr("src","Contents/images/common/back-top-btn.png");
+		$(".bishanToaPayohImg img").attr("src","Contents/images/common/footer-img.png");
+	}
+});
+</script>

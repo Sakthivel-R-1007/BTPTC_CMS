@@ -1,0 +1,156 @@
+﻿
+
+@{
+    ViewBag.Title = "EditNewLetter";
+
+    Layout = null;
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+
+}
+@Html.AntiForgeryToken()
+@model NewsLetter
+
+
+<table cellpadding="0" cellspacing="0" border="0" class="editBannerForm">
+    <tr>
+        <td class="fieldname">Title</td>
+        <td>
+            @Html.TextBoxFor(m => m.Title, new { placeholder = "Type your Title here" })
+            @Html.ValidationMessageFor(m => m.Title)
+            @Html.HiddenFor(m => m.GUID)
+            @*@Html.HiddenFor(m=>m.FileSize)*@
+        </td>
+    </tr>
+    <tr>
+        <td class="fieldname">Quarter</td>
+        <td>
+
+            @Html.DropDownList("Quarter", new List<SelectListItem>
+             {
+           new SelectListItem{Text="1st Quarter", Value="1st Quarter"},
+              new SelectListItem{Text="2nd Quarter", Value="2nd Quarter"},
+              new SelectListItem{Text="3rd Quarter", Value="3nd Quarter"},
+             new SelectListItem{Text="4nd Quarter", Value="4nd Quarter"}
+          }, "Please select")
+            @Html.ValidationMessage("Quarter")
+        </td>
+    </tr>
+    <tr>
+        <td class="fieldname">Year</td>
+        <td>
+
+            @Html.DropDownList("Year", new List<SelectListItem>
+            {
+              new SelectListItem{Text="2020", Value="2020"},
+              new SelectListItem{Text="2019", Value="2019"},
+              new SelectListItem{Text="2018", Value="2018"},
+              new SelectListItem{Text="2017", Value="2017"}
+         }, "Please select")
+            @Html.ValidationMessage("Year")
+        </td>
+    </tr>
+
+
+    @*<tr>
+            <td class="fieldname">Image <span class="importantNote">(500px by 688px)</span></td>
+            <td>
+                <div class="upload">
+                    <input type="button" class="uploadBtn" value="Choose File">
+                    <input type="file" name="uploadAttach_2" />
+                    <label>
+                        <input type="text" name="uploadFile_2" id="uploadFile_2" value="" placeholder="No file chosen">
+                    </label>
+                </div>
+                <div class="imgPreview"></div>
+            </td>
+        </tr>*@
+
+    <tr>
+        <td class="fieldname"> Image <span class="importantNote">(500px by 688px)</span></td>
+        <td>
+            <div class="upload">
+                <input type="button" class="uploadBtn" value="Choose File">
+                <input type="file" id="LargeImage" name="LargeImage" data-imageWidth="" data-imageHeight="" />
+                <label>
+                    @Html.TextBox("LargeImageFileName", (Model != null && !string.IsNullOrEmpty(Model.LargeImageGUID) ? Model.LargeImageName + "." + Model.LargeImageExtension.Trim('.') : ""), new { @type = "text", @placeholder = "No file chosen", @readonly = "true" })
+                    @Html.HiddenFor(m => m.LargeImageGUID)
+                    @Html.HiddenFor(m => m.LargeImageName)
+                    @Html.HiddenFor(m => m.LargeImageExtension)
+                </label>
+            </div>
+            @Html.ValidationMessage("LargeImage")
+            <div class="imgPreview"><img id="LargeImageFilePath" src="@appPath/Resources/Images/NewsLetter/@(Model.LargeImageGUID!=null? Model.LargeImageGUID:"").@(Model.LargeImageExtension!=null ? Model.LargeImageExtension:"" )" /></div>
+        </td>
+    </tr>
+    <tr>
+        <td class="fieldname">Large Image Alt Tag</td>
+        <td>
+            @Html.TextBoxFor(m => m.LargeImageAltTag, new { placeholder = "Type your Title here" })
+            @Html.ValidationMessageFor(m => m.LargeImageAltTag)
+        </td>
+    </tr>
+
+    @*<tr>
+            <td class="fieldname">Thumbnail Image <span class="importantNote">(500px by 280px)</span></td>
+            <td>
+                <div class="upload">
+                    <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach_thumb_2" />
+                    <label><input type="text" name="uploadFile_thumb_2" id="uploadFile_thumb_2" value="" placeholder="No file chosen"></label>
+                </div>
+                <div class="imgPreview"></div>
+            </td>
+        </tr>*@
+    <tr>
+        <td class="fieldname">Thumbnail Image <span class="importantNote">(500px by 280px)</span></td>
+        <td>
+            <div class="upload">
+                <input type="button" class="uploadBtn" value="Choose File">
+                <input type="file" id="ThumbnailImage" name="ThumbnailImage" data-imageWidth="" data-imageHeight="" />
+                <label>
+                    @Html.TextBox("ThumbnailImageFileName", (Model != null && !string.IsNullOrEmpty(Model.ThumbnailImageGUID) ? Model.ThumbnailImageName + "." + Model.ThumbnailImageExtension.Trim('.') : ""), new { @type = "text", @placeholder = "No file chosen", @readonly = "true" })
+                    @Html.HiddenFor(m => m.ThumbnailImageGUID)
+                    @Html.HiddenFor(m => m.ThumbnailImageName)
+                    @Html.HiddenFor(m => m.ThumbnailImageExtension)
+                </label>
+            </div>
+            @Html.ValidationMessage("ThumbnailImage")
+            <div class="imgPreview"><img id="ThumbnailImageFilePath" src="@appPath/Resources/Images/NewsLetter/@(Model.ThumbnailImageGUID!=null? Model.ThumbnailImageGUID:"").@(Model.ThumbnailImageExtension!=null ? Model.ThumbnailImageExtension:"" )"></div>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class="fieldname">Thumbnail Image<br />Alt Tag</td>
+        <td>
+            @Html.TextBoxFor(m => m.ThumbnailImageAltTag, new { placeholder = "Type your Title here" })
+            @Html.ValidationMessageFor(m => m.ThumbnailImageAltTag)
+        </td>
+    </tr>
+
+
+
+    <tr>
+        <td class="fieldname">Upload PDF</td>
+        <td>
+            <div class="upload">
+                <input type="button" class="uploadBtn" value="Choose File">
+                <input type="file" name="FileName" />
+                <label>
+
+                    @Html.TextBox("PdfFileName", (Model != null && !string.IsNullOrEmpty(Model.PdfFileGUID) ? Model.PdfFileName + "." + Model.PdfFileExtension.Trim('.') : ""), new { @type = "text", @placeholder = "No file chosen", @readonly = "true" })
+                    @Html.HiddenFor(m => m.PdfFileGUID)
+                     @Html.HiddenFor(m => m.PdfFileName)
+                    @Html.HiddenFor(m => m.PdfFileExtension)
+                </label>
+            </div>
+            @Html.ValidationMessage("PdfFileName")
+        </td>
+    </tr>
+
+</table>
+<div class="padding10"></div>
+<input type="submit" class="submitBtn floatRight" value="Save">
+<div class="clear padding10"></div>
+
+
+

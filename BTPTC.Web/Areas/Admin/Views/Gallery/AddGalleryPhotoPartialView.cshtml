@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+    string appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model Gallery
+
+@Html.AntiForgeryToken()
+@Html.HiddenFor(m => m.GUID)
+<table cellpadding="0" cellspacing="0" border="0" class="editBannerForm">
+    <tr>
+        <td class="fieldname">Description</td>
+        <td>
+            @Html.TextAreaFor(g => g.galleryPhotoDescription.Description)
+            @Html.ValidationMessageFor(g => g.galleryPhotoDescription.Description)
+        </td>
+    </tr>
+    <tr>
+        <td class="fieldname">Photo<br />(Multiple upload)<span class="importantNote">(Width: 1024px)</span></td>
+        <td>
+            <div class="upload">
+                <input type="button" class="uploadBtn" value="Choose File"><input type="file" id="uploadAttach_1" multiple name="uploadAttach_1" data-imageWidth="" data-imageHeight="" />
+                <label><input type="text" name="uploadFile_1" id="uploadFile_1" placeholder="No file chosen"></label>
+                <ul id="output">
+                </ul>
+            </div>
+            @*@if (Model != null)
+                {
+                    <div class="imgPreview"><img id="ImageFilePath1" src="@appPath/Resources/Images/Gallery/@Model.ImageGUID.@Model.ImageExtension"></div>
+                }
+                else
+                {
+                    <div class="imgPreview"><img id="ImageFilePath1" src="@appPath/Contents/images/no-image.jpg" /></div>
+                }*@
+            @Html.ValidationMessage("uploadAttach_1")
+        </td>
+    </tr>
+</table>
+<div class="padding10"></div>
+<input type="button" class="submitBtn floatRight" id="addGalleryPhotoForm" value="Save">

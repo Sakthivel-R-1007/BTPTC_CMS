@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "GALLERY";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+@model IList<Gallery>
+
+    <div class="mainContents">
+        <div class="contactDetails desktopOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Num, Font size adjustment and Social Media)-->
+        <div class="contactDetails mobileOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Numbers)-->
+
+        <div class="pageBanner"><img src="@appPath/Contents/images/gallery/banner-img.jpg" alt=""></div>
+
+        <div class="galleryPg">
+            <div class="pageContents">
+                <div class="container">
+                    <div class="topBar">
+                        <div class="breadcrumb"><a href="index.html">Home</a><span></span>Gallery</div>
+                        <div class="socialShareBtns">
+                            <ul>
+                                <li>Share:</li>
+                                <li><a href="http://www.facebook.com/sharer.php?u=@appPath/Gallery" target="_blank"><img src="@appPath/Contents/images/common/fb-share-btn.png" alt=""></a></li>
+                                <li><a href="https://twitter.com/share?text=Gallery - Bishan-Toa Payoh Town Council, @appPath/Gallery" target="_blank"><img src="@appPath/Contents/images/common/twitter-share-btn.png" alt=""></a></li>
+                                <!--li><a href="#" target="_blank"><img src="images/common/google-share-btn.png" alt="" target="_blank"></a></li-->
+                                <li><a href="mailto:?subject=Gallery | Bishan-Toa Payoh Town Council&Body=I thought you might be interested in this article: @appPath/Gallery"><img src="@appPath/Contents/images/common/email-share-btn.png" alt="" target="_blank"></a></li>
+                                <li class="print"><a href="javascript:void(0)" onclick="window.print();"><img src="@appPath/Contents/images/common/print-btn.png" alt="" target="_blank"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="galleryPgContainer">
+                        <h1>Gallery</h1>
+                        <ul>
+                            @if (Model != null && Model.Count() > 0)
+                            {
+
+                                foreach (Gallery G in Model)
+                                {
+                                    <li><a href="@appPath/Gallery/Detail/@G.Title.Trim().Replace(" ", "-")"><img src="@appPath/Resources/Images/Gallery/@(@G.galleryPhoto!=null?G.galleryPhoto.ImageGUID+"."+G.galleryPhoto.ImageExtension:"")" alt=""><p>@((G.Date != null && G.Date != DateTime.MinValue) ? G.Date.ToString("dd MMM yyyy") : "")</p><h2>@G.Title</h2></a></li>
+                                }
+                            }
+                            @*<li><a href="gallery-2019-market-visit-and-pal-family-carnival.html"><img src="images/gallery/2019/2019-11-03/img-01.jpg" alt=""><p>3 Nov 2019</p><h2>Market visit and PAL family carnival at Blk 127 Lor 1 Toa Payoh</h2></a></li>
+                            <li><a href="gallery-2019-market-visit-shunfu.html"><img src="images/gallery/2019/2019-09-22/img-01.jpg" alt=""><p>22 Sep 2019</p><h2>Market visit at Shunfu Mart</h2></a></li>
+                            <li><a href="gallery-2019-thomson-sin-ming-celebration.html"><img src="images/gallery/2019/2019-07-21/img-01.jpg" alt=""><p>21 Jul 2019</p><h2>Thomson-Sin Ming Court RC Anniversary, Healthy Liftstyle Hub Opening and Merdeka Generation Celebration</h2></a></li>
+                            <li><a href="gallery-2019-tp-central-repairs-redecoration-colour-scheme.html"><img src="images/gallery/2019/2019-06-30/img-01.jpg" alt=""><p>30 Jun 2019</p><h2>Toa Payoh Central Repairs &amp; Redecoration Colour Scheme</h2></a></li>
+                            <li><a href="gallery-2019-market-visit-toa-payoh.html"><img src="images/gallery/2019/2019-02-03/img-01.jpg" alt=""><p>3 Feb 2019</p><h2>Market visit at Blk 74 Toa Payoh</h2></a></li>
+                            <li><a href="gallery-2018-tree-planting.html"><img src="images/gallery/2018/2018-11-04/img-01.jpg" alt=""><p>4 Nov 2018</p><h2>Tree Planting 2018</h2></a></li>
+                            <li><a href="gallery-2018-tpc-nrp-exhibition.html"><img src="images/gallery/2018/2018-06-23/img-01.jpg" alt=""><p>23 Jun 2018</p><h2>Toa Payoh Central Neighbourhood Renewal Programme Exhibition</h2></a></li>
+                            <li><a href="gallery-2018-market-visit-bishan.html"><img src="images/gallery/2018/2018-05-06/img-01.jpg" alt=""><p>6 May 2018</p><h2>Market visit at Bishan North Shopping Mall</h2></a></li>
+                            <li><a href="gallery-2018-bn-nrp-exhibition.html"><img src="images/gallery/2018/2018-03-24/img-01.jpg" alt=""><p>24 Mar 2018</p><h2>Bishan North Neighbourhood Renewal Programme Exhibition</h2></a></li>
+                            <li><a href="gallery-2018-market-visit-blk-93-toa-payoh.html"><img src="images/gallery/2018/2018-02-04/img-01.jpg" alt=""><p>4 Feb 2018</p><h2>Market visit at Blk 93 Lor 4 Toa Payoh</h2></a></li>
+                            <li><a href="gallery-2017-market-visit-blk-128-toa-payoh.html"><img src="images/gallery/2017/2017-09-24/img-01.jpg" alt=""><p>24 Sep 2017</p><h2>Market visit at Blk 128 Lor 1 Toa Payoh</h2></a></li>
+                            <li><a href="gallery-2017-market-visit-blk-509-bishan.html"><img src="images/gallery/2017/2017-05-07/img-01.jpg" alt=""><p>7 May 2017</p><h2>Market visit near Blk 509 Bishan St 11</h2></a></li>*@
+                            <!--li><a href="gallery-2016-tree-planting-day.html"><img src="images/gallery/2016/2016-11-27/img-01.jpg" alt=""><p>27 Nov 2016</p><h2>Tree Planting Day</h2></a></li-->
+                            @*<li><a href="gallery-2016-market-visit-bishan-north.html"><img src="images/gallery/2016/2016-05-08/img-01.jpg" alt=""><p>8 May 2016</p><h2>Market visit at Bishan North Shopping Mall</h2></a></li>
+                            <li><a href="gallery-2016-market-visit-blk18-22-toa-payoh.html"><img src="images/gallery/2016/2016-date/img-01.jpg" alt=""><p>Yr 2016</p><h2>Market visit at Blk 18-22 Toa Payoh Lor 7</h2></a></li>*@
+                        </ul>
+
+                        <!--div class="pageNum">
+                        <ol>
+                            <li><a href="#" class="prev"></a></li>
+                            <li><a href="#" class="active">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#" class="next"></a></li>
+                        </ol>
+                    </div-->
+                    </div>
+                </div>
+            </div>
+        </div><!--End Gallery-->
+    </div><!-- End Main Contents -->

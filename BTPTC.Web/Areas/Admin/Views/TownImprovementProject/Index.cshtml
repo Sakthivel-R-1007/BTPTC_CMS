@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewBag.Title = "Town Improvement Project ";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@section Style
+{
+
+
+}
+
+@model List<Notice>
+<head>
+    <meta charset="utf-8">
+    <title>Bishan-Toa Payoh Town Council | CMS</title>
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/Admin/css/common.css">
+
+    <script src="@appPath/Contents/Admin/js/jquery-3.4.1.min.js"></script>
+    <script src="@appPath/Contents/Admin/common.js" type="text/javascript"></script>
+    <!-- MaxCDN Bootstrap plugins -->
+    <script src="@appPath/Contents/Admin/js/bootstrap/bootstrap.js"></script>
+
+</head>
+<body>
+    <div class="wrapper">
+        <header></header>
+        <div class="maincontents">
+            <form>
+                <h1>Town Improvement Projects</h1>
+                <div class="floatRight">
+                    <a href="#" data-toggle="modal" data-target="#sortSeq" class="editMetaBtn">Sort Sequence</a>&nbsp;&nbsp;
+                    <a href="addProject.html" class="editMetaBtn">Add Project</a>
+                </div>
+                <div class="clear padding10"></div>
+                <div class="homepage">
+                    <table cellpadding="0" cellspacing="0" class="tblgrey">
+                        <tr>
+                            <th width="60">S/N</th>
+                            <th>Project Type</th>
+                            <th width="200">Modified Date</th>
+                            <th width="120">Action</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>Barrier Free Access Ramp</td>
+                            <td>06/05/2020 12:00:00 PM</td>
+                            <td><a href="editProject.html">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>Community Hall</td>
+                            <td>06/05/2020 12:00:00 PM</td>
+                            <td><a href="editProject.html">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>Covered Linkway / Drop-Off Point</td>
+                            <td>06/05/2020 12:00:00 PM</td>
+                            <td><a href="editProject.html">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>Fitness Corner (Adult / Elderly)</td>
+                            <td>06/05/2020 12:00:00 PM</td>
+                            <td><a href="editProject.html">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td>Open Space Facilities</td>
+                            <td>06/05/2020 12:00:00 PM</td>
+                            <td><a href="editProject.html">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td>Pavilion</td>
+                            <td>06/05/2020 12:00:00 PM</td>
+                            <td><a href="editProject.html">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>07</td>
+                            <td>Playground</td>
+                            <td>06/05/2020 12:00:00 PM</td>
+                            <td><a href="editProject.html">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>Study Corner / Resident Corner</td>
+                            <td>06/05/2020 12:00:00 PM</td>
+                            <td><a href="editProject.html">Edit</a> | <a href="#" data-toggle="modal" data-target="#delete">Delete</a></td>
+                        </tr>
+                    </table>
+                    <div class="padding10"></div>
+                    <!--div class="pagination"> <a href="#">&laquo;</a> <a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">...</a> <a href="#">7</a> <a href="#">8</a> <a href="#">9</a> <a href="#">&raquo;</a></div>
+                    <div class="padding10"></div-->
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer></footer>
+
+    <!-- Popup (delete) -->
+    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content deletealert">
+                <div class="modal-header">
+                    <div class="title">Delete Project</div>
+                    <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                    <div class="clear"></div>
+                </div>
+                <div class="modal-body">
+                    <div class="container" style="text-align:center;">
+                        <p><strong>Are you sure to delete this project?</strong></p>
+                        <div class="padding10"></div>
+                        <input type="button" class="submitBtn" value="Delete">
+                        <div class="clear padding10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup (sort Sequence) -->
+    <div class="modal fade" id="sortSeq" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content editalert">
+                <div class="modal-header">
+                    <div class="title">Sort Sequence</div>
+                    <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                    <div class="clear"></div>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <ul id="sortable">
+                            <li><span>Barrier Free Access Ramp</span></li>
+                            <li><span>Community Hall</span></li>
+                            <li><span>Covered Linkway / Drop-Off Point</span></li>
+                            <li><span>Fitness Corner (Adult / Elderly)</span></li>
+                            <li><span>Open Space Facilities</span></li>
+                            <li><span>Pavilion</span></li>
+                            <li><span>Playground</span></li>
+                            <li><span>Study Corner / Resident Corner</span></li>
+                        </ul>
+                        <div class="padding10"></div>
+                        <input type="button" class="submitBtn floatRight" value="Save">
+                        <div class="clear padding10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            $("#sortable").sortable();
+            $("#sortable").disableSelection();
+        });
+    </script>
+</body>

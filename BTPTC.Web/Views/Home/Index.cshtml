@@ -1,0 +1,524 @@
+﻿@{
+    ViewBag.Title = "Home";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+
+
+<div class="mainContents">
+    <div class="contactDetails desktopOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Num, Font size adjustment and Social Media)-->
+
+    <div class="homepage">
+        <!--Banner Slider-->
+        <div class="bannerSlider">
+            <div><img src="@appPath/Contents/images/homepage/banner-img-01.jpg" alt=""></div>
+            <div><img src="@appPath/Contents/images/homepage/banner-img-02.jpg" alt=""></div>
+            <div><img src="@appPath/Contents/images/homepage/banner-img-03.jpg" alt=""></div>
+            <div><img src="@appPath/Contents/images/homepage/banner-img-04.jpg" alt=""></div>
+            <div><img src="@appPath/Contents/images/homepage/banner-img-05.jpg" alt=""></div>
+        </div>
+
+        <div class="contactDetails mobileOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Numbers)-->
+        <!--Quick Links-->
+        <div class="quickLinks">
+            <ul class="left">
+                <li>
+                    <a href="bulky-item-removal-services.html">
+                        <span class="width84Img"><img src="@appPath/Contents/images/homepage/removal-services-img.png" alt="Bulky Item Removal Services"></span>
+                        <span class="width84">Bulky Item Removal Services</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="booking-rates.html">
+                        <span class="width59Img"><img src="@appPath/Contents/images/homepage/booking-rates-img.png" alt="Common Areas & Facilities Booking Rates"></span>
+                        <span class="width59">Common Areas &amp; Facilities Booking Rates</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="right">
+                <li>
+                    <a href="service-conservancy-charges.html">
+                        <span class="width59Img"><img src="@appPath/Contents/images/homepage/scc-img.png" alt="Service and Conservancy Charges (S&CC)"></span>
+                        <span class="width59">Service and Conservancy Charges (S&amp;CC)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="feedback.html">
+                        <span class="width59Img"><img src="@appPath/Contents/images/homepage/feedback-img.png" alt="Feedback"></span>
+                        <span class="width59">Feedback</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!--White Boxes-->
+        <div class="whiteContainer">
+            <!--For Our Residents-->
+            <div class="homeResidents">
+                <div class="content">
+                    <h1>For Our Residents</h1>
+                    <ul class="watchVideo">
+                        <li>
+                            <a href="#" target="_blank">Watch: ELCB Power Trip</a>
+                            <a href="#" target="_blank">Watch: Choked Basin</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">Watch: Flickering Light</a>
+                            <a href="#" target="_blank">Watch: Overflow Cistern</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="#">Our Town Map</a>
+                            <a href="town-improvement-project.html">Town Improvement Projects</a>
+                            <a href="newsletter.html">Newsletter</a>
+                            <a href="annual-report.html">Annual Report</a>
+                        </li>
+                        <li>
+                            <a href="tender.html">Tender</a>
+                            <a href="useful-links.html">Useful Links & Contacts</a>
+                            <a href="#">Advertise</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--Our Offices-->
+            <div class="homeOffices">
+                <div class="content">
+                    <h1>Our Offices</h1>
+                    <ul>
+                        <li>
+                            <p><strong>Toa Payoh Office</strong></p>
+                            <p>Blk 125A Lorong 2 Toa Payoh,<br />#01-134 Singapore 311125</p>
+                        </li>
+                        <li>
+                            <p><strong>Operating Hours</strong></p>
+                            <p>
+                                Mon to Fri : 8.00am to 5.30pm<br />
+                                Sat : 8.00am to 12.00pm<br />
+                                Sun & Public Holidays : Closed
+                            </p>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <p><strong>Bishan Office</strong></p>
+                            <p>Blk 197 Bishan Street 13,<br />#01-585 Singapore 570197</p>
+                        </li>
+                        <li>
+                            <p><strong>Operating Hours</strong></p>
+                            <p>
+                                Mon to Fri : 8.00am to 5.30pm<br />
+                                Sat : 8.00am to 12.00pm<br />
+                                Sun & Public Holidays : Closed
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--Latest Happenings-->
+            <div class="homeHappenings">
+                <div class="content">
+                    <h1>Latest Happenings</h1>
+                    <a href="latest-happenings.html" class="viewAll">View All</a>
+                    <ul>
+                        <li>
+                            <a href="event-page.html">
+                                <span class="imgContainer"><img src="@appPath/Contents/images/events/2020/chingagy_heartlands/event-thumb.jpg" alt=""></span>
+                                <span>
+                                    <p class="date">1 Mar 2020</p>
+                                    <p><strong>Chingay @@ Heartlands 2020</strong></p>
+                                    <p>Lorem ipsum dolor sit consectetur adipiscing faucibus non augue tempor, at ultricies justo vulputate.</p>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="event-page.html">
+                                <span class="imgContainer"><img src="@appPath/Contents/images/events/2020/cny_dinner/event-thumb.jpg" alt=""></span>
+                                <span>
+                                    <p class="date">8 Feb 2020</p>
+                                    <p><strong>Bishan North CNY Dinner</strong></p>
+                                    <p>Lorem ipsum dolor sit consectetur adipiscing faucibus non augue tempor, at ultricies justo vulputate.</p>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--Meet Our MPs-->
+            <div class="homeMPs">
+                <div class="content">
+                    <h1>Meet Our MPs</h1>
+                    <div class="mpDetail">
+                        <div class="ngEngHen">
+                            <span class="imgContainer"><img src="@appPath/Contents/images/mps/Ng-Eng-Hen.jpg" alt="Dr Ng Eng Hen"></span>
+                            <span>
+                                <p class="mpName">Dr Ng Eng Hen</p>
+                                <p>
+                                    Minister for Defence<br />
+                                    MP for Bishan-Toa Payoh GRC<br />
+                                    Advisor of Bishan-Toa Payoh Town Council<br />
+                                    Advisor to Bishan-Toa Payoh Grassroots Organisations
+                                </p>
+
+                                <p><strong>Location</strong></p>
+                                <p>
+                                    Blk 178 Toa Payoh Central<br />
+                                    #01-238 Singapore 310178
+                                </p>
+
+                                <p><strong>Meet-The-People Session</strong></p>
+                                <p>
+                                    Every Tuesday from 7.30pm<br />
+                                    (Except Public Holidays)
+                                </p>
+                            </span>
+                        </div>
+                        <div class="josephineTeo">
+                            <span class="imgContainer"><img src="@appPath/Contents/images/mps/Josephine-Teo.jpg" alt="Mrs Josephine Teo"></span>
+                            <span>
+                                <p class="mpName">Mrs Josephine Teo</p>
+                                <p>
+                                    Minister for Manpower<br />
+                                    Second Minister for Home Affairs<br />
+                                    MP for Bishan-Toa Payoh GRC<br />
+                                    Elected Member of Bishan-Toa Payoh Town Council<br />
+                                    Advisor to Bishan-Toa Payoh Grassroots Organisations
+                                </p>
+
+                                <p><strong>Location</strong></p>
+                                <p>
+                                    Blk 231 Bishan St 23<br />
+                                    #01-03 Singapore 570231
+                                </p>
+
+                                <p><strong>Meet-The-People Session</strong></p>
+                                <p>
+                                    Every Tuesday from 7.30pm<br />
+                                    (Except Public Holidays)
+                                </p>
+                            </span>
+                        </div>
+                        <div class="cheeHongTat">
+                            <span class="imgContainer"><img src="@appPath/Contents/images/mps/Chee-Hong-Tat.jpg" alt="Mr Chee Hong Tat"></span>
+                            <span>
+                                <p class="mpName">Mr Chee Hong Tat</p>
+                                <p>
+                                    Senior Minister of State for Trade and Industry, and Education<br />
+                                    MP for Bishan-Toa Payoh GRC<br />
+                                    Vice-Chairman of Bishan-Toa Payoh Town Council<br />
+                                    Advisor to Bishan-Toa Payoh Grassroots Organisations
+                                </p>
+
+                                <p><strong>Location</strong></p>
+                                <p>
+                                    Blk 122 Lorong 2 Toa Payoh<br />
+                                    #01-18 Singapore 310122
+                                </p>
+
+                                <p><strong>Meet-The-People Session</strong></p>
+                                <p>
+                                    Every Tuesday from 7.30pm<br />
+                                    (Except Public Holidays)
+                                </p>
+                            </span>
+                        </div>
+                        <div class="chongKeeHiong">
+                            <span class="imgContainer"><img src="@appPath/Contents/images/mps/Chong-Kee-Hiong.jpg" alt="Mr Chong Kee Hiong"></span>
+                            <span>
+                                <p class="mpName">Mr Chong Kee Hiong</p>
+                                <p>
+                                    MP for Bishan-Toa Payoh GRC<br />
+                                    Chairman of Bishan-Toa Payoh Town Council<br />
+                                    Advisor to Bishan-Toa Payoh Grassroots Organisations
+                                </p>
+
+                                <p><strong>Location</strong></p>
+                                <p>
+                                    Blk 196 Bishan Street 13 <br />
+                                    #01-563 Singapore 570196
+                                    <br /><br />
+                                    Blk 309 Shunfu Road<br />
+                                    #01-175, Singapore 570309<br />
+                                    (Every 1st Tuesday of the month)
+                                </p>
+
+                                <p><strong>Meet-The-People Session</strong></p>
+                                <p>
+                                    Every Tuesday from 7.30pm<br />
+                                    (Except Public Holidays)
+                                </p>
+                            </span>
+                        </div>
+                        <div class="saktiandiSupaat">
+                            <span class="imgContainer"><img src="@appPath/Contents/images/mps/Saktiandi-Supaat.jpg" alt="Mr Saktiandi Supaat"></span>
+                            <span>
+                                <p class="mpName">Mr Saktiandi Supaat</p>
+                                <p>
+                                    MP for Bishan-Toa Payoh GRC<br />
+                                    Vice-Chairman of Bishan-Toa Payoh Town Council<br />
+                                    Advisor to Bishan-Toa Payoh Grassroots Organisations
+                                </p>
+
+                                <p><strong>Location</strong></p>
+                                <p>
+                                    Blk 261A Toa Payoh East<br />
+                                    #01-02 Singapore 311261
+                                </p>
+
+                                <p><strong>Meet-The-People Session</strong></p>
+                                <p>
+                                    Every Tuesday from 7.30pm<br />
+                                    (Except Public Holidays)
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mpsBtn">
+                        <ul>
+                            <li class="ngEngHen active"><img src="@appPath/Contents/images/mps/Ng-Eng-Hen.jpg" alt="Dr Ng Eng Hen"></li>
+                            <li class="josephineTeo"><img src="@appPath/Contents/images/mps/Josephine-Teo.jpg" alt="Mrs Josephine Teo"></li>
+                            <li class="cheeHongTat"><img src="@appPath/Contents/images/mps/Chee-Hong-Tat.jpg" alt="Mr Chee Hong Tat"></li>
+                            <li class="chongKeeHiong"><img src="@appPath/Contents/images/mps/Chong-Kee-Hiong.jpg" alt="Mr Chong Kee Hiong"></li>
+                            <li class="saktiandiSupaat"><img src="@appPath/Contents/images/mps/Saktiandi-Supaat.jpg" alt="Mr Saktiandi Supaat"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--Compliments-->
+            <div class="homeCompliments">
+                <div class="content">
+                    <h1>Compliments</h1>
+                    <!--ul>
+                        <li>
+                            <p>“Dear Mr Lorem, Lorem ipsum dolor sit amet, consectetur adipiscing elit. In faucibus erat non augue tempor, at ultricies justo vulputate. Maecenas commodo, mauris id ullamcorper molestie, purus tellus laoreet orci, eu interdum arcu dui ac eleifend viverra porttitor. Curabitur ac vulputate quis eros sit amet finibus odio.”</p>
+                            <p class="name">Mrs Sharon Tan</p>
+                            <p class="location">Resident of Toa Payoh</p>
+                        </li>
+                        <li>
+                            <p>“Dear Mr Lorem, Lorem ipsum dolor sit amet, consectetur adipiscing elit. In faucibus erat non augue tempor, at ultricies justo vulputate. Maecenas commodo, mauris id ullamcorper molestie, purus tellus laoreet orci, eu interdum arcu dui ac eleifend viverra porttitor. Curabitur ac vulputate quis eros sit amet finibus odio.”</p>
+                            <p class="name">Mr Azman Ismail</p>
+                            <p class="location">Resident of Bishan</p>
+                        </li>
+                    </ul-->
+
+                    <div class="complimentSlider">
+                        <div>
+                            <ul>
+                                <li>
+                                    <p>Dear Yee Mong Kong</p>
+                                    <p>I wanted to thank you for your quick and swift action not only in paper but also on site. It is done and the ramp is now under drying stage before public can use it. Really great of you that you taking my comment in the positive way.</p>
+                                    <p class="name">Andy</p>
+                                </li>
+                                <li>
+                                    <p>Dear Wei Tian,</p>
+                                    <p>Thank you so much. The issue has been resolved. I am very appreciative of your help to make this happen. Please also help me convey my appreciation to the contractor.</p>
+                                    <p class="name">Melvin</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>
+                                    <p>I would like to appreciate your staff Mr. Peh for his competent/patience/helpful services rendered to me through phone while my whole house electricity was down. He thought me step-by-step how to operate within few minutes it was back in order again. Thanks you so much. Well done!</p>
+                                    <p class="name">Shelley</p>
+                                </li>
+                                <li>
+                                    <p>I would like to compliment Mr Peh who answered my call and Mr Teo who followed up on my case on 28 June, regarding a leaking stop valve. They were both very prompt in taking action and solving my problem. Once again, thank you for your excellent service.</p>
+                                    <p class="name">Lily</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>
+                                    <p>Dear Ms Ou Yang,</p>
+                                    <p>I am grateful for your speedy service and capability in keeping the environmental comfortable for Singaporeans in Bishan estate.</p>
+                                    <p class="name">Nari</p>
+                                </li>
+                                <li>
+                                    <p>I would like to thank and compliment Mr Patrick and Mr Bikash for the cleaning job well done.</p>
+                                    <p class="name">Penny</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>
+                                    <p>Hi Xin Ying,</p>
+                                    <p>Thank you for your email reply. I would like to applaud the Town Council for always being so prompt and responsive. Really appreciate it. Kudos to Bishan Town Council officers and team.</p>
+                                    <p class="name">Daphne</p>
+                                </li>
+                                <li>
+                                    <p>Would like to thank Mr Yee for attending to our request for investigation and giving advice on how to manage the situation. His promptness and friendly manner, helped reduce our anxiety, significantly. He is a contributor to Bishan being a well-managed estate! Thank you, Mr Yee.</p>
+                                    <p class="name">Mdm Cheng</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>
+                                    <p>I called Town Council for assistance as I saw huge swarm of insects swirling outside the windows of my home's living room. Siti clearly demonstrated how competent she was in managing the issue. Siti made effort to continuously engage me on her action plan. She clearly has the right attitude towards work. She knows the importance of engagement via communications. Good job Siti. Veron, thank you for putting together such an effective, competent and responsible team!</p>
+                                    <p class="name">Ms Ong</p>
+                                </li>
+                                <li>
+                                    <p>I would like to give an excellent satisfactory comment to the fast response to my feedback on the block rubbish chute odour issue. I noticed the TC staffs doing water flushing to the chute from the top down and washing at the bin areas. Keep up the good job. You have my thumb up!! Thank you for the fast response.</p>
+                                    <p class="name">Mr Choo</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>
+                                    <p>I visited Bishan Town Council numerous times this year regarding my shop at Block 151 Bishan St 11 and was always well served by your staffs. Special thanks to Mr Yee and Ms Judy Lee who are very professional, polite, helpful, patient and understanding when serving me. Bishan Town Council is fortunate to have them on board.</p>
+                                    <p class="name">Mdm Soh</p>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--div class="complimentSlider">
+                        <div>
+                            <p>Dear Yee Mong Kong</p>
+                            <p>I wanted to thank you for your quick and swift action not only in paper but also on site. It is done and the ramp is now under drying stage before public can use it. Really great of you that you taking my comment in the positive way.</p>
+                            <p class="name">Andy</p>
+                        </div>
+                        <div>
+                            <p>Dear Wei Tian,</p>
+                            <p>Thank you so much. The issue has been resolved. I am very appreciative of your help to make this happen. Please also help me convey my appreciation to the contractor.</p>
+                            <p class="name">Melvin</p>
+                        </div>
+                        <div>
+                            <p>I would like to appreciate your staff Mr. Peh for his competent/patience/helpful services rendered to me through phone while my whole house electricity was down. He thought me step-by-step how to operate within few minutes it was back in order again. Thanks you so much. Well done!</p>
+                            <p class="name">Shelley</p>
+                        </div>
+                        <div>
+                            <p>I would like to compliment Mr Peh who answered my call and Mr Teo who followed up on my case on 28 June, regarding a leaking stop valve. They were both very prompt in taking action and solving my problem. Once again, thank you for your excellent service.</p>
+                            <p class="name">Lily</p>
+                        </div>
+                        <div>
+                            <p>Dear Ms Ou Yang,</p>
+                            <p>I am grateful for your speedy service and capability in keeping the environmental comfortable for Singaporeans in Bishan estate.</p>
+                            <p class="name">Nari</p>
+                        </div>
+                        <div>
+                            <p>I would like to thank and compliment Mr Patrick and Mr Bikash for the cleaning job well done.</p>
+                            <p class="name">Penny</p>
+                        </div>
+                        <div>
+                            <p>Hi Xin Ying,</p>
+                            <p>Thank you for your email reply. I would like to applaud the Town Council for always being so prompt and responsive. Really appreciate it. Kudos to Bishan Town Council officers and team.</p>
+                            <p class="name">Daphne</p>
+                        </div>
+                        <div>
+                            <p>Would like to thank Mr Yee for attending to our request for investigation and giving advice on how to manage the situation. His promptness and friendly manner, helped reduce our anxiety, significantly. He is a contributor to Bishan being a well-managed estate! Thank you, Mr Yee.</p>
+                            <p class="name">Mdm Cheng</p>
+                        </div>
+                        <div>
+                            <p>I called Town Council for assistance as I saw huge swarm of insects swirling outside the windows of my home's living room. Siti clearly demonstrated how competent she was in managing the issue. Siti made effort to continuously engage me on her action plan. She clearly has the right attitude towards work. She knows the importance of engagement via communications. Good job Siti. Veron, thank you for putting together such an effective, competent and responsible team!</p>
+                            <p class="name">Ms Ong</p>
+                        </div>
+                        <div>
+                            <p>I would like to give an excellent satisfactory comment to the fast response to my feedback on the block rubbish chute odour issue. I noticed the TC staffs doing water flushing to the chute from the top down and washing at the bin areas. Keep up the good job. You have my thumb up!! Thank you for the fast response.</p>
+                            <p class="name">Mr Choo</p>
+                        </div>
+                        <div>
+                            <p>I visited Bishan Town Council numerous times this year regarding my shop at Block 151 Bishan St 11 and was always well served by your staffs. Special thanks to Mr Yee and Ms Judy Lee who are very professional, polite, helpful, patient and understanding when serving me. Bishan Town Council is fortunate to have them on board.</p>
+                            <p class="name">Mdm Soh</p>
+                        </div>
+                    </div-->
+                </div>
+            </div>
+        </div>
+    </div><!--End Homepage-->
+</div><!-- End Main Contents -->
+
+@section scripts
+{
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/scripts/slick/slick-theme.css" />
+    <script type="text/javascript" src="@appPath/Contents/scripts/slick/slick.js"></script>
+
+    <script>
+        jQuery(document).ready(function () {
+            $('.bannerSlider').slick({
+                dots: true,
+                infinite: true,
+                fade: true,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                speed: 1500,
+                slidesToShow: 1,
+                adaptiveHeight: true
+            });
+
+            $('.complimentSlider').slick({
+                dots: false,
+                infinite: true,
+                fade: false,
+                autoplay: true,
+                autoplaySpeed: 10000,
+                speed: 1500,
+                slidesToShow: 1,
+                adaptiveHeight: true
+            });
+
+            /*
+            $('.complimentSlider').slick({
+                dots:false,
+                infinite:true,
+                autoplaySpeed: 3000,
+                speed: 1500,
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                adaptiveHeight:true,
+                responsive:[
+                {
+                    breakpoint: 560,
+                    settings:{
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                    }
+                }
+                ]
+            });
+            */
+            $(".mpDetail div").hide();
+            $(".mpDetail div:first-child").show();
+            $(".mpsBtn .ngEngHen").click(function () {
+                $(".mpsBtn li").removeClass("active");
+                $(this).addClass("active");
+                $(".mpDetail div").hide();
+                $(".mpDetail .ngEngHen").fadeIn(300);
+            });
+            $(".mpsBtn .josephineTeo").click(function () {
+                $(".mpsBtn li").removeClass("active");
+                $(this).addClass("active");
+                $(".mpDetail div").hide();
+                $(".mpDetail .josephineTeo").fadeIn(300);
+            });
+            $(".mpsBtn .cheeHongTat").click(function () {
+                $(".mpsBtn li").removeClass("active");
+                $(this).addClass("active");
+                $(".mpDetail div").hide();
+                $(".mpDetail .cheeHongTat").fadeIn(300);
+            });
+            $(".mpsBtn .chongKeeHiong").click(function () {
+                $(".mpsBtn li").removeClass("active");
+                $(this).addClass("active");
+                $(".mpDetail div").hide();
+                $(".mpDetail .chongKeeHiong").fadeIn(300);
+            });
+            $(".mpsBtn .saktiandiSupaat").click(function () {
+                $(".mpsBtn li").removeClass("active");
+                $(this).addClass("active");
+                $(".mpDetail div").hide();
+                $(".mpDetail .saktiandiSupaat").fadeIn(300);
+            });
+        });
+    </script>
+}

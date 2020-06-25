@@ -1,0 +1,95 @@
+﻿
+
+@{
+
+	var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+<div class="contactDetails desktopOnly">
+	<div class="container">
+		<div class="left">
+			<div class="tcHotline"><p class="red">Town Council Hotline</p><p class="blue">(During Office Hours)</p><p>6259 6700</p></div>
+			<div class="emuHotline"><p class="red">EMSU Hotline <span class="blue">(24 Hours)</span></p><p>1800 241 7711</p></div>
+		</div>
+		<div class="right">
+			<div class="fontAdjustment">
+				<a href="javascript:increaseFontSize();" class="large">A</a>
+				<a href="javascript:resetFontSize();" class="middle selected">A</a>
+				<a href="javascript:decreaseFontSize();" class="small">A</a>
+			</div>
+			<ul class="socialMediaIcon">
+				<li><a href="https://www.facebook.com/BishanToaPayoh/" target="_blank"><img src="@appPath/Contents/images/common/fb-btn.png" alt="Facebook"></a></li>
+				<li><a href="mobile-app.html#itown"><img src="@appPath/Contents/images/common/itown-btn.png" alt="iTown App"></a></li>
+				<li><a href="mobile-app.html#oneservice"><img src="@appPath/Contents/images/common/one-service-btn.png" alt="One Service App"></a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div><!--End Contact Details (Contact Num, Font size adjustment and Social Media-->
+
+<div class="contactDetails mobileOnly">
+	<div class="container">
+		<div class="left">
+			<div class="tcHotline"><p class="red">Town Council Hotline</p><p class="blue">(During Office Hours)</p><p>6259 6700</p></div>
+		</div>
+		<div class="right">
+			<div class="emuHotline"><p class="red">EMSU Hotline</p><p class="blue">(24 Hours)</p><p>1800 241 7711</p></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div><!--End Contact Details (Contact Numbers-->
+
+<script>
+
+	var min = 12;
+	var max = 16;
+
+	function increaseFontSize() {
+		var fontSizeIncrease = document.querySelectorAll('.pageContents p, .pageContents li, .ourmpContent h3, .commonTable table, .question span, .qna .answer table th, .qna .answer table td, .eventsContent .date');
+		for (i = 0; i < fontSizeIncrease.length; i++) {
+			if (fontSizeIncrease[i].style.fontSize) {
+				var font_size = parseInt(fontSizeIncrease[i].style.fontSize.replace("px", ""));
+				var line_height = parseInt(fontSizeIncrease[i].style.lineHeight.replace("px", ""));
+			} else {
+				var font_size = 14;
+				var line_height = 18;
+			}
+			if (font_size != max) {
+				font_size += 1;
+				line_height += 2;
+			}
+			fontSizeIncrease[i].style.fontSize = font_size + "px";
+			fontSizeIncrease[i].style.lineHeight = line_height + "px";
+		}
+	}
+
+	function resetFontSize() {
+		var fontSizeReset = document.querySelectorAll('.pageContents p, .pageContents li, .ourmpContent h3, .commonTable table, .question span, .qna .answer table th, .qna .answer table td, .eventsContent .date');
+		for (i = 0; i < fontSizeReset.length; i++) {
+			if (fontSizeReset[i].style.fontSize) {
+				var font_size = 14;
+				var line_height = 18;
+			}
+			fontSizeReset[i].style.fontSize = font_size + "px";
+			fontSizeReset[i].style.lineHeight = line_height + "px";
+		}
+	}
+
+	function decreaseFontSize() {
+		var fontSizeDecrease = document.querySelectorAll('.pageContents p, .pageContents li, .ourmpContent h3, .commonTable table, .question span, .qna .answer table th, .qna .answer table td, .eventsContent .date');
+		for (i = 0; i < fontSizeDecrease.length; i++) {
+			if (fontSizeDecrease[i].style.fontSize) {
+				var font_size = parseInt(fontSizeDecrease[i].style.fontSize.replace("px", ""));
+				var line_height = parseInt(fontSizeDecrease[i].style.lineHeight.replace("px", ""));
+			} else {
+				var font_size = 14;
+				var line_height = 18;
+			}
+			if (font_size != min) {
+				font_size -= 1;
+				line_height -= 2;
+			}
+			fontSizeDecrease[i].style.fontSize = font_size + "px";
+			fontSizeDecrease[i].style.lineHeight = line_height + "px";
+		}
+	}
+</script>

@@ -1,0 +1,31 @@
+﻿
+
+
+@{
+
+    Layout = null;
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+@model IList<Notice>
+
+
+
+@if (Model != null && Model.Count > 0)
+{
+    int SNo = 1;
+    foreach (Notice ES in Model)
+    {
+        <tr>
+            <td>@ES.RowNum</td>
+            <td>@ES.NoticeType</td>
+            <td>@ES.Location</td>
+            <td>@ES.Status</td>
+            <td>@ES.ModifiedOn</td>
+
+            @*<td><a href="@appPath/Admin/TownImprovementProject/EditNotice/@ES.GUID" id="editNotice" data-toggle="modal" data-target="#editNotice">Edit</a> | <a href="javascipt:void(0)" id="deletebtn" data-uniquecode="@ES.GUID" data-toggle="modal">Delete</a></td>*@
+            <td><a href="javascipt:void(0)" id="editNotice" data-toggle="modal" data-target="#editNotice">Edit</a> | <a href="javascipt:void(0)" id="deletebtn" data-uniquecode="@ES.GUID" data-toggle="modal">Delete</a></td>
+        </tr>
+        SNo++;
+    }
+}

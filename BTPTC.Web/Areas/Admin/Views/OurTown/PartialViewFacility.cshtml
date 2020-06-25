@@ -1,0 +1,25 @@
+﻿
+
+@{
+
+    Layout = null;
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+@model IList<Facility>
+@if (Model != null && Model.Count > 0)
+{
+    int SNo = 1;
+    foreach (Facility ES in Model)
+    {
+        <tr>
+            <td>@ES.RowNum</td>
+            <td>@ES.Name</td>
+          
+            <td>@ES.ModifiedOn</td>
+            <td><a href="@appPath/Admin/OurTown/EditFacility/@ES.Id">Edit</a> | <a href="javascipt:void(0)" id="deletebtn" data-uniquecode="@ES.GUID">Delete</a></td>
+        </tr>
+        SNo++;
+    }
+}
+

@@ -1,0 +1,406 @@
+﻿
+@{
+    ViewBag.Title = "Town Improvement Projects";
+    ViewBag.bodyClass = "OURTOWN";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+
+<div class="mainContents">
+    <div class="contactDetails desktopOnly"> @Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Num, Font size adjustment and Social Media)-->
+    <div class="contactDetails mobileOnly"> @Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Numbers)-->
+
+    <div class="pageBanner"><img src="@appPath/Contents/images/improvement-project/banner-img.jpg" alt=""></div>
+
+    <div class="townImprovePjt">
+        <div class="pageContents">
+            <div class="container">
+                <div class="topBar">
+                    <div class="breadcrumb"><a href="@appPath/">Home</a><span></span><a href="#">Our Town</a><span></span>Town Improvement Projects</div>
+                    <div class="socialShareBtns">
+                        <ul>
+                            <li>Share:</li>
+                            <li><a href="http://www.facebook.com/sharer.php?u=http://btptc.medialabsstreaming.com/town-improvement-project.html" target="_blank"><img src="@appPath/Contents/images/common/fb-share-btn.png" alt=""></a></li>
+                            <li><a href="https://twitter.com/share?text=Town Improvement Projects | Bishan-Toa Payoh Town Council,;url=http://btptc.medialabsstreaming.com/town-improvement-project.html" target="_blank"><img src="@appPath/Contents/images/common/twitter-share-btn.png" alt=""></a></li>
+                            <!--li><a href="#" target="_blank"><img src="images/common/google-share-btn.png" alt="" target="_blank"></a></li-->
+                            <li><a href="mailto:?subject=Town Improvement Projects | Bishan-Toa Payoh Town Council&Body=I thought you might be interested in this article: http://btptc.medialabsstreaming.com/town-improvement-project.html"><img src="@appPath/Contents/images/common/email-share-btn.png" alt="" target="_blank"></a></li>
+                            <li class="print"><a href="#" onclick="window.print();"><img src="@appPath/Contents/images/common/print-btn.png" alt="" target="_blank"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="townImprovePjtContainer">
+                    <h1>Town Improvement Projects</h1>
+
+                    <ul class="townImprovePjtType">
+                        <li><a href="#" rel="improvementPjt01" class="active btn01" onclick="return false;">Barrier Free Access Ramp</a></li>
+                        <li><a href="#" rel="improvementPjt02" class="btn02" onclick="return false;">Community Hall</a></li>
+                        <li><a href="#" rel="improvementPjt03" class="btn03" onclick="return false;">Covered Linkway / Drop-Off Point</a></li>
+                        <li><a href="#" rel="improvementPjt04" class="btn04" onclick="return false;">Fitness Corner (Adult / Elderly)</a></li>
+                        <li><a href="#" rel="improvementPjt05" class="btn05" onclick="return false;">Open Space Facilities</a></li>
+                        <li><a href="#" rel="improvementPjt06" class="btn06" onclick="return false;">Pavilion</a></li>
+                        <li><a href="#" rel="improvementPjt07" class="btn07" onclick="return false;">Playground</a></li>
+                        <li><a href="#" rel="improvementPjt08" class="btn08" onclick="return false;">Study Corner / Resident Corner</a></li>
+                    </ul>
+
+                    <div class="townImprovePjtTypeMobile">
+                        <div class="btnStatus">Barrier Free Access Ramp</div>
+                        <ul>
+                            <li><a href="#" rel="improvementPjt01" onclick="return false;">Barrier Free Access Ramp</a></li>
+                            <li><a href="#" rel="improvementPjt02" onclick="return false;">Community Hall</a></li>
+                            <li><a href="#" rel="improvementPjt03" onclick="return false;">Covered Linkway / Drop-Off Point</a></li>
+                            <li><a href="#" rel="improvementPjt04" onclick="return false;">Fitness Corner (Adult / Elderly)</a></li>
+                            <li><a href="#" rel="improvementPjt05" onclick="return false;">Open Space Facilities</a></li>
+                            <li><a href="#" rel="improvementPjt06" onclick="return false;">Pavilion</a></li>
+                            <li><a href="#" rel="improvementPjt07" onclick="return false;">Playground</a></li>
+                            <li><a href="#" rel="improvementPjt08" onclick="return false;">Study Corner / Resident Corner</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="townImprovePjtContent" id="improvementPjt01">
+                        <h2>Completed Projects</h2>
+                        <div class="normalTable">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <thead>
+                                    <tr>
+                                        <th class="center" style="width:40px;">No.</th>
+                                        <th>Location</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="center">1</td><td>Blk 201 Bishan Street 23</td></tr>
+                                    <tr><td class="center">2</td><td>Near Blk 146 Lorong 2 Toa Payoh</td></tr>
+                                    <tr><td class="center">3</td><td>Near Blk 157 Lorong 1 Toa Payoh</td></tr>
+                                    <tr><td class="center">4</td><td>Blk 241 Bishan Street 22</td></tr>
+                                    <tr><td class="center">5</td><td>Blk 38 Lorong 5 Toa Payoh</td></tr>
+                                    <tr><td class="center">6</td><td>Blk 111 Lorong 1 Toa Payoh</td></tr>
+                                    <tr><td class="center">7</td><td>Near Blk 153 to driveway in front of Blk 152 Lorong 2 Toa Payoh</td></tr>
+                                    <tr><td class="center">8</td><td>Blk 50 Lorong 5 Toa Payoh to Main Road</td></tr>
+                                    <tr><td class="center">9</td><td>Blk 138 to 140 Bishan Street 12</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="townImprovePjtContent" id="improvementPjt02">
+                        <h2>In Progress Projects</h2>
+                        <div class="normalTable">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <thead>
+                                    <tr>
+                                        <th class="center" style="width:40px;">No.</th>
+                                        <th>Location</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="center">1</td><td>Blk 63 Lor 5 Toa Payoh</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="townImprovePjtContent" id="improvementPjt03">
+                        <h2>Completed Projects</h2>
+                        <div class="normalTable">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <thead>
+                                    <tr>
+                                        <th class="center" style="width:40px;">No.</th>
+                                        <th>Location</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="center">1</td><td>Connecting Blk 189 and Blk 191</td></tr>
+                                    <tr><td class="center">2</td><td>Blk 125 Bishan Street 11</td></tr>
+                                    <tr><td class="center">3</td><td>Blk 191 Bishan Street 13</td></tr>
+                                    <tr><td class="center">4</td><td>Blk 219 Bishan Street 23</td></tr>
+                                    <tr><td class="center">5</td><td>Blk 201 Toa Payoh North</td></tr>
+                                    <tr><td class="center">6</td><td>Blk 144 Lorong 1 Toa Payoh to Toa Payoh West CC</td></tr>
+                                    <tr><td class="center">7</td><td>From existing linkway between Blk 26 and Blk 27 Toa Payoh East to lift access at Pedestrian Overhead Bridge</td></tr>
+                                    <tr><td class="center">8</td><td>From Blk 101 Bishan Street 12 to bus-stop along Braddell Road</td></tr>
+                                    <tr><td class="center">9</td><td>Blk 147 Lorong 2 Toa Payoh to Toa Payoh West CC</td></tr>
+                                    <tr><td class="center">10</td><td>Blk 14A Lorong 7 Toa Payoh to pedestrian crossing</td></tr>
+                                    <tr><td class="center">11</td><td>Blk 23 Toa Payoh East to bus stop</td></tr>
+                                    <tr><td class="center">12</td><td>Blk 14B Lorong 7 Toa Payoh</td></tr>
+                                    <tr><td class="center">13</td><td>Between MSCP at Blk 138 Lorong 1A Toa Payoh and Blk 138C Lorong 1A Toa Payoh</td></tr>
+                                    <tr><td class="center">14</td><td>Blk 209 Toa Payoh North to Blk 112 Lorong 1 Toa Payoh</td></tr>
+                                    <tr><td class="center">15</td><td>From existing linkway at Blk 108 Lorong 1 Toa Payoh to Blk 205 Toa Payoh North</td></tr>
+                                    <tr><td class="center">16</td><td>In between Blk 119 & 124 Lorong 1 Toa Payoh to existing linkway to Blk 124 Lorong 1 Toa Payoh</td></tr>
+                                    <tr><td class="center">17</td><td>Blk 313 Shunfu Road</td></tr>
+                                    <tr><td class="center">18</td><td>Blk 119 Lorong 1 Toa Payoh</td></tr>
+                                    <tr><td class="center">19</td><td>Blk 187 Bishan Street 13</td></tr>
+                                    <tr><td class="center">20</td><td>Blk 202 Toa Payoh North</td></tr>
+                                    <tr><td class="center">21</td><td>From Blk 139 Bishan Street 12 to existing covered linkway to Blk 140 Bishan Street 12</td></tr>
+                                    <tr><td class="center">22</td><td>Blk 143 Lorong 2 Toa Payoh</td></tr>
+                                    <tr><td class="center">23</td><td>Blk 109 Bishan Street 12</td></tr>
+                                    <tr><td class="center">24</td><td>Connecting to existing covered linkway between Blk 133 and 134 Bishan Street 12</td></tr>
+                                    <tr><td class="center">25</td><td>From Blk 142 Bishan Street 12 to Blk 144 Bishan Street 12</td></tr>
+                                    <tr><td class="center">26</td><td>From Natura Loft Blk 275 Bishan Street 24 to Blk 279 Bishan Street 24</td></tr>
+                                    <tr><td class="center">27</td><td>Blk 200 Toa Payoh North</td></tr>
+                                    <tr><td class="center">28</td><td>Blk 192 Lorong 4 Toa Payoh to Bus Stop</td></tr>
+                                    <tr><td class="center">29</td><td>Blk 84C to existing linkway between Blk 84A & 84B Lorong 2 Toa Payoh</td></tr>
+                                    <tr><td class="center">30</td><td>Blk 3 to 3A MSCP Lorong 7 Toa Payoh</td></tr>
+                                    <tr><td class="center">31</td><td>From MSCP Blk 10A to existing covered linkway to Blk 10B Lorong 7 Toa Payoh</td></tr>
+                                    <tr><td class="center">32</td><td>Along Toa Payoh Central main road in front of Blk 177 Toa Payoh Central</td></tr>
+                                    <tr><td class="center">33</td><td>Blk 146 Bishan Street 11</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h2>In Progress Projects</h2>
+                        <div class="normalTable">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <thead>
+                                    <tr>
+                                        <th class="center" style="width:40px;">No.</th>
+                                        <th>Location</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="center">1</td><td>Blk 211 to 216 Bishan Street 23</td></tr>
+                                    <tr><td class="center">2</td><td>Blk 146/147 Bishan Street</td></tr>
+                                    <tr><td class="center">3</td><td>Between Blk 124 & 126 Lorong 1 Toa Payoh</td></tr>
+                                    <tr><td class="center">4</td><td>Between Blk 123 & 125 Lorong 1 Toa Payoh</td></tr>
+                                    <tr><td class="center">5</td><td>From MSCP at Blk 35A to existing linkway between Blk 36 and 35A Lorong 5 Toa Payoh</td></tr>
+                                    <tr><td class="center">6</td><td>Blk 99C Lorong 2 Toa Payoh</td></tr>
+                                    <tr><td class="center">7</td><td>Connecting Blk 130 and Blk 131 Bishan St. 12</td></tr>
+                                    <tr><td class="center">8</td><td>Blk 27 Toa Payoh East to Blk 257 Kim Keat Ave</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="townImprovePjtContent" id="improvementPjt04">
+                        <h2>Completed Projects</h2>
+                        <div class="normalTable">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <thead>
+                                    <tr>
+                                        <th class="center" style="width:40px;">No.</th>
+                                        <th>Location</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="center">1</td><td>Blk 234 Lorong 8 Toa Payoh</td></tr>
+                                    <tr><td class="center">2</td><td>Blk 79A Toa Payoh Central</td></tr>
+                                    <tr><td class="center">3</td><td>Blk 150 Lorong 1 Toa Payoh</td></tr>
+                                    <tr><td class="center">4</td><td>Blk 69 Moulmein Road</td></tr>
+                                    <tr><td class="center">5</td><td>Blk 152B Bishan Street 11</td></tr>
+                                    <tr><td class="center">6</td><td>Blk 177 Toa Payoh Central</td></tr>
+                                    <tr><td class="center">7</td><td>Blk 163 Bishan Street 13</td></tr>
+                                    <tr><td class="center">8</td><td>Blk 305 Shunfu Road</td></tr>
+                                    <tr><td class="center">9</td><td>Blk 205 Bishan Street 23</td></tr>
+                                    <tr><td class="center">10</td><td>Blk 7 Lorong 7 Toa Payoh</td></tr>
+                                    <tr><td class="center">11</td><td>Blk 174 Lorong 1 Toa Payoh</td></tr>
+                                    <tr><td class="center">12</td><td>Blk 37 Lorong 5 Toa Payoh</td></tr>
+                                    <tr><td class="center">13</td><td>Blk 128 Lorong 1 Toa Payoh</td></tr>
+                                    <tr><td class="center">14</td><td>Blk 25 Sin Ming Road</td></tr>
+                                    <tr><td class="center">15</td><td>Blk 62B Lorong 4 Toa Payoh</td></tr>
+                                    <tr><td class="center">16</td><td>Blk 114 Lorong 1 Toa Payoh</td></tr>
+                                    <tr><td class="center">17</td><td>Blk 120A Lorong 2 Toa Payoh</td></tr>
+                                    <tr><td class="center">18</td><td>Blk 207 Toa Payoh North</td></tr>
+                                    <tr><td class="center">19</td><td>Blk 278 Bishan Street 24</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="townImprovePjtContent" id="improvementPjt05">
+                        <h2>Completed Projects</h2>
+                        <div class="normalTable">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <thead>
+                                    <tr>
+                                        <th class="center" style="width:40px;">No.</th>
+                                        <th>Location</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="center">1</td><td>Near Blk 78C Toa Payoh Central (Roof for Open Plaza)</td></tr>
+                                    <tr><td class="center">2</td><td>Open space in front of Blk 157 Lor 1 Toa Payoh (3G Park)</td></tr>
+                                    <tr><td class="center">3</td><td>In front of Blk 17 Lor 8 Toa Payoh (3G Park)</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h2>In Progress Projects</h2>
+                        <div class="normalTable">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <thead>
+                                    <tr>
+                                        <th class="center" style="width:40px;">No.</th>
+                                        <th>Location</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="center">1</td><td>Heights Park (Mega Playpark)</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="townImprovePjtContent" id="improvementPjt06">
+                        <h2>Completed Projects</h2>
+                        <div class="normalTable">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <thead>
+                                    <tr>
+                                        <th class="center" style="width:40px;">No.</th>
+                                        <th>Location</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="center">1</td><td>Blk 207 Toa Payoh North</td></tr>
+                                    <tr><td class="center">2</td><td>Blk 138C Lorong 1A Toa Payoh</td></tr>
+                                    <tr><td class="center">3</td><td>Blk 100 Lorong 1 Toa Payoh</td></tr>
+                                    <tr><td class="center">4</td><td>Blk 288 Bishan Street 24</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="townImprovePjtContent" id="improvementPjt07">
+                        <h2>Completed Projects</h2>
+                        <div class="normalTable">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <thead>
+                                    <tr>
+                                        <th class="center" style="width:40px;">No.</th>
+                                        <th>Location</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="center">1</td><td>Blk 12 Lorong 7 Toa Payoh</td></tr>
+                                    <tr><td class="center">2</td><td>Blk 17 Lorong 7 Toa Payoh</td></tr>
+                                    <tr><td class="center">3</td><td>Blk 200 Toa Payoh North</td></tr>
+                                    <tr><td class="center">4</td><td>Blk 172 Lorong 1 Toa Payoh</td></tr>
+                                    <tr><td class="center">5</td><td>Blk 23 Toa Payoh East</td></tr>
+                                    <tr><td class="center">6</td><td>Blk 232 Lorong 8 Toa Payoh</td></tr>
+                                    <tr><td class="center">7</td><td>Blk 102 Jalan Dusun</td></tr>
+                                    <tr><td class="center">8</td><td>Blk 191 Lorong 4 Toa Payoh</td></tr>
+                                    <tr><td class="center">9</td><td>Blk 98 Lorong 1 Toa Payoh</td></tr>
+                                    <tr><td class="center">10</td><td>Blk 177 Toa Payoh Central</td></tr>
+                                    <tr><td class="center">11</td><td>Blk 228 Lorong 8 Toa Payoh</td></tr>
+                                    <tr><td class="center">12</td><td>Blk 27 Toa Payoh East</td></tr>
+                                    <tr><td class="center">13</td><td>Blk 37 Lorong 5 Toa Payoh</td></tr>
+                                    <tr><td class="center">14</td><td>Blk 7 Lorong 7 Toa Payoh</td></tr>
+                                    <tr><td class="center">15</td><td>Blk 45 Lorong 5 Toa Payoh</td></tr>
+                                    <tr><td class="center">16</td><td>Blk 79B Toa Payoh Central</td></tr>
+                                    <tr><td class="center">17</td><td>Blk 79E Toa Payoh Central</td></tr>
+                                    <tr><td class="center">18</td><td>Blk 69 Moulmein Road</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="townImprovePjtContent" id="improvementPjt08">
+                        <h2>Completed Projects</h2>
+                        <div class="normalTable">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <thead>
+                                    <tr>
+                                        <th class="center" style="width:40px;">No.</th>
+                                        <th>Location</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="center">1</td><td>Blk 407 Sin Ming Ave</td></tr>
+                                    <tr><td class="center">2</td><td>Blk 25 Sin Ming Road</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--End Town Improvement Projects-->
+</div><!-- End Main Contents -->
+
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $(".townImprovePjtContent").hide();
+            $(".townImprovePjtContent:first").show();
+            $(".townImprovePjtType a").click(function () {
+                $(".townImprovePjtContent").hide();
+                var currentTab = $(this).attr("rel");
+                $("#" + currentTab).fadeIn();
+                $(".townImprovePjtType a").removeClass("active");
+                $(this).addClass("active");
+
+                if (currentTab == "improvementPjt01") {
+                    $(".townImprovePjtTypeMobile .btnStatus").text("Barrier Free Access Ramp");
+                }
+                else if (currentTab == "improvementPjt02") {
+                    $(".townImprovePjtTypeMobile .btnStatus").text("Community Hall");
+                }
+                else if (currentTab == "improvementPjt03") {
+                    $(".townImprovePjtTypeMobile .btnStatus").text("Covered Linkway / Drop-Off Point");
+                }
+                else if (currentTab == "improvementPjt04") {
+                    $(".townImprovePjtTypeMobile .btnStatus").text("Fitness Corner (Adult / Elderly)");
+                }
+                else if (currentTab == "improvementPjt05") {
+                    $(".townImprovePjtTypeMobile .btnStatus").text("Open Space Facilities");
+                }
+                else if (currentTab == "improvementPjt06") {
+                    $(".townImprovePjtTypeMobile .btnStatus").text("Pavilion");
+                }
+                else if (currentTab == "improvementPjt07") {
+                    $(".townImprovePjtTypeMobile .btnStatus").text("Playground");
+                }
+                else if (currentTab == "improvementPjt08") {
+                    $(".townImprovePjtTypeMobile .btnStatus").text("Study Corner / Resident Corner");
+                }
+            });
+
+            $(".townImprovePjtTypeMobile .btnStatus").click(function () {
+                $(".townImprovePjtTypeMobile ul").slideToggle(200);
+            });
+
+            $(".townImprovePjtTypeMobile a").click(function () {
+                $(".townImprovePjtContent").hide();
+                var currentTab = $(this).attr("rel");
+                $("#" + currentTab).fadeIn();
+                $(".townImprovePjtTypeMobile ul").hide(0);
+                $(".townImprovePjtType a").removeClass("active");
+                if (currentTab == "improvementPjt01") {
+                    $(".townImprovePjtTypeMobile .btnStatus").text("Barrier Free Access Ramp");
+                    $(".townImprovePjtType .btn01").addClass("active");
+                }
+                else if (currentTab == "improvementPjt02") {
+                    $(".townImprovePjtTypeMobile .btnStatus").text("Community Hall");
+                    $(".townImprovePjtType .btn02").addClass("active");
+                }
+                else if (currentTab == "improvementPjt03") {
+                    $(".townImprovePjtTypeMobile .btnStatus").text("Covered Linkway / Drop-Off Point");
+                    $(".townImprovePjtType .btn03").addClass("active");
+                }
+                else if (currentTab == "improvementPjt04") {
+                    $(".townImprovePjtTypeMobile .btnStatus").text("Fitness Corner (Adult / Elderly)");
+                    $(".townImprovePjtType .btn04").addClass("active");
+                }
+                else if (currentTab == "improvementPjt05") {
+                    $(".townImprovePjtTypeMobile .btnStatus").text("Open Space Facilities");
+                    $(".townImprovePjtType .btn05").addClass("active");
+                }
+                else if (currentTab == "improvementPjt06") {
+                    $(".townImprovePjtTypeMobile .btnStatus").text("Pavilion");
+                    $(".townImprovePjtType .btn06").addClass("active");
+                }
+                else if (currentTab == "improvementPjt07") {
+                    $(".townImprovePjtTypeMobile .btnStatus").text("Playground");
+                    $(".townImprovePjtType .btn07").addClass("active");
+                }
+                else if (currentTab == "improvementPjt08") {
+                    $(".townImprovePjtTypeMobile .btnStatus").text("Study Corner / Resident Corner");
+                    $(".townImprovePjtType .btn08").addClass("active");
+                }
+            });
+
+        });
+    </script>
+}
+
+

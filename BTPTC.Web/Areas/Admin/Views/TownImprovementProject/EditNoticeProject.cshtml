@@ -1,0 +1,101 @@
+﻿
+
+@{
+    ViewBag.Title = "Town Improvement Project ";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model Notice
+
+<div class="modal fade" id="editNoticeType" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content editalert">
+            <div class="modal-header">
+                <div class="title">Edit Tender Notice</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("EditNoticeType", "TownImprovementProject", FormMethod.Post, new { enctype = "multipart/form-data", id = "EditNoticeType" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container">
+                        <table cellpadding="0" cellspacing="0" border="0" class="editBannerForm">
+                            <tr>
+                                <td class="fieldname">Type</td>
+                                <td>
+                                    <input type="hidden" id="hiddenNoticeGuid" />
+                                    @Html.Hidden("GUID", null)
+                                    @Html.TextBox("NoticeType", null, new { placeholder = "Type your Title here" })
+                                    @Html.ValidationMessage("NoticeType")
+                                    @ViewBag.errormsg
+                                    
+                                </td>
+                            </tr>
+
+                        </table>
+                        <div class="padding10"></div>
+                        <input type="submit" class="submitBtn floatRight" value="Save">
+                        <div class="clear padding10"></div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@section scripts
+{
+    <script>
+        //Notices
+        $('input[name=uploadAttach_PDF]').change(function () {
+            document.getElementById("uploadFile_PDF").value = $(this).val();
+        });
+        $('input[name=uploadAttach_PDF_2]').change(function () {
+            document.getElementById("uploadFile_PDF_2").value = $(this).val();
+        });
+
+        //Results
+        $('input[name=uploadAttach_PDF_3]').change(function () {
+            document.getElementById("uploadFile_PDF_3").value = $(this).val();
+        });
+        $('input[name=uploadAttach_PDF_4]').change(function () {
+            document.getElementById("uploadFile_PDF_4").value = $(this).val();
+        });
+
+        //Awarded
+        $('input[name=uploadAttach_PDF_5]').change(function () {
+            document.getElementById("uploadFile_PDF_5").value = $(this).val();
+        });
+        $('input[name=uploadAttach_PDF_6]').change(function () {
+            document.getElementById("uploadFile_PDF_6").value = $(this).val();
+        });
+
+        $('.tenderContainer').hide();
+        $('.tenderContainer.notices').show();
+        $('#filterByType').change(function () {
+            var x = $(this).val();
+            $('.tenderContainer').hide();
+            if (x == "notices") {
+                $('.tenderContainer.notices').fadeIn(200);
+            } else if (x == "results") {
+                $('.tenderContainer.results').fadeIn(200);
+            } else if (x == "awarded") {
+                $('.tenderContainer.awarded').fadeIn(200);
+            }
+        });
+
+
+    </script>
+    <script src="~/Contents/Admin/js/jqueryPagination/simplePagination.js"></script>
+    <script src="@appPath/Contents/Admin/js/jqueryValidate/jquery.validate.js"></script>
+    <script src="@appPath/Contents/Admin/js/jqueryValidate/additional-methods.js"></script>
+    <script src="~/Contents/Admin/js/Custom/Notice/Add-Notice.js"></script>
+    <script src="~/Contents/Admin/js/Custom/Notice/View-Notice.js"></script>
+}
+
+

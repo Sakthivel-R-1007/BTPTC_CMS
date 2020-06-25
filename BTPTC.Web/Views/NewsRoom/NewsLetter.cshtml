@@ -1,0 +1,135 @@
+﻿
+<head>
+    @{
+        ViewBag.Title = "ViewNewsLetter";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+    }
+
+    @model List<NewsLetter>
+
+</head>
+<body class="NEWSROOM">
+    <div class="wrapper">
+        <header>
+            <div class="header"></div>
+        </header><!--End Header-->
+
+        <div class="mainContents">
+            <div class="contactDetails desktopOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Num, Font size adjustment and Social Media)-->
+            <div class="contactDetails mobileOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Numbers)-->
+            <div class="pageBanner"><img src="images/newsletter/banner-img.jpg" alt=""></div>
+
+            <div class="newsletter">
+                <div class="pageContents">
+                    <div class="container">
+                        <div class="topBar">
+                            <div class="breadcrumb"><a href="index.html">Home</a><span></span><a href="#">Newsroom</a><span></span>Newsletter</div>
+                            <div class="socialShareBtns">
+                                <ul>
+                                    <li>Share:</li>
+                                    <li><a href="http://www.facebook.com/sharer.php?u=http://btptc.medialabsstreaming.com/newsletter.html" target="_blank"><img src="images/common/fb-share-btn.png" alt=""></a></li>
+                                    <li><a href="https://twitter.com/share?text=Newsletter - Bishan-Toa Payoh Town Council, http://btptc.medialabsstreaming.com/newsletter.html" target="_blank"><img src="images/common/twitter-share-btn.png" alt=""></a></li>
+                                    <!--li><a href="#" target="_blank"><img src="images/common/google-share-btn.png" alt="" target="_blank"></a></li-->
+                                    <li><a href="mailto:?subject=Newsletter | Bishan-Toa Payoh Town Council&Body=I thought you might be interested in this article: http://btptc.medialabsstreaming.com/newsletter.html"><img src="images/common/email-share-btn.png" alt="" target="_blank"></a></li>
+                                    <li class="print"><a href="#" onclick="window.print();"><img src="images/common/print-btn.png" alt="" target="_blank"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="newsContainer">
+                            <h1>Newsletter</h1>
+
+                            <div class="filter">
+
+                                <select id="filterByYear">
+                                    <option disabled>Filter by year</option>
+                                    <option selected value="2020">2020</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2017">2017</option>
+                                </select>
+
+                            </div>
+                            <div id="filteview">
+
+                            </div>
+                            @*@Html.Partial("GetyearList")*@
+                            @*@foreach (NewsLetter Y in Model)
+                        {
+                            <ul class="@Y.Year">
+                                @if (Model != null && Model.Count > 0)
+                                {
+                                    foreach (NewsLetter NL in Model.Where(r => r.Year == Y.Year).ToList())
+                                    {
+                                        <li>
+                                            <a href="@appPath/Resources/Documents/@NL.PdfFileGUID.@NL.PdfFileExtension" target="_blank">
+                                                <div class="coverImg"><img src="@appPath/Resources/images/NewsLetter/@NL.ThumbnailImageGUID.@NL.ThumbnailImageExtension"></div>
+                                                <h2>@NL.Title</h2>
+                                                <p>(@NL.Quarter)</p>
+                                            </a>
+                                            <a href="@appPath/Resources/Documents/@NL.PdfFileGUID.@NL.PdfFileExtension" download="@appPath/Resources/Documents/@NL.PdfFileGUID.@NL.PdfFileExtension">
+                                                <p class="downloadLink">Download <span>(@NL.FileSize)</span></p>
+                                            </a>
+                                        </li>
+                                    }
+                                }
+
+                            </ul>
+                            }*@
+
+
+                        </div>
+                    </div>
+                </div>
+            </div><!--End Newsletter-->
+        </div><!-- End Main Contents -->
+
+        <div class="footer"></div>
+    </div><!--End Wrapper-->
+</body>
+<script>
+
+    $(document).ready(function () {
+        $('#filterByYear').trigger('change')
+    })
+
+
+    //$('.2020').show();
+    //$('#filterByYear').change(function () {
+    //    var x = $(this).val();
+    //    $('.newsContainer ul').hide();
+    //    if (x == "2020") {
+    //        $('.2020').fadeIn(200);
+    //    } else if (x == "2019") {
+    //        $('.2019').fadeIn(200);
+    //    } else if (x == "2018") {
+    //        $('.2018').fadeIn(200);
+    //    } else if (x == "2017") {
+    //        $('.2017').fadeIn(200);
+    //    }
+    //});
+
+
+    $('#filterByYear').on('change', function () {
+        var x = $(this).val();
+        var url ='/NewsRoom/GetyearList/'+x+''
+        $.ajax({
+            url: url,
+            type: "GET",
+            success(result) {
+                $('#filteview').html(result).find('ul').fadeIn(200);
+            }
+        })
+
+    })
+
+
+
+</script>
+
+
+
+
+
+
+

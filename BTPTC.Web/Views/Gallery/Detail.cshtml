@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "GALLERY";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+@model Gallery
+
+    <div class="mainContents">
+        <div class="contactDetails desktopOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Num, Font size adjustment and Social Media)-->
+        <div class="contactDetails mobileOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Numbers)-->
+
+        <div class="pageBanner"><img src="@appPath/Contents/images/gallery/banner-img.jpg" alt=""></div>
+
+        <div class="galleryPg">
+            <div class="pageContents">
+                <div class="container">
+                    <div class="topBar">
+                        <div class="breadcrumb"><a href="@appPath">Home</a><span></span><a href="@appPath/Gallery">Gallery</a><span></span>@((Model != null) ? Model.Title : "")</div>
+                        <div class="socialShareBtns">
+                            <ul>
+                                <li>Share:</li>
+                                <li><a href="http://www.facebook.com/sharer.php?u=@appPath/Gallery/Detail/@((Model != null)?Model.Title:"")" target="_blank"><img src="@appPath/Contents/images/common/fb-share-btn.png" alt=""></a></li>
+                                <li><a href="https://twitter.com/share?text=Market visit at Bishan North Shopping Mall - Bishan-Toa Payoh Town Council, @appPath/Gallery/Detail/@((Model != null)?Model.Title:"")" target="_blank"><img src="@appPath/Contents/images/common/twitter-share-btn.png" alt=""></a></li>
+                                <!--li><a href="#" target="_blank"><img src="images/common/google-share-btn.png" alt="" target="_blank"></a></li-->
+                                <li><a href="mailto:?subject=Market visit at Bishan North Shopping Mall | Gallery | Bishan-Toa Payoh Town Council&Body=I thought you might be interested in this article: @appPath/Gallery/Detail/@((Model != null)?Model.Title:"")"><img src="@appPath/Contents/images/common/email-share-btn.png" alt="" target="_blank"></a></li>
+                                <li class="print"><a href="javascript:void(0)" onclick="window.print();"><img src="@appPath/Contents/images/common/print-btn.png" alt="" target="_blank"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    @if (Model != null)
+                    {
+                        <div class="gallerySubPgContainer">
+                            <h1>@Model.Title</h1>
+                            <div class="galleryDetail">
+                                <div class="colLeft"><p>@((Model.Date != null && Model.Date != DateTime.MinValue) ? Model.Date.ToString("dd MMM yyyy") : "")<span>|</span>@((Model.galleryPhotos != null && Model.galleryPhotos.Count() > 0 ? Model.galleryPhotos.Count() : 0)) Photos</p></div>
+                                <div class="colRight"><a href="@appPath/Gallery">Back to Gallery</a></div>
+                                <div class="clear padding5"></div>
+                            </div>
+                            <ul>
+                                @if (Model.galleryPhotos != null && Model.galleryPhotos.Count() > 0)
+                                {
+
+                                    foreach (GalleryPhoto GP in Model.galleryPhotos)
+                                    {
+                                        <li><a data-fancybox="gallery-img" data-thumb="@appPath/Resources/Images/Gallery/@GP.ImageGUID.@GP.ImageExtension" href="@appPath/Resources/Images/Gallery/@GP.ImageGUID.@GP.ImageExtension"><img src="@appPath/Resources/Images/Gallery/@GP.ImageGUID.@GP.ImageExtension" alt=""></a></li>
+
+                                    }
+                                }
+                                @*<li><a data-fancybox="gallery-img" data-thumb="images/gallery/2016/2016-05-08/img-01.jpg" href="images/gallery/2016/2016-05-08/img-01.jpg"><img src="images/gallery/2016/2016-05-08/img-01.jpg" alt=""></a></li>
+                                <li><a data-fancybox="gallery-img" data-thumb="images/gallery/2016/2016-05-08/img-02.jpg" href="images/gallery/2016/2016-05-08/img-02.jpg"><img src="images/gallery/2016/2016-05-08/img-02.jpg" alt=""></a></li>
+                                <li><a data-fancybox="gallery-img" data-thumb="images/gallery/2016/2016-05-08/img-03.jpg" href="images/gallery/2016/2016-05-08/img-03.jpg"><img src="images/gallery/2016/2016-05-08/img-03.jpg" alt=""></a></li>
+                                <li><a data-fancybox="gallery-img" data-thumb="images/gallery/2016/2016-05-08/img-04.jpg" href="images/gallery/2016/2016-05-08/img-04.jpg"><img src="images/gallery/2016/2016-05-08/img-04.jpg" alt=""></a></li>
+                                <li><a data-fancybox="gallery-img" data-thumb="images/gallery/2016/2016-05-08/img-05.jpg" href="images/gallery/2016/2016-05-08/img-05.jpg"><img src="images/gallery/2016/2016-05-08/img-05.jpg" alt=""></a></li>
+                                <li><a data-fancybox="gallery-img" data-thumb="images/gallery/2016/2016-05-08/img-06.jpg" href="images/gallery/2016/2016-05-08/img-06.jpg"><img src="images/gallery/2016/2016-05-08/img-06.jpg" alt=""></a></li>
+                                <li><a data-fancybox="gallery-img" data-thumb="images/gallery/2016/2016-05-08/img-07.jpg" href="images/gallery/2016/2016-05-08/img-07.jpg"><img src="images/gallery/2016/2016-05-08/img-07.jpg" alt=""></a></li>
+                                <li><a data-fancybox="gallery-img" data-thumb="images/gallery/2016/2016-05-08/img-08.jpg" href="images/gallery/2016/2016-05-08/img-08.jpg"><img src="images/gallery/2016/2016-05-08/img-08.jpg" alt=""></a></li>
+                                <li><a data-fancybox="gallery-img" data-thumb="images/gallery/2016/2016-05-08/img-09.jpg" href="images/gallery/2016/2016-05-08/img-09.jpg"><img src="images/gallery/2016/2016-05-08/img-09.jpg" alt=""></a></li>
+                                <li><a data-fancybox="gallery-img" data-thumb="images/gallery/2016/2016-05-08/img-10.jpg" href="images/gallery/2016/2016-05-08/img-10.jpg"><img src="images/gallery/2016/2016-05-08/img-10.jpg" alt=""></a></li>
+                                <li><a data-fancybox="gallery-img" data-thumb="images/gallery/2016/2016-05-08/img-11.jpg" href="images/gallery/2016/2016-05-08/img-11.jpg"><img src="images/gallery/2016/2016-05-08/img-11.jpg" alt=""></a></li>
+                                <li><a data-fancybox="gallery-img" data-thumb="images/gallery/2016/2016-05-08/img-12.jpg" href="images/gallery/2016/2016-05-08/img-12.jpg"><img src="images/gallery/2016/2016-05-08/img-12.jpg" alt=""></a></li>
+                                <li><a data-fancybox="gallery-img" data-thumb="images/gallery/2016/2016-05-08/img-13.jpg" href="images/gallery/2016/2016-05-08/img-13.jpg"><img src="images/gallery/2016/2016-05-08/img-13.jpg" alt=""></a></li>
+                                <li><a data-fancybox="gallery-img" data-thumb="images/gallery/2016/2016-05-08/img-14.jpg" href="images/gallery/2016/2016-05-08/img-14.jpg"><img src="images/gallery/2016/2016-05-08/img-14.jpg" alt=""></a></li>
+                                <li><a data-fancybox="gallery-img" data-thumb="images/gallery/2016/2016-05-08/img-15.jpg" href="images/gallery/2016/2016-05-08/img-15.jpg"><img src="images/gallery/2016/2016-05-08/img-15.jpg" alt=""></a></li>
+                                <li><a data-fancybox="gallery-img" data-thumb="images/gallery/2016/2016-05-08/img-16.jpg" href="images/gallery/2016/2016-05-08/img-16.jpg"><img src="images/gallery/2016/2016-05-08/img-16.jpg" alt=""></a></li>
+                                <li><a data-fancybox="gallery-img" data-thumb="images/gallery/2016/2016-05-08/img-17.jpg" href="images/gallery/2016/2016-05-08/img-17.jpg"><img src="images/gallery/2016/2016-05-08/img-17.jpg" alt=""></a></li>
+                                <li><a data-fancybox="gallery-img" data-thumb="images/gallery/2016/2016-05-08/img-18.jpg" href="images/gallery/2016/2016-05-08/img-18.jpg"><img src="images/gallery/2016/2016-05-08/img-18.jpg" alt=""></a></li>
+                                <li><a data-fancybox="gallery-img" data-thumb="images/gallery/2016/2016-05-08/img-19.jpg" href="images/gallery/2016/2016-05-08/img-19.jpg"><img src="images/gallery/2016/2016-05-08/img-19.jpg" alt=""></a></li>
+                                <li><a data-fancybox="gallery-img" data-thumb="images/gallery/2016/2016-05-08/img-20.jpg" href="images/gallery/2016/2016-05-08/img-20.jpg"><img src="images/gallery/2016/2016-05-08/img-20.jpg" alt=""></a></li>
+                                <li><a data-fancybox="gallery-img" data-thumb="images/gallery/2016/2016-05-08/img-21.jpg" href="images/gallery/2016/2016-05-08/img-21.jpg"><img src="images/gallery/2016/2016-05-08/img-21.jpg" alt=""></a></li>
+                                <li><a data-fancybox="gallery-img" data-thumb="images/gallery/2016/2016-05-08/img-22.jpg" href="images/gallery/2016/2016-05-08/img-22.jpg"><img src="images/gallery/2016/2016-05-08/img-22.jpg" alt=""></a></li>*@
+                            </ul>
+
+                            <!--div class="pageNum">
+                            <ol>
+                                <li><a href="#" class="prev"></a></li>
+                                <li><a href="#" class="active">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#" class="next"></a></li>
+                            </ol>
+                        </div-->
+
+                            <div class="padding10"></div>
+                            <p><a href="@appPath/Gallery" class="backBottom">Back to Gallery</a></p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div><!--End Gallery-->
+    </div><!-- End Main Contents -->

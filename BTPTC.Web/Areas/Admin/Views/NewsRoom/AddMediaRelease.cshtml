@@ -1,0 +1,65 @@
+﻿
+@{
+    Layout = null;
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model MediaRelease
+
+
+
+
+@Html.AntiForgeryToken()
+
+<table cellpadding="0" cellspacing="0" border="0" class="editBannerForm">
+    <tr>
+        <td class="fieldname">Title</td>
+        <td>
+            @Html.TextAreaFor(m => m.Title, new { placeholder = "Type your Title here" })
+            @Html.ValidationMessageFor(m => m.Title)
+        </td>
+    </tr>
+    <tr>
+
+
+        <td class="fieldname">Date</td>
+        <td>
+            @Html.TextBoxFor(m=>m.Date, null, new { placeholder = "Type your Title here" ,@class="Date" })
+            @Html.ValidationMessageFor(m => m.Date)
+        </td>
+
+    </tr>
+
+    <tr>
+        <td class="fieldname">Upload PDF</td>
+        <td>
+            <div class="upload">
+                <input type="button" class="uploadBtn" value="Choose File">
+                <input type="file" name="FileName" />
+                <label>
+                    @Html.TextBox("PDFFileName", null, new { @type = "text", @placeholder = "No file chosen", @readonly = "true" })
+                    @Html.HiddenFor(m => m.PdfFileGUID)
+                    @* @Html.HiddenFor(m => m.PdfFileName)*@
+                    @Html.HiddenFor(m => m.PdfFileExtension )
+                </label>
+            </div>
+            <span id="output"></span>
+            @Html.ValidationMessage("PDFFileName")
+        </td>
+    </tr>
+
+
+</table>
+@*<div class="padding10"></div>
+<input type="submit" class="submitBtn floatRight" value="Save">
+<div class="clear padding10"></div>
+<div class="padding10"></div>*@
+<div class="padding10"></div>
+<input type="button" id="AddresourcessubmitBtn" class="submitBtn floatRight" value="Save">
+@*<a class="submitBtn floatRight" id="AddresourcessubmitBtn" href="javascript:void(0)">Save</a>*@
+<div class="clear padding10"></div>
+
+
+
+
+
+

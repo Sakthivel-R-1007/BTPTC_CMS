@@ -1,0 +1,133 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model List<MaintenanceSchedule>
+
+<div class="mainContents">
+    <div class="contactDetails desktopOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Num, Font size adjustment and Social Media)-->
+    <div class="contactDetails mobileOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Numbers)-->
+
+    <div class="pageBanner"><img src="@appPath/contents/images/maintenance-schedule/banner-img.jpg" alt=""></div>
+
+    <div class="maintenanceSchedule">
+        <div class="pageContents">
+            <div class="container">
+                <div class="topBar">
+                    <div class="breadcrumb"><a href="javascript:void(0)">Home</a><span></span><a href="javascript:void(0)">Our Town</a><span></span>Maintenance Schedule</div>
+                    <div class="socialShareBtns">
+                        <ul>
+                            <li>Share:</li>
+                            <li><a href="http://www.facebook.com/sharer.php?u=http://btptc.medialabsstreaming.com/maintenance-schedule.html" target="_blank"><img src="@appPath/contents/images/common/fb-share-btn.png" alt=""></a></li>
+                            <li><a href="https://twitter.com/share?text=Maintenance Schedule - Bishan-Toa Payoh Town Council, http://btptc.medialabsstreaming.com/maintenance-schedule.html" target="_blank"><img src="@appPath/contents/images/common/twitter-share-btn.png" alt=""></a></li>
+                            <!--li><a href="#" target="_blank"><img src="@appPath/contents/images/common/google-share-btn.png" alt="" target="_blank"></a></li-->
+                            <li><a href="mailto:?subject=Maintenance Schedule | Bishan-Toa Payoh Town Council&Body=I thought you might be interested in this article: http://btptc.medialabsstreaming.com/maintenance-schedule.html"><img src="@appPath/contents/images/common/email-share-btn.png" alt="" target="_blank"></a></li>
+                            <li class="print"><a href="javascript:void(0)" onclick="window.print();"><img src="@appPath/contents/images/common/print-btn.png" alt="" target="_blank"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="maintenanceScheduleContainer">
+                    <h1>Maintenance Schedule</h1>
+
+                    <div class="filterBlk">
+                        <span><input type="text" name="block" id="block" placeholder="Enter Block" value=""></span>
+                        <span>
+                            @Html.DropDownList("StreetName", new SelectList(ViewBag.streetList), "Select Street Name")
+                        </span>
+                        <span class="btn"><img src="@appPath/contents/images/common/search-btn.png" id="searchBtn"></span>
+                    </div>
+
+                    <div class="clear padding20"></div>
+
+                    <div class="commonTable">
+                        <table cellpadding="0" cellspacing="0" border="0" id="MaintenanceTbl">
+                            <thead>
+                                <tr>
+                                    <th>Division</th>
+                                    <th>Blk No</th>
+                                    <th>Street Name</th>
+                                    <th>RC Zone</th>
+                                    <th>Block Washing</th>
+                                    <th>Bin Chute Fogging</th>
+                                    <th>Bin Chute Flushing (Weekly)</th>
+                                    <th>Lift Maintenance (Monthly)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @if (Model != null && Model.Count > 0)
+                                {
+                                    foreach (MaintenanceSchedule MS in Model)
+                                    {
+                                        <tr>
+
+                                            <td data-label="Division"><span>@MS.Division</span></td>
+                                            <td data-label="Blk No"><span>@MS.BlkNo</span></td>
+                                            <td data-label="Street Name"><span>@MS.StreetName</span></td>
+                                            <td data-label="RC Zone"><span>@MS.RCZone</span></td>
+                                            <td data-label="Block Washing"><span>@MS.BlockWashing</span></td>
+                                            <td data-label="Bin Chute Fogging"><span>@MS.BinChuteFogging</span></td>
+                                            <td data-label="Bin Chute Flushing (Weekly)"><span>@MS.BinChuteFlushing</span></td>
+                                            <td data-label="Lift Maintenance (Monthly)"><span>@MS.LiftMaintenance</span></td>
+                                        </tr>
+                                    }
+
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--End Maintenance Schedule-->
+</div><!-- End Main Contents -->
+
+@section scripts{
+    <script>
+
+        $(document).ready(function () {
+
+            $('#MaintenanceTbl').hide();
+
+            $("#searchBtn").click(function () {
+                $('#MaintenanceTbl').show();
+                var streetName = $('#StreetName').val()
+                var block = $('#block').val();
+                debugger
+                if (streetName != '' || block != '') {
+
+                    $('#MaintenanceTbl tbody tr').each(function () {
+                        var sel = $(this);
+                        var txt = sel.find('td:eq(2)').text();
+                        var txtblock = sel.find('td:eq(1)').text();
+
+
+                        if (streetName != 'Select Street Name' || block != '') {
+                            if (txt.indexOf(streetName) === -1 || txtblock.indexOf(block) === -1) {
+                                $(this).hide();
+                            }
+                            else {
+                                $(this).show();
+
+                            }
+                        }
+                        else {
+
+                            $('#MaintenanceTbl tbody tr').hide();
+
+                        }
+                    });
+                }
+                else {
+
+
+                    $('#MaintenanceTbl').hide();
+                }
+            })
+        })
+    </script>
+}
+

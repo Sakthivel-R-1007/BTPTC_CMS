@@ -1,0 +1,244 @@
+@media screen and (max-width:1279px){
+	.gallerySubPgContainer ul li{width:calc(320px - 20px);}
+}
+@media screen and (max-width:1199px){
+	.header{margin:20px auto 10px auto;width:95%;}
+	.header .container{width:100%;height:auto;background:none;border-radius:0;}
+	.header .desktopOnly{display:none;}
+	.header .mobileOnly{display:block;}
+	.contactDetails.desktopOnly{display:none;}
+	.contactDetails.mobileOnly{display:block;}
+	.homeMPs .mpsBtn ul li{margin:0 5px;}
+}
+@media screen and (max-width:1023px){
+	.homepage .quickLinks .left{display:block;width:100%;margin-right:0;margin-bottom:20px;}
+	.homepage .quickLinks .right{display:block;width:100%;margin-left:0;}
+	.homeMPs .mpDetail span{width:calc(100% - 170px);display:inline-block;vertical-align:top;}
+	.homeMPs .mpDetail .imgContainer{width:140px;margin-right:30px;}
+	.homeMPs .mpDetail .imgContainer img{width:100%;border-radius:140px;}
+	.homeMPs .mpsBtn ul{text-align:center;}
+	.homeMPs .mpsBtn ul li{width:50px;}
+	.ourmpContent .detail{width:100%;display:block;margin-bottom:20px;}
+	.ourmpContent .videoSlider{width:100%;margin-left:0;display:block;padding-bottom:20px;}
+	.facilitiesContent ul li{width:calc(50% - 20px);}
+	.newsContainer ul li{width:calc(50% - 20px);margin-bottom:20px;}
+	.mediaReleaseContainer ul li{width:50%;}
+}
+@media screen and (max-width:840px){
+	.homepage .whiteContainer .homeResidents{width:100%;margin-right:0;}
+	.homepage .whiteContainer .homeOffices{width:100%;margin-left:0;}
+	.homepage .whiteContainer .homeHappenings{width:100%;margin-right:0;}
+	.homepage .whiteContainer .homeMPs{width:100%;margin-left:0;}
+	.homepage .whiteContainer h1{text-align:center;}
+	.homepage .whiteContainer a{text-align:center;}
+	.homepage .whiteContainer .homeOffices p{text-align:center;}
+	.homepage .whiteContainer .homeCompliments p{text-align:center;}
+	.homepage .whiteContainer .homeHappenings p{text-align:left;}
+	.homeMPs .mpDetail{width:500px;margin:0 auto;}
+	.homeMPs .mpDetail span{width:calc(100% - 210px);display:inline-block;vertical-align:top;}
+	.homeMPs .mpDetail .imgContainer{width:180px;margin-right:30px;}
+	.homeMPs .mpDetail .imgContainer img{width:100%;border-radius:180px;}
+	.footer .termsConditions{background:#6bbd51;padding:10px;width:calc(100% - 20px);position:relative;bottom:0;}
+	.nightTheme .footer .termsConditions{background:#4d873a;}
+	.footer .termsConditions .left{float:none;width:100%;text-align:center;margin-bottom:2.5px;}
+	.footer .termsConditions .right{float:none;width:100%;text-align:center;}
+	.commonForm{width:calc(100% - 20px);padding:0 10px;}
+	.commonForm span{width:100%;display:block;margin-bottom:20px;}
+	.commonForm span.vtop{margin-top:0;}
+	.commonForm .fieldName{width:100%;margin-right:0;margin-bottom:10px;}
+	.commonForm .blkNum{display:block;width:100%;margin-right:0;}
+	.commonForm .UnitNo{display:block;width:100%;margin-top:20px;font-size:0;}
+	.commonForm .UnitNo div{display:inline-block;vertical-align:middle;}
+	.commonForm .UnitNo .subFieldName{width:100%;margin-bottom:10px;font-size:14px;line-height:18px;}
+	.commonForm .UnitNo .symbol{font-size:14px;line-height:18px;}
+	.commonForm .UnitNo .floor{width:calc(50% - 30px);}
+	.commonForm .UnitNo .unit{width:calc(50% - 30px);}
+	.commonForm .telFieldContainer{font-size:0;width:100%;}
+	.commonForm .telFieldName{display:block;width:100%;margin-right:0;font-size:14px;line-height:18px;margin-bottom:10px;}
+	.commonForm .telSymbol{font-size:14px;line-height:18px;width:30px;}
+	.commonForm .telField{width:calc(100% - 30px);}
+	.breadcrumb{width:100%;display:block;margin-bottom:30px;}
+	.socialShareBtns{width:100%;margin-left:0;display:block;}
+	.feedbackForm{margin:20px 0;}
+	.commonTable table{margin:0;border-radius:10px;border-collapse:collapse;border-bottom-left-radius:0;border-bottom-right-radius:0;overflow:auto;}
+	.commonTable table thead{display:none;}
+	.commonTable table tr{display:table;width:100%;margin-bottom:20px;background:#ffffff;border-radius:15px;}
+	.commonTable table tr td{display:table-row;width:100%;vertical-align:middle;background:#ffffff;}
+	.commonTable table tbody tr.tdHeader td:before{content:"";display:none;}
+	.commonTable table tbody tr.tdHeader td strong{margin-top:10px;}
+	.commonTable table tr td::before{content:attr(data-label);display:table-cell;font-weight:700;color:#ffffff;background:#007cc2;width:50%;padding:10px;vertical-align:middle;text-align:center !important;}
+	.commonTable table tr td:first-child::before{border-top-left-radius:10px;}
+	.commonTable table tr td:last-child::before{border-bottom-left-radius:10px;}
+	.commonTable table tr td span{display:table-cell;width:50%;padding:10px;vertical-align:middle;}
+	.commonTable table tr td:first-child span{border-top-right-radius:10px;}
+	.commonTable table tr td:last-child span{border-bottom-right-radius:10px;}
+	.commonTable table tr:nth-of-type(odd) td span{background:#cce5f3;}
+	.commonTable table tr:nth-of-type(even) td span{background:#f2f8fc;}
+	.tenderContent .commonTable table tr:nth-of-type(even) td span, .townImprovePjtContent .commonTable table tr:nth-of-type(even) td span{background:#cce5f3;}
+	.commonTable table tbody tr td.left{text-align:center !important;}
+	.facilitiesType{display:none;width:100%;margin-right:0;}
+	.facilitiesTypeMobile{display:block;}
+	.facilitiesContent{display:block;width:100%;}
+	.faqsContainer h2{width:100%;display:block;margin-bottom:20px;}
+	.faqsContainer .qna{width:100%;display:block;}
+	.newsContainer .filter{position:relative;right:0;top:0;margin:0 auto 20px auto;}
+	.tenderType{display:none;width:100%;margin-right:0;}
+	.tenderTypeMobile{display:block;}
+	.tenderContent{display:block;width:100%;}
+	.townImprovePjtType{display:none;width:100%;margin-right:0;}
+	.townImprovePjtTypeMobile{display:block;}
+	.townImprovePjtContent{display:block;width:100%;}
+	.galleryPgContainer ul li{width:calc(50% - 20px);}
+	.eventsType{display:none;width:100%;margin-right:0;}
+	.eventsTypeMobile{display:block;}
+	.eventsContent{display:block;width:100%;margin-left:0;}
+	.investContainer .filter{position:relative;right:0;top:0;margin:0 0 20px 0;}
+	.usefulLinksType{display:none;width:100%;margin-right:0;}
+	.usefulLinksTypeMobile{display:block;}
+	.usefulLinksContent{display:block;width:100%;}
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+	/* For tablet: */
+	.header{margin:20px auto 10px auto;}
+	.header .container{width:100%;height:auto;background:none;border-radius:0;}
+	.header .desktopOnly{display:none;}
+	.header .mobileOnly{display:block;}
+	.contactDetails.desktopOnly{display:none;}
+	.contactDetails.mobileOnly{display:block;}
+}
+@media screen and (max-width:768px){
+	.officeBS{display:block;vertical-align:top;width:100%;margin-right:0;margin-bottom:20px;}
+	.officeTP{display:block;vertical-align:top;width:100%;margin-left:0;}
+	.rolesResponsContainer .imgContainer{float:none;margin-left:0;width:100%;margin-bottom:20px;}
+	.eventsContent ul li .imgContainer{width:200px;padding-right:20px;}
+	.eventsContent ul li .textContainer{width:calc(100% - 220px);}
+	.happeningsContainer ul li .imgContainer{width:200px;padding-right:20px;}
+	.happeningsContainer ul li .textContainer{width:calc(100% - 220px);}
+}
+@media screen and (max-width:720px){
+	.gallerySubPgContainer ul li{width:225px;height:150px;/*margin-left:0;margin-right:0;*//*width:100px;height:100px;background:#000000;*/}
+	.eventsDetail .imgLeft{float:none;width:100%;max-width:400px;margin:0 auto 20px auto;}
+	.eventsDetail img{width:100%;}
+}
+@media screen and (max-width:560px){
+	.header .mobileOnly .mobileMenu{width:105%;max-width:105%; left:-2.5%;}
+	.homepage .whiteContainer h1{text-align:left;}
+	.homepage .whiteContainer a{text-align:left;}
+	.homepage .whiteContainer .homeResidents ul li{display:block;width:100%;margin-right:0;}
+	.homepage .whiteContainer .homeResidents ul li:nth-child(even){margin-left:0;}
+	.homepage .whiteContainer .homeOffices p{text-align:left;}
+	.homepage .whiteContainer .homeOffices ul{margin-bottom:10px;}
+	.homepage .whiteContainer .homeOffices ul li{display:block;width:100%;margin-right:0;margin-bottom:10px;}
+	.homepage .whiteContainer .homeOffices ul li:nth-child(even){margin-left:0;margin-bottom:0;}
+	.homepage .whiteContainer .homeHappenings ul li{width:100%;font-size:0;border-bottom:1px solid #dbdad8;padding:10px 0 20px 0;}
+	.homepage .whiteContainer .homeHappenings ul li:nth-child(even){padding:20px 0 0 0;border-bottom:none;}
+	.homepage .whiteContainer .homeHappenings ul li span{width:100%;display:block;}
+	.homepage .whiteContainer .homeHappenings ul li .imgContainer{width:100%;margin-right:0;margin-bottom:20px;}
+	.homeMPs .mpDetail{width:100%;}
+	.homeMPs .mpDetail span{width:100%;display:block;}
+	.homeMPs .mpDetail .imgContainer{width:180px;margin-right:0;margin-bottom:20px;}
+	.homeMPs .mpDetail .imgContainer img{width:100%;border-radius:180px;}
+	.homepage .whiteContainer .homeCompliments p{text-align:left;}
+	.homepage .whiteContainer .homeCompliments ul li{display:block;width:calc(100% - 60px);/*margin-right:0;margin-bottom:20px;*/margin:20px 30px 0 30px;}
+	/*.homepage .whiteContainer .homeCompliments ul li:nth-child(even){margin-left:0;margin-bottom:0;}*/
+	.homepage .quickLinks ul li span{font-size:12px;line-height:16px;}
+	.homepage .quickLinks ul li span.width84Img{width:57px;margin-right:10px;}
+	.homepage .quickLinks ul li span.width84{width:calc(100% - 67px);}
+	.homepage .quickLinks ul li span.width59Img{width:40px;margin-right:10px;}
+	.homepage .quickLinks ul li span.width59{width:calc(100% - 50px);}
+	.ourmpContent .detail .imgContainer{width:150px;margin-right:0;display:block;margin-bottom:20px;}
+	.ourmpContent .detail .textContainer{width:100%;display:block;}
+	.facilitiesContent h2{margin-left:0;}
+	.facilitiesContent ul li{width:100%;margin:10px 0;}
+	.newsContainer ul li{width:100%;margin-bottom:20px;margin-left:0;margin-right:0;}
+	.newsContainer .filter{margin:0 0 20px 0;}
+	.tenderContent .filter{position:relative;right:0;top:0;margin-bottom:20px;}
+	.appContainer .content{width:calc(100% - 20px); padding:10px;}
+	.appContainer .imgContainer{width:180px;display:block;margin:0 0 20px 0;}
+	.appContainer .textContainer{width:100%;display:block;margin-left:0;}
+	.mediaReleaseContainer ul li{width:100%;}
+	.galleryPgContainer ul li{width:100%;margin-left:0;margin-right:0;}
+	.gallerySubPgContainer ul li{width:280px;height:150px;margin-left:0;margin-right:0;}
+	.galleryDetail .colLeft{float:none;width:100%;}
+	.galleryDetail .colRight{float:none;width:100%;text-align:left;margin-left:0;margin-bottom:20px;}
+	.eventsContent h2{margin-left:0;}
+	.eventsContent ul li{width:100%;margin:10px 0;}
+	.eventsContent ul li .imgContainer{width:100%;padding-right:0;margin-bottom:20px;display:block;}
+	.eventsContent ul li .textContainer{width:100%;display:block;}
+	.happeningsContainer ul li{width:100%;margin:10px 0;}
+	.happeningsContainer ul li .imgContainer{width:100%;padding-right:0;margin-bottom:20px;display:block;}
+	.happeningsContainer ul li .textContainer{width:100%;display:block;}
+	.pdppContainer .imgRight{width:175px;}
+}
+@media screen and (max-width:400px){
+	.homepage .quickLinks ul li a{width:calc(100% - 20px);padding:10px;}
+	.homepage .quickLinks ul li span.width84Img{width:57px;margin-right:5px;}
+	.homepage .quickLinks ul li span.width84{width:calc(100% - 62px);}
+	.homepage .quickLinks ul li span.width59Img{width:40px;margin-right:5px;}
+	.homepage .quickLinks ul li span.width59{width:calc(100% - 45px);}
+}
+@media screen and (max-width:359px){
+	.homepage .quickLinks .left{margin-bottom:5px;}
+	.homepage .quickLinks ul li{display:block;width:100%;margin-right:0;margin-bottom:5px;}
+	.homepage .quickLinks ul li:last-child{margin-left:0;}
+	.homepage .whiteContainer{margin-top:15px;}
+	.homeMPs .mpsBtn ul li{width:40px;}
+	.gallerySubPgContainer ul li{width:250px;height:125px;margin-left:0;margin-right:0;}
+}
+
+@media print{
+	.header .desktopOnly{display:none;}
+	.header .mobileOnly{display:block;}
+	.header .mobileOnly .nav{display:none;}
+	.header .mobileOnly .mobileMenu{display:none;}
+	.contactDetails.desktopOnly{display:none;}
+	.contactDetails.mobileOnly{display:block;}
+	input[type=text]{border:1px solid #434343;}
+	textarea{border:1px solid #434343;}
+	select{border:1px solid #434343;}
+	button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"]{display:none;}
+	.footer{display:none;}
+	.topBar{display:none;}
+	.pageContents .container{padding:0 20px;}
+	.feedbackForm h2{border-bottom:1px solid #434343;}
+	.bulkyRemoveServiceForm form{display:block;}
+	.ourmpContent{border:1px solid #434343;}
+	.ourmpContent .detail{width:100%;display:block;}
+	.ourmpContent .videoSlider{display:none;}
+	.commonTable table thead tr th{border:1px solid #000000;color:#000000;}
+	.commonTable table tbody tr td{border:1px solid #000000;}
+	.faqsContainer h2{width:100%;display:block;padding-top:0;margin-bottom:10px;}
+	.faqsContainer .qna{width:100%;display:block;}
+	.qna .answer{display:block;}
+	.qna .question{border:1px solid #000000;}
+	.question span{/*display:inline-block;*/display:table-cell;padding:10px;color:#007cc2;font-weight:700;font-size:14px;line-height:18px;}
+	.question span.num{width:40px;border-right:1px solid #000000;}
+	.qna .answer table thead tr th{border:1px solid #d7d7d7;}
+	.qna .answer table tbody tr td{border:1px solid #d7d7d7;}
+	.newsContainer .download{display:none;}
+	.filter{display:none;}
+	.tenderType{display:none;}
+	.tenderTypeMobile{display:none;}
+	.tenderContent{display:block;width:100%;}
+	.facilitiesType{display:none;}
+	.facilitiesTypeMobile{display:none;}
+	.facilitiesContent{display:block;width:100%;}
+	.facilitiesContent h2{margin-left:0;}
+	.townImprovePjtType{display:none;}
+	.townImprovePjtTypeMobile{display:none;}
+	.townImprovePjtContent{display:block;width:100%;}
+	.galleryDetail .colLeft{float:none;width:100%;}
+	.galleryDetail .colRight{display:none;}
+	.eventsType{display:none;}
+	.eventsTypeMobile{display:none;}
+	.eventsContent{display:block;width:100%;margin-left:0;}
+	.eventsDetail a.submitBtn{display:none;}
+	.eventsDetail .imgLeft span{display:none;}
+	.usefulLinksType{display:none;}
+	.usefulLinksTypeMobile{display:none;}
+	.usefulLinksContent{display:block;width:100%;}
+	.usefulLinksContent h2{margin-left:0;}
+}

@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+    string appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model IList<Gallery>
+
+@if (Model != null && Model.Count() > 0)
+{
+
+    foreach (Gallery G in Model)
+    {
+        <tr>
+            <td>@G.RowNum</td>
+            <td>@G.Title</td>
+            <td>@((G.Date != null && G.Date != DateTime.MinValue) ? G.Date.ToString("dd MMM yyyy") : "")</td>
+            <td>@((G.ModifiedOn != null && G.ModifiedOn != DateTime.MinValue) ? G.ModifiedOn.ToString("dd/MMM/yyyy hh:mm tt") : (G.CreatedOn != null && G.CreatedOn != DateTime.MinValue) ? G.CreatedOn.ToString("dd/MMM/yyyy hh:mm tt") : "")</td>
+            <td><a href="@appPath/Gallery/Edit/@G.GUID">Edit</a> | <a href="JavaScript:Void(0);" id="galleryDelete" data-uniquecode="@G.GUID" data-toggle="modal" data-target="#delete">Delete</a></td>
+        </tr>
+    }
+}
+else
+{
+    <tr>
+
+        <td colspan="5" align="center">No Records Found </td>
+    </tr>
+}

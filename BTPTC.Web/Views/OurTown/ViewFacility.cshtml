@@ -1,0 +1,141 @@
+﻿
+@{
+    ViewBag.Title = "ViewFacility";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+
+@model  List<Facility>
+
+<div class="mainContents">
+    <div class="contactDetails desktopOnly"></div><!--End Contact Details (Contact Num, Font size adjustment and Social Media)-->
+    <div class="contactDetails mobileOnly"></div><!--End Contact Details (Contact Numbers)-->
+
+    <div class="pageBanner"><img src="@appPath/contents/images/facilities/banner-img.jpg" alt=""></div>
+
+    <div class="facilities">
+        <div class="pageContents">
+            <div class="container">
+                <div class="topBar">
+                    <div class="breadcrumb"><a href="index.html">Home</a><span></span><a href="#">Our Town</a><span></span>Our Facilities</div>
+                    <div class="socialShareBtns">
+                        <ul>
+                            <li>Share:</li>
+                            <li><a href="http://www.facebook.com/sharer.php?u=http://btptc.medialabsstreaming.com/our-facilities.html" target="_blank"><img src="@appPath/contents/images/common/fb-share-btn.png" alt=""></a></li>
+                            <li><a href="https://twitter.com/share?text=Our Facilities | Bishan-Toa Payoh Town Council,;url=http://btptc.medialabsstreaming.com/our-facilities.html" target="_blank"><img src="images/common/twitter-share-btn.png" alt=""></a></li>
+                            <!--li><a href="#" target="_blank"><img src="@appPath/contents/images/common/google-share-btn.png" alt="" target="_blank"></a></li-->
+                            <li><a href="mailto:?subject=Our Facilities | Bishan-Toa Payoh Town Council&Body=I thought you might be interested in this article: http://btptc.medialabsstreaming.com/our-facilities.html"><img src="@appPath/contents/images/common/email-share-btn.png" alt="" target="_blank"></a></li>
+                            <li class="print"><a href="javascript:void(0)" onclick="window.print();"><img src="@appPath/contents/images/common/print-btn.png" alt="" target="_blank"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="facilitiesContainer">
+                    <h1>Our Facilities</h1>
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        int i = 1;
+                        <ul class="facilitiesType">
+                            @foreach (Facility EA in Model)
+                            {
+
+                                <li><a href="javascript:void(0)" rel="@("f0"+i)" class="@("active btn0"+i) facilityTypeAnchor" onclick="return false;">@EA.Name</a></li>
+                                i++;
+                            }
+
+                        </ul>
+                    }
+
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        int j = 1;
+                        <div class="facilitiesTypeMobile">
+                            <div class="btnStatus">3G Parks</div>
+                            <ul>
+                                @foreach (Facility EA in Model)
+                                {
+                                    <li><a href="javascript:void(0)" rel="@("f0"+j)" class="MobileTypeAnchor" onclick="return false;">@EA.Name</a></li>
+                                    j++;
+                                }
+
+                            </ul>
+                        </div>
+                    }
+
+
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        int k = 1;
+
+                        foreach (Facility EA in Model)
+                        {
+                            <div class="facilitiesContent" id="@("f0" + k)">
+
+                                <h2>@EA.Name</h2>
+                                <ul>
+                                    @foreach (FacilityImage EI in EA.FacilityImage)
+                                    {
+                                        <li><a data-fancybox="3gParks-imgs" data-thumb="@appPath/Resources/images/Facility/@EI.ImageGUID.Replace("-","").@EI.ImageExtension" href="@appPath/Resources/images/Facility/@EI.ImageGUID.Replace("-","").@EI.ImageExtension"><img src="@appPath/Resources/images/Facility/@EI.ImageGUID.Replace("-","").@EI.ImageExtension" alt=""><h3>@EI.Description</h3></a></li>
+
+                                    }
+                                </ul>
+                            </div>
+                            k++;
+                        }
+                    }
+
+
+                </div>
+
+            </div>
+        </div>
+    </div><!--End Our Facilities-->
+</div><!-- End Main Contents -->
+@section scripts{
+    <script>
+        $(document).ready(function () {
+
+            $(".facilitiesContent").hide();
+            $(".facilitiesContent:first").show();
+            $(".facilitiesType a").click(function () {
+                $(".facilitiesContent").hide();
+                var currentTab = $(this).attr("rel");
+                $("#" + currentTab).fadeIn();
+                $(".facilitiesType a").removeClass("active");
+                $(this).addClass("active");
+
+                $.each($('.facilityTypeAnchor'), function () {
+
+                    if (currentTab == $(this).attr("rel")) {
+                        $(".facilitiesTypeMobile .btnStatus").text($(this).text());
+                    }
+                })
+
+            });
+
+            $(".facilitiesTypeMobile .btnStatus").click(function () {
+                $(".facilitiesTypeMobile ul").slideToggle(200);
+            });
+
+            $(".facilitiesTypeMobile a").click(function () {
+                $(".facilitiesContent").hide();
+                var currentTab = $(this).attr("rel");
+                $("#" + currentTab).fadeIn();
+                $(".facilitiesTypeMobile ul").hide(0);
+                $(".facilitiesType a").removeClass("active");
+
+
+
+                $.each($('.MobileTypeAnchor'), function () {
+
+                    if (currentTab == $(this).attr("rel")) {
+                        $(".facilitiesTypeMobile .btnStatus").text($(this).text());
+                        $(".facilitiesType .btn01").addClass("active");
+                    }
+                })
+
+            });
+        });
+    </script>
+}
+

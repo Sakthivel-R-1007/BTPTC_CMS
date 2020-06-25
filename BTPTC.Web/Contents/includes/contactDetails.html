@@ -1,0 +1,135 @@
+<div class="contactDetails desktopOnly">
+	<div class="container">
+		<div class="left">
+			<div class="tcHotline"><p class="red">Town Council Hotline</p><p class="blue">(During Office Hours)</p><p>6259 6700</p></div>
+			<div class="emuHotline"><p class="red">EMSU Hotline <span class="blue">(24 Hours)</span></p><p>1800 241 7711</p></div>
+		</div>
+		<div class="right">
+			<div class="fontAdjustment">
+				<a href="javascript:increaseFontSize();" class="large">A</a>
+				<a href="javascript:resetFontSize();" class="middle selected">A</a>
+				<a href="javascript:decreaseFontSize();" class="small">A</a>
+			</div>
+			<ul class="socialMediaIcon">
+				<li><a href="https://www.facebook.com/BishanToaPayoh/" target="_blank"><img src="Contents/images/common/fb-btn.png" alt="Facebook"></a></li>
+				<li><a href="mobile-app.html#itown"><img src="Contents/images/common/itown-btn.png" alt="iTown App"></a></li>
+				<li><a href="mobile-app.html#oneservice"><img src="Contents/images/common/one-service-btn.png" alt="One Service App"></a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>	
+</div><!--End Contact Details (Contact Num, Font size adjustment and Social Media-->
+		
+<div class="contactDetails mobileOnly">
+	<div class="container">
+		<div class="left">
+			<div class="tcHotline"><p class="red">Town Council Hotline</p><p class="blue">(During Office Hours)</p><p>6259 6700</p></div>
+		</div>
+		<div class="right">
+			<div class="emuHotline"><p class="red">EMSU Hotline</p><p class="blue">(24 Hours)</p><p>1800 241 7711</p></div>
+		</div>
+		<div class="clear"></div>
+	</div>	
+</div><!--End Contact Details (Contact Numbers-->		
+
+<script>		
+	var min = 12;
+	var max = 16;
+	
+	var homeMin = 10;
+	var homeMax = 14;
+	
+	function increaseFontSize() {
+	   var fontSizeIncrease = document.querySelectorAll('.pageContents p, .pageContents li, .ourmpContent h3, .commonTable table, .question span, .qna .answer table th, .qna .answer table td, .eventsContent .date, .facilitiesContent ul li h3, .normalTable table, .newsContainer h2, .annualReportContainer h2, .galleryPgContainer ul li h2');
+	   for(i=0; i<fontSizeIncrease.length; i++) {
+		  if(fontSizeIncrease[i].style.fontSize) {
+			 var font_size = parseInt(fontSizeIncrease[i].style.fontSize.replace("px",""));
+			 var line_height = parseInt(fontSizeIncrease[i].style.lineHeight.replace("px",""));
+		  } else {
+			 var font_size = 14;
+			 var line_height = 18;
+		  }
+		  if(font_size != max) {
+			 font_size += 1;
+			 line_height += 2;
+		  }
+		  fontSizeIncrease[i].style.fontSize = font_size+"px";
+		  fontSizeIncrease[i].style.lineHeight = line_height+"px";
+	   }
+	   
+	   var fontSizeIncreaseHome = document.querySelectorAll('.homepage .whiteContainer .homeResidents ul li, .homepage .whiteContainer .homeOffices ul li p, .homepage .whiteContainer .homeHappenings p, .homepage .whiteContainer .homeMPs p, .homepage .whiteContainer .homeCompliments p');
+	   for(i=0; i<fontSizeIncreaseHome.length; i++) {
+		  if(fontSizeIncreaseHome[i].style.fontSize) {
+			 var font_size = parseInt(fontSizeIncreaseHome[i].style.fontSize.replace("px",""));
+			 var line_height = parseInt(fontSizeIncreaseHome[i].style.lineHeight.replace("px",""));
+		  } else {
+			 var font_size = 12;
+			 var line_height = 14;
+		  }
+		  if(font_size != homeMax) {
+			 font_size += 1;
+			 line_height += 2;
+		  }
+		  fontSizeIncreaseHome[i].style.fontSize = font_size+"px";
+		  fontSizeIncreaseHome[i].style.lineHeight = line_height+"px";
+	   }
+	}
+	
+	function resetFontSize() {
+	   var fontSizeReset = document.querySelectorAll('.pageContents p, .pageContents li, .ourmpContent h3, .commonTable table, .question span, .qna .answer table th, .qna .answer table td, .eventsContent .date, .facilitiesContent ul li h3, .normalTable table, .newsContainer h2, .annualReportContainer h2, .galleryPgContainer ul li h2');
+	   for(i=0; i<fontSizeReset.length; i++) {
+		  if(fontSizeReset[i].style.fontSize) {
+			 var font_size = 14;
+			 var line_height = 18;
+		  }
+		  fontSizeReset[i].style.fontSize = font_size+"px";
+		  fontSizeReset[i].style.lineHeight = line_height+"px";
+	   }
+	   
+	   var fontSizeResetHome = document.querySelectorAll('.homepage .whiteContainer .homeResidents ul li, .homepage .whiteContainer .homeOffices ul li p, .homepage .whiteContainer .homeHappenings p, .homepage .whiteContainer .homeMPs p, .homepage .whiteContainer .homeCompliments p');
+	   for(i=0; i<fontSizeResetHome.length; i++) {
+		  if(fontSizeResetHome[i].style.fontSize) {
+			 var font_size = 12;
+			 var line_height = 16;
+		  }
+		  fontSizeResetHome[i].style.fontSize = font_size+"px";
+		  fontSizeResetHome[i].style.lineHeight = line_height+"px";
+	   }
+	}
+	
+	function decreaseFontSize() {
+	   var fontSizeDecrease = document.querySelectorAll('.pageContents p, .pageContents li, .ourmpContent h3, .commonTable table, .question span, .qna .answer table th, .qna .answer table td, .eventsContent .date, .facilitiesContent ul li h3, .normalTable table, .newsContainer h2, .annualReportContainer h2, .galleryPgContainer ul li h2');
+	   for(i=0; i<fontSizeDecrease.length; i++) {
+		  if(fontSizeDecrease[i].style.fontSize) {
+			 var font_size = parseInt(fontSizeDecrease[i].style.fontSize.replace("px",""));
+			 var line_height = parseInt(fontSizeDecrease[i].style.lineHeight.replace("px",""));
+		  } else {
+			 var font_size = 14;
+			 var line_height = 18;
+		  }
+		  if(font_size != min) {
+			 font_size -= 1;
+			 line_height -= 2;
+		  }
+		  fontSizeDecrease[i].style.fontSize = font_size+"px";
+		  fontSizeDecrease[i].style.lineHeight = line_height+"px";
+	   }
+	   
+	   var fontSizeDecreaseHome = document.querySelectorAll('.homepage .whiteContainer .homeResidents ul li, .homepage .whiteContainer .homeOffices ul li p, .homepage .whiteContainer .homeHappenings p, .homepage .whiteContainer .homeMPs p, .homepage .whiteContainer .homeCompliments p');
+	   for(i=0; i<fontSizeDecreaseHome.length; i++) {
+		  if(fontSizeDecreaseHome[i].style.fontSize) {
+			 var font_size = parseInt(fontSizeDecreaseHome[i].style.fontSize.replace("px",""));
+			 var line_height = parseInt(fontSizeDecreaseHome[i].style.lineHeight.replace("px",""));
+		  } else {
+			 var font_size = 12;
+			 var line_height = 14;
+		  }
+		  if(font_size != homeMin) {
+			 font_size -= 1;
+			 line_height -= 2;
+		  }
+		  fontSizeDecreaseHome[i].style.fontSize = font_size+"px";
+		  fontSizeDecreaseHome[i].style.lineHeight = line_height+"px";
+	   }
+	}
+</script>

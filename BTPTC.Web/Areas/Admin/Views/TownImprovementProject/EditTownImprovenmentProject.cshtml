@@ -1,0 +1,227 @@
+﻿
+@{
+    ViewBag.Title = "EditProject";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+@model Notice
+
+
+
+<div class="maincontents">
+    @using (Html.BeginForm("AddProject", "TownImprovementProject", FormMethod.Post, new { enctype = "multipart/form-data", id = "AddProjectTypeFrom" }))
+    {
+        <h1>TOWN IMPROVEMENT PROJECTS</h1>
+        <div class="homepage">
+            <h2>Edit Project</h2>
+
+            <div class="formLayout">
+                <table cellpadding="0" cellspacing="0" border="0" class="tblcreate">
+                    <tr>
+                        <td class="fieldname">
+                            Project Name
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.NoticeType, "", new { placeholder = "Type your Title here" })
+                            @Html.ValidationMessageFor(m => m.NoticeType)
+                            @Html.HiddenFor(m => m.GUID)
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <span id="TableRowCheck" style="color:red;float:right"></span>
+            <div class="padding10"></div>
+            <div class="floatRight"><a href="#" class="editMetaBtn" data-toggle="modal" data-target="#editPopup">Add Location</a></div>
+            <div class="clear padding10"></div>
+
+
+            <table cellpadding="0" cellspacing="0" class="tblgrey" id="NoticeTbl">
+                <thead>
+                    <tr>
+                        <th width="60">S/N</th>
+                        <th>Location</th>
+                        <th>Project Status</th>
+                        <th width="200">Modified Date</th>
+                        <th width="120">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.NoticeTypes.Count > 0)
+                    {
+                        int SNo = 1, rowcount = 0;
+
+                        foreach (NoticeTypes N in Model.NoticeTypes)
+                        {
+                            <tr class="data-contact-person">
+                                <td>@SNo</td>
+                                @* <td>@N.GUID @Html.HiddenFor(m => m.NoticeTypes[rowcount].GUID)</td>*@
+                                <td>@N.Location @Html.HiddenFor(m => m.NoticeTypes[rowcount].Location)</td>
+                                <td>@N.Status @Html.HiddenFor(m => m.NoticeTypes[rowcount].Status)</td>
+                                <td>@N.ModifiedOn @Html.HiddenFor(m => m.NoticeTypes[rowcount].ModifiedOn)</td>
+
+                                <td><a href="javascipt:void(0)" data-uniquecode="@N.Noticeid" class="editpopup">Edit</a> | <a href="javascipt:void(0)" id="deletebtn" class="linelink" data-uniquecode="@N.GUID">Delete</a></td>
+                            </tr>
+                            SNo++;
+                            rowcount++;
+                        }
+                    }
+                </tbody>
+            </table>
+
+            <div class="padding10"></div>
+            <!--div class="pagination"> <a href="#">&laquo;</a> <a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">...</a> <a href="#">7</a> <a href="#">8</a> <a href="#">9</a> <a href="#">&raquo;</a></div>
+    <div class="padding10"></div-->
+
+            <div class="floatRight">
+                <a href="javascript:void(0);" id="NoticeTypeSubmit" class="submitBtn floatRight addNotice" aria-hidden="true">Save</a>&nbsp;
+                @*<input type="submit" class="submitBtn" id="FacilitySubmit" value="Save">&nbsp;*@
+                <input type="button" class="resetBtn" value="Back" onClick="location.href='@appPath/Admin/TownImprovementProject/TownImprovementProject'">
+            </div>
+            <div class="clear"></div>
+        </div>
+    }
+</div>
+
+<!-- Popup (delete) -->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content deletealert">
+            <div class="modal-header">
+                <div class="title">Delete Facility</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container" style="text-align:center;">
+                    <p><strong>Are you sure to delete this facility?</strong></p>
+                    <div class="padding10"></div>
+                    <input type="button" class="submitBtn" value="Delete">
+                    <div class="clear padding10"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Popup (edit) -->
+<div class="modal fade" id="editPopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content editalert">
+            <div class="modal-header">
+                <div class="title">Edit Photo</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+
+                @using (Html.BeginForm("AddPhotoFacility", "OurTown", FormMethod.Post, new { enctype = "multipart/form-data", id = "TownProjectFrom" }))
+                {
+                    <div class="container">
+                        <table cellpadding="0" cellspacing="0" border="0" class="editBannerForm">
+
+                            @Html.AntiForgeryToken()
+
+                            <tr>
+                                <td class="fieldname">Location</td>
+                                <td>
+                                    @Html.TextBox("Location", null, new { placeholder = "Type your Title here" })
+                                    @Html.ValidationMessage("Location")
+                                    @*@Html.Hidden("GUID")*@
+                                    <input type="hidden" id="hiddenTableRowid" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fieldname">Status</td>
+                                <td>
+
+                                    @*@Html.DropDownList("Status", new SelectList("Completed", "Progress"), "Filter by Status", new { @class = "filter", id = "filtervalue" })
+                                        @Html.ValidationMessage("Status")*@
+
+                                    @Html.DropDownList("Status", new List<SelectListItem>
+                                          { new SelectListItem{Text="Completed", Value="Completed"},
+                                            new SelectListItem{Text="Progress", Value="Progress"}},
+                                            "Please select"
+                                            )
+
+                                </td>
+                            </tr>
+
+                        </table>
+                        <div class="padding10"></div>
+                        <a href="javascript:void(0);" id="btnfacility" class="submitBtn floatRight" aria-hidden="true">Save</a>
+                        <div class="clear padding10"></div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Popup (add) -->
+@*<div class="modal fade" id="imagemodeladd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content editalert">
+            <div class="modal-header">
+                <div class="title">Edit Photo</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+
+                @using (Html.BeginForm("AddPhotoFacility", "OurTown", FormMethod.Post, new { enctype = "multipart/form-data", id = "PhotoFacilityFrom" }))
+                {
+                    <div class="container">
+                        <table cellpadding="0" cellspacing="0" border="0" class="editBannerForm">
+
+                            @Html.AntiForgeryToken()
+
+                            <tr>
+                                <td class="fieldname">Location</td>
+                                <td>
+                                    @Html.TextBox("Location", null, new { placeholder = "Type your Title here" })
+                                    @Html.ValidationMessage("Location")
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fieldname">Status</td>
+                                <td>
+
+                                    @Html.DropDownList("Status", new SelectList("Completed", "Progress"), "Filter by Status", new { @class = "filter", id = "filtervalue" })
+                                        @Html.ValidationMessage("Status")
+
+                                    @Html.DropDownList("Status", new List<SelectListItem>
+                                          { new SelectListItem{Text="Completed", Value="Completed"},
+                                            new SelectListItem{Text="Progress", Value="Progress"}},
+                                            "Please select"
+                                            )
+
+                                </td>
+                            </tr>
+
+                        </table>
+                        <div class="padding10"></div>
+                        <a href="javascript:void(0);" id="btnfacility" class="submitBtn floatRight" aria-hidden="true">Save</a>
+                        <div class="clear padding10"></div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>*@
+
+
+
+
+@section scripts{
+
+
+    <script src="@appPath/Contents/Admin/js/jqueryValidate/jquery.validate.js"></script>
+    <script src="@appPath/Contents/Admin/js/jqueryValidate/additional-methods.js"></script>
+    @* <script src="@appPath/Contents/Admin/js/Custom/Add-Notice.js"></script>*@
+    <script src="~/Contents/Admin/js/Custom/Edit-TownProject.js"></script>
+
+}
+

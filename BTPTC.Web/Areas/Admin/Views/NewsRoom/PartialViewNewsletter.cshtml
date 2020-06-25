@@ -1,0 +1,39 @@
+﻿
+
+@{
+
+    Layout = null;
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+
+@model List<NewsLetter>
+@if (Model != null && Model.Count > 0)
+{
+
+    int SNo = 1;
+    foreach(NewsLetter NL in Model)
+    {
+        <tr>
+            <td>@NL.RowNum</td>
+            <td>@NL.Title</td>
+            <td>@NL.Quarter</td>
+            <td>@NL.Year</td>
+            <td>@NL.FileSize</td>
+            <td>@NL.ModifiedOn</td>
+            <td><a href="@appPath/Admin/NewsRoom/EditFacility/@NL.GUID">Edit</a> | <a href="javascipt:void(0)" data-toggle="modal" id="deletebtn" data-uniquecode="@NL.GUID" data-target="#delete">Delete</a></td>
+        </tr>
+        SNo++;
+    }
+}
+else
+{
+    <tr>
+        <td colspan="6">
+            No Records Found!
+
+        </td>
+
+    </tr>
+}
+

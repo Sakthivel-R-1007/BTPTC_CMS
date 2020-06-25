@@ -1,0 +1,78 @@
+﻿
+
+@{
+    ViewBag.Title = "EventsDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model  Events
+
+@if (Model != null)
+{
+    <div class="mainContents">
+        <div class="contactDetails desktopOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Num, Font size adjustment and Social Media)-->
+        <div class="contactDetails mobileOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Numbers)-->
+        <div class="pageBanner"><img src="@appPath/Contents/images/events/banner-img.jpg" alt=""></div>
+
+        <div class="events">
+            <div class="pageContents">
+                <div class="container">
+                    <div class="topBar">
+                        <div class="breadcrumb"><a href="@appPath">Home</a><span></span><a href="javascript:void(0)">Our Town</a><span></span><a href=""@appPath/OurTown/OurEvents">Our Events</a><span></span>Tree Planting 2019</div>
+                        <div class="socialShareBtns">
+                            <ul>
+                                <li>Share:</li>
+                                <li><a href="http://www.facebook.com/sharer.php?u=http://btptc.medialabsstreaming.com/event-tree-planting-2019.html" target="_blank"><img src="@appPath/contents/images/common/fb-share-btn.png" alt=""></a></li>
+                                <li><a href="https://twitter.com/share?text=Tree Planting 2019 - Bishan-Toa Payoh Town Council, http://btptc.medialabsstreaming.com/event-tree-planting-2019.html" target="_blank"><img src="@appPath/contents/images/common/twitter-share-btn.png" alt=""></a></li>
+                                <!--li><a href="#" target="_blank"><img src="@appPath/contents/images/common/google-share-btn.png" alt="" target="_blank"></a></li-->
+                                <li><a href="mailto:?subject=Tree Planting 2019 | Our Events | Bishan-Toa Payoh Town Council&Body=I thought you might be interested in this article: http://btptc.medialabsstreaming.com/event-tree-planting-2019.html"><img src="@appPath/contents/images/common/email-share-btn.png" alt="" target="_blank"></a></li>
+                                <li class="print"><a href="javascript:void(0)" onclick="window.print();"><img src="@appPath/contents/images/common/print-btn.png" alt="" target="_blank"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="eventsContainer">
+                        <h1>Tree Planting 2019</h1>
+                        <div class="eventsDetail">
+                            <p class="imgLeft"><a href="javascript:void(0)" data-toggle="modal" data-target="#enlargeImg" onClick="popup_open()"><img src="@appPath/Resources/images/Events/@Model.ThumbnailImageGUID.@Model.ThumbnailImageExtension" alt=""><span>Click to enlarge the image.</span></a></p>
+
+                            <p><strong>Guest-of-Honour:</strong>@Model.GuestOfHonour</p>
+
+                            <p><strong>Event Date:</strong> @Model.EventDateString</p>
+
+                            <p><strong>Event Time:</strong> @Model.StartEventTime.ToString("HH:mm")</p>
+
+                            <p><strong>Venue:</strong> @Model.Venue</p>
+
+                            <p>@Model.Contents</p>
+
+                            <p><a href="@appPath/OurTown/OurEvents" class="submitBtn">Back to Events</a></p>
+
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--End Our Events-->
+    </div><!-- End Main Contents -->
+
+    @section Popup{
+        <div class="modal fade" id="enlargeImg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="container forEvents">
+                            <a href="javascript:void(0)" data-dismiss="modal" aria-hidden="true" onClick="popup_close()" class="closePopUpBtn"><img src="@appPath/Contents/images/common/close-icon.png"></a>
+                            <div class="modal-ImgContainer">
+                                @{
+                                    string image = Model.ThumbnailImageGUID+'.'+Model.ThumbnailImageExtension;
+                                }
+                                <img src="@appPath/Resources/images/Events/@image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+

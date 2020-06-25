@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "Our History";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+    <div class="mainContents">
+        <div class="contactDetails desktopOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Num, Font size adjustment and Social Media)-->
+        <div class="contactDetails mobileOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Numbers)-->
+
+        <div class="pageBanner"><img src="@appPath/Contents/images/history/banner-img.jpg" alt=""></div>
+
+        <div class="ourHistory">
+            <div class="pageContents">
+                <div class="container">
+                    <div class="topBar">
+                        <div class="breadcrumb"><a href="@appPath/">Home</a><span></span><a href="#">About Us</a><span></span>Our History</div>
+                        <div class="socialShareBtns">
+                            <ul>
+                                <li>Share:</li>
+                                <li><a href="http://www.facebook.com/sharer.php?u=http://btptc.medialabsstreaming.com/our-history.html" target="_blank"><img src="@appPath/Contents/images/common/fb-share-btn.png" alt=""></a></li>
+                                <li><a href="https://twitter.com/share?text=Our History - Bishan-Toa Payoh Town Council, http://btptc.medialabsstreaming.com/our-history.html" target="_blank"><img src="@appPath/Contents/images/common/twitter-share-btn.png" alt=""></a></li>
+                                <!--li><a href="#" target="_blank"><img src="images/common/google-share-btn.png" alt="" target="_blank"></a></li-->
+                                <li><a href="mailto:?subject=Our History | Bishan-Toa Payoh Town Council&Body=I thought you might be interested in this article: http://btptc.medialabsstreaming.com/our-history.html"><img src="@appPath/Contents/images/common/email-share-btn.png" alt="" target="_blank"></a></li>
+                                <li class="print"><a href="#" onclick="window.print();"><img src="@appPath/Contents/images/common/print-btn.png" alt="" target="_blank"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="historyContainer">
+                        <h1>Our History</h1>
+
+                        <h2>In Poem</h2>
+
+                        <p>We would like to share a sentimental moment with you. We want to bring you back to the time when Toa Payoh was just another swamp, till the time it had developed into a much sought-after estate. This poem, appropriately titled "<a href="#" data-toggle="modal" data-target="#poem" onClick="popup_open()">A Brief History of Toa Payoh</a>", was penned by Mr. Koh Buck Song, a veteran reporter with the Straits Times.</p>
+
+                        <div class="imgContainer">
+                            <span><img src="@appPath/Contents/images/history/VisitThePast1.jpg" alt=""></span>
+                            <span><img src="@appPath/Contents/images/history/VisitThePast2.jpg" alt=""></span>
+                            <span><img src="@appPath/Contents/images/history/VisitThePast3.jpg" alt=""></span>
+                        </div>
+                        <div class="padding5"></div>
+
+                        <h2>History of Bishan, Thomson &amp; Toa Payoh Estates</h2>
+
+                        <p><strong>Bishan North and Bishan East</strong></p>
+
+                        <p>Preceding the 1960's the Bishan North and Bishan East areas were used as a graveyard for the Cantonese. In 1964, building started to commence and by the late 1960's all graves were exhumed and cremated to allow for future housing and commercial development. </p>
+
+                        <p><strong>Thomson</strong></p>
+
+                        <p class="imgLeft"><img src="@appPath/Contents/images/history/kampong8.jpg" alt=""></p>
+
+                        <p>The Thomson area is one of the oldest of the five communities. It was a farming/agricultural community and rubber plantation prior to the PAP. One of the oldest facilities is the Shin Min School which was built just after WWII.</p>
+
+                        <p>Thomson Road which is one of the oldest roads in the area was named after JT Thomson who designed and built it.</p>
+
+                        <p>Additional background information came from "The Singapore House" by Lee Kip Lin (Times Edition, 1983) which gives some reference to the area in the nineteenth century. The following information has been derived from this source.</p>
+
+                        <p>In the early 1800's there were only scattered Malay settlements within the Serangoon area. It was not until the mid 1830's that Joseph Balestier, the American consul, speculated in sugar planting in Serangoon. About 1,000 acres between existing Balestier Road and the Kallang River were planted with sugar cane. When sugar prices fell in the late 1840's the plantation was abandoned.</p>
+
+                        <p>In the Thomson area there were also a few kampongs and scattered compounds during the 1800's. Thomson was named after John Turnbull Thomson the government surveyor of maps from 1841 to 1853.</p>
+
+                        <p class="imgRight"><img src="@appPath/Contents/images/history/jungle.jpg" alt=""></p>
+
+                        <p><strong>Toa Payoh</strong></p>
+
+                        <p>In the 1920s, there was a vast stretch of swampy land dotted with fish ponds, vegetable farms and huts. This piece of rural vegetable farm land was known as Toa Payoh. Back then, agriculture was the main source of living for the population of 300.</p>
+
+                        <p>By 1960, the population in Toa Payoh grew to about 10,000. However, the lifestyle remain unchanged.</p>
+
+                        <p class="imgLeft"><img src="@appPath/Contents/images/history/expressway.jpg" alt=""></p>
+
+                        <p>In 1964, the Housing & Development Board (HDB) began its massive project to develop Toa Payoh into a planned satellite town. The entire project was estimated to cost 150 million dollars, with 35,000 low cost, high rise public housing units to house 250,000 of the population.</p>
+
+                        <p>As a planned satellite town, the development of Toa Payoh Town included a town centre, a bus interchange, schools, industrial parks and sports/ recreational facilities.</p>
+
+                        <p>In 1969, the first batch of residents moved into Toa Payoh Town and, as the saying goes, the rest is history... </p>
+
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--End Our History-->
+    </div><!-- End Main Contents -->

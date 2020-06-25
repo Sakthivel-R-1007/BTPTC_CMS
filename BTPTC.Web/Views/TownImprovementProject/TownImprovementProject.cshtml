@@ -1,0 +1,164 @@
+﻿@{
+    ViewBag.Title = "ViewFacility";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+
+@model List<Notice>
+    <link href="~/Contents/css/styles.css" rel="stylesheet" />
+
+<div class="wrapper">
+    <header>
+        <div class="header"></div>
+    </header><!--End Header-->
+
+    <div class="mainContents">
+        <div class="contactDetails desktopOnly"></div><!--End Contact Details (Contact Num, Font size adjustment and Social Media)-->
+        <div class="contactDetails mobileOnly"></div><!--End Contact Details (Contact Numbers)-->
+
+        <div class="pageBanner"><img src="images/improvement-project/banner-img.jpg" alt=""></div>
+
+        <div class="townImprovePjt">
+            <div class="pageContents">
+                <div class="container">
+                    <div class="topBar">
+                        <div class="breadcrumb"><a href="index.html">Home</a><span></span><a href="#">Our Town</a><span></span>Town Improvement Projects</div>
+                        <div class="socialShareBtns">
+                            <ul>
+                                <li>Share:</li>
+                                <li><a href="http://www.facebook.com/sharer.php?u=http://btptc.medialabsstreaming.com/town-improvement-project.html" target="_blank"><img src="images/common/fb-share-btn.png" alt=""></a></li>
+                                <li><a href="https://twitter.com/share?text=Town Improvement Projects - Bishan-Toa Payoh Town Council, http://btptc.medialabsstreaming.com/town-improvement-project.html" target="_blank"><img src="images/common/twitter-share-btn.png" alt=""></a></li>
+                                <!--li><a href="#" target="_blank"><img src="images/common/google-share-btn.png" alt="" target="_blank"></a></li-->
+                                <li><a href="mailto:?subject=Town Improvement Projects | Bishan-Toa Payoh Town Council&Body=I thought you might be interested in this article: http://btptc.medialabsstreaming.com/town-improvement-project.html"><img src="images/common/email-share-btn.png" alt="" target="_blank"></a></li>
+                                <li class="print"><a href="#" onclick="window.print();"><img src="images/common/print-btn.png" alt="" target="_blank"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="townImprovePjtContainer">
+                        <h1>Town Improvement Projects</h1>
+
+                        @if (Model != null && Model.Count > 0)
+                        {
+                            int i = 1;
+                            <ul class="townImprovePjtType">
+                                @foreach (Notice EA in Model)
+                                {
+
+                                    <li><a href="#" rel="@("improvementPjt0"+i)" class="@("active btn0"+i) facilityTypeAnchor" onclick="return false;">@EA.NoticeType</a></li>
+                                    i++;
+                                }
+
+                            </ul>
+                        }
+
+
+                        <div class="townImprovePjtTypeMobile">
+                            <div class="btnStatus"></div>
+
+                            @if (Model != null && Model.Count > 0)
+                            {
+                                int j = 1;
+
+                                <ul>
+                                    @foreach (Notice EA in Model)
+                                    {
+                                        <li><a href="#" rel="@("improvementPjt0"+j)" class="MobileTypeAnchor" onclick="return false;">@EA.NoticeType</a></li>
+                                        j++;
+                                    }
+
+                                </ul>
+                            }
+
+                        </div>
+
+
+
+                        @if (Model != null && Model.Count > 0)
+                        {
+                            int k = 1;
+                            int SNO = 1;
+
+                            foreach (Notice EA in Model)
+                            {
+
+                                <div class="townImprovePjtContent" id="@("improvementPjt0" + k)">
+                                    <h2>Completed Projects</h2>
+
+                                    <div class="normalTable">
+                                        <table cellpadding="0" cellspacing="0" border="0">
+                                            <thead>
+                                                <tr>
+                                                    <th class="center" style="width:40px;">No.</th>
+                                                    <th>Location</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (NoticeTypes NI in EA.NoticeTypes)
+                                                {
+                                                    <tr>
+                                                        <td class="center">@SNO</td>
+                                                        <td>@NI.Location</td>
+                                                    </tr>
+                                                }
+
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                k++;
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div><!--End Town Improvement Projects-->
+    </div><!-- End Main Contents -->
+
+    <div class="footer"></div>
+</div><!--End Wrapper-->
+
+<script>
+    $(document).ready(function () {
+
+        $(".townImprovePjtContent").hide();
+        $(".townImprovePjtContent:first").show();
+        $(".townImprovePjtType a").click(function () {
+
+            $(".townImprovePjtContent").hide();
+            var currentTab = $(this).attr("rel");
+            $("#" + currentTab).fadeIn();
+            $(".townImprovePjtType a").removeClass("active");
+            $(this).addClass("active");
+
+            if (currentTab == "improvementPjt01") {
+                $(".townImprovePjtTypeMobile .btnStatus").text("Barrier Free Access Ramp");
+            }
+
+        });
+
+        $(".townImprovePjtTypeMobile .btnStatus").click(function () {
+            $(".townImprovePjtTypeMobile ul").slideToggle(200);
+        });
+
+        $(".townImprovePjtTypeMobile a").click(function () {
+            //$(".townImprovePjtContent").hide();
+            var currentTab = $(this).attr("rel");
+            $("#" + currentTab).fadeIn();
+            $(".townImprovePjtTypeMobile ul").hide(0);
+            $(".townImprovePjtType a").removeClass("active");
+
+            if (currentTab == "improvementPjt01") {
+                $(".townImprovePjtTypeMobile .btnStatus").text("Barrier Free Access Ramp");
+                $(".townImprovePjtType .btn01").addClass("active");
+            }
+
+        });
+
+    });
+</script>
+

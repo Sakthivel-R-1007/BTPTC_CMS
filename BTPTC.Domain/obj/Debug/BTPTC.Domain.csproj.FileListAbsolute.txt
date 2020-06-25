@@ -1,0 +1,14 @@
+D:\Projects\BTPTC_CMS\BTPTC.Domain\bin\Debug\BTPTC.Domain.dll
+D:\Projects\BTPTC_CMS\BTPTC.Domain\bin\Debug\BTPTC.Domain.pdb
+D:\Projects\BTPTC_CMS\BTPTC.Domain\obj\Debug\BTPTC.Domain.dll
+D:\Projects\BTPTC_CMS\BTPTC.Domain\obj\Debug\BTPTC.Domain.pdb
+G:\Projects\BTPTC_CMS\BTPTC.Domain\bin\Debug\BTPTC.Domain.dll
+G:\Projects\BTPTC_CMS\BTPTC.Domain\bin\Debug\BTPTC.Domain.pdb
+G:\Projects\BTPTC_CMS\BTPTC.Domain\obj\Debug\BTPTC.Domain.dll
+G:\Projects\BTPTC_CMS\BTPTC.Domain\obj\Debug\BTPTC.Domain.pdb
+G:\Projects\BTPTC_CMS\BTPTC.Domain\obj\Debug\BTPTC.Domain.csproj.CoreCompileInputs.cache
+G:\Projects\BTPTC_CMS\BTPTC.Domain\obj\Debug\BTPTC.Domain.csprojAssemblyReference.cache
+D:\Repositeries\BTPTC_CMS\BTPTC.Domain\bin\Debug\BTPTC.Domain.dll
+D:\Repositeries\BTPTC_CMS\BTPTC.Domain\bin\Debug\BTPTC.Domain.pdb
+D:\Repositeries\BTPTC_CMS\BTPTC.Domain\obj\Debug\BTPTC.Domain.dll
+D:\Repositeries\BTPTC_CMS\BTPTC.Domain\obj\Debug\BTPTC.Domain.pdb

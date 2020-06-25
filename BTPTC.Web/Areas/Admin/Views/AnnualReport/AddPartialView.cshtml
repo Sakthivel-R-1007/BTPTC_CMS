@@ -1,0 +1,59 @@
+﻿@{
+    Layout = null;
+    string appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model AnnualReport
+
+@Html.AntiForgeryToken()
+
+<table cellpadding="0" cellspacing="0" border="0" class="editBannerForm">
+    <tr>
+        <td class="fieldname">Title</td>
+        <td>
+            @Html.TextBoxFor(g => g.Title)
+            @Html.ValidationMessageFor(g => g.Title)
+        </td>
+    </tr>
+    <tr>
+        <td class="fieldname">Image <span class="importantNote">(500px by 700px)</span></td>
+        <td>
+            <div class="upload">
+                <input type="button" class="uploadBtn" value="Choose File"><input type="file" id="uploadAttach_1" multiple name="uploadAttach_1" data-imageWidth="" data-imageHeight="" />
+                <label><input type="text" name="uploadFile_1" id="uploadFile_1" placeholder="No file chosen"></label>
+                <ul id="output">
+                </ul>
+            </div>
+            <div class="imgPreview"><img id="ImageFilePath1" src="" /></div>
+            @*@if (Model != null)
+        {
+            <div class="imgPreview"><img id="ImageFilePath1" src="@appPath/Resources/Images/Gallery/@Model.ImageGUID.@Model.ImageExtension"></div>
+        }
+        else
+        {
+            <div class="imgPreview"><img id="ImageFilePath1" src="@appPath/Contents/images/no-image.jpg" /></div>
+        }*@
+            @Html.ValidationMessage("uploadAttach_1")
+        </td>
+    </tr>
+    <tr>
+        <td class="fieldname">Image Alt Tag</td>
+        <td>
+            @Html.TextBoxFor(g => g.ImageAltTag)
+            @Html.ValidationMessageFor(g => g.ImageAltTag)
+        </td>
+    </tr>
+    <tr>
+        <td class="fieldname">Upload PDF</td>
+        <td>
+            <div class="upload">
+                <input type="button" class="uploadBtn" value="Choose File"><input type="file" name="uploadAttach_PDF_2" id="uploadAttach_PDF_2" />
+                <label>
+                    @Html.TextBox("PDFFileName", (Model != null && !string.IsNullOrEmpty(Model.PDFName) ? Model.PDFName + "." + (Model != null ? Model.PDFExtension.Trim('.') : "") : ""), new { @type = "text", @placeholder = "No file chosen", @readonly = "true" })
+                </label>
+            </div>
+            @Html.ValidationMessage("uploadAttach_PDF_2")
+        </td>
+    </tr>
+</table>
+<div class="padding10"></div>
+<input type="button" class="submitBtn floatRight" id="addannualreport" value="Save">

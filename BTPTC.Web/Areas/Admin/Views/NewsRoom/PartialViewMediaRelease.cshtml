@@ -1,0 +1,39 @@
+﻿
+
+@{
+
+    Layout = null;
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+
+@model List<MediaRelease>
+@if (Model != null && Model.Count > 0)
+{
+
+    int SNo = 1;
+    foreach (MediaRelease NL in Model)
+    {
+    <tr>
+        <td>@NL.RowNum</td>
+        <td>@NL.Date</td>
+        <td>@NL.Title</td>
+        <td>@NL.ModifiedOn</td>
+        <td><a href="javascipt:void(0)" data-id="@NL.GUID" class="editMediaReleasebtn">Edit</a> | <a href="javascipt:void(0)" data-toggle="modal" id="deletebtn" data-uniquecode="@NL.GUID" data-target="#delete">Delete</a></td>
+        
+    </tr>
+        SNo++;
+    }
+}
+else
+{
+    <tr>
+        <td colspan="6">
+            No Records Found!
+
+        </td>
+
+    </tr>
+}
+
+

@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "AddGallery";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+ }
+    @model Gallery
+    <div class="maincontents">
+        @using (Html.BeginForm("Add", "Gallery", FormMethod.Post, new { id = "AddGalleryForm", enctype = "multipart/form-data" }))
+        {
+            <h1>Gallery</h1>
+
+            @Html.AntiForgeryToken();
+
+            <div class="homepage">
+                <h2>Add Gallery</h2>
+
+                <div class="formLayout">
+                    <table cellpadding="0" cellspacing="0" border="0" class="tblcreate">
+                        <tr>
+                            <td class="fieldname">Title</td>
+                            <td>
+                                @Html.TextBoxFor(g => g.Title)
+                                @Html.ValidationMessageFor(g => g.Title)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fieldname">Date</td>
+                            <td>
+                                @Html.TextBox("DateString", (Model != null && Model.Date != DateTime.MinValue ? Model.Date.ToString("dd/MM/yyyy") : ""), new { @readonly = "readonly" })
+                                <div class="diverror">@Html.ValidationMessage("DateString")</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fieldname" colspan="2">Short Description</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                @Html.TextAreaFor(g => g.ShortDescription , new { @class = "ckeditor" })
+                                @Html.ValidationMessageFor(g => g.ShortDescription)
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="padding10"></div>
+
+                <!--div class="pagination"> <a href="#">&laquo;</a> <a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">...</a> <a href="#">7</a> <a href="#">8</a> <a href="#">9</a> <a href="#">&raquo;</a></div>
+            <div class="clear padding10"></div-->
+
+                <div class="floatRight">
+                    <input type="submit" class="submitBtn"  id="submitBtn" value="Save">&nbsp;
+                    <input type="button" class="resetBtn" value="Back" onClick="location.href='viewGallery.html'">
+                </div>
+                <div class="clear"></div>
+
+            </div>
+        }
+
+        @section scripts{
+            <script type="text/javascript" src="@BundleTable.Bundles.ResolveBundleUrl("~/admin-Gallery-addjs")"></script>
+            <script src="@appPath/Contents/Admin/js/ckeditor/ckeditor.js"></script>
+            @*<script src="@appPath/Contents/Admin/js/jqueryValidate/jquery.checkImageSize.js"></script>*@
+        }

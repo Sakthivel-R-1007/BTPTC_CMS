@@ -1,0 +1,222 @@
+﻿
+@{
+    ViewBag.Title = "EditEvents";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+@model Events
+
+<head>
+    <meta charset="utf-8">
+    <title>Bishan-Toa Payoh Town Council | CMS</title>
+    <link rel="stylesheet" type="text/css" href="@appPath/Contents/Admin/css/common.css">
+
+    <script src="@appPath/Contents/Admin/js/jquery-3.4.1.min.js"></script>
+    <script src="@appPath/Contents/Admin/common.js" type="text/javascript"></script>
+    <!-- MaxCDN Bootstrap plugins -->
+    <script src="@appPath/Contents/Admin/js/bootstrap/bootstrap.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+
+</head>
+
+<style>
+    h1 {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 32px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        color: #000000;
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        margin: 10px 0;
+        color: #007cc3;
+    }
+</style>
+<div class="maincontents">
+    @using (Html.BeginForm("EditEvents", "OurTown", FormMethod.Post, new { enctype = "multipart/form-data", id = "EditEventForm" }))
+    {
+
+        @Html.AntiForgeryToken()
+        <h1>Events</h1>
+
+        <div class="homepage">
+            <h2>Edit Event</h2>
+            <div class="clear padding5"></div>
+            <table cellpadding="0" cellspacing="0" border="0" class="tblcreate">
+                <tr>
+                    <td class="fieldname">Event Title</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.EventTitle, new { placeholder = "Type your Title here" })
+                        @Html.ValidationMessageFor(m => m.EventTitle)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldname">Guest-of-Honour</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.GuestOfHonour, new { placeholder = "Type your Title here" })
+                        @Html.ValidationMessageFor(m => m.GuestOfHonour)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldname">Event Date</td>
+                    <td>
+                        <div class="form-group">
+                            <div id='datetimepicker4'>
+                                @Html.TextBox("FromDateString", (Model != null && Model.EventDate != DateTime.MinValue ? Model.EventDate.ToString("DD/MM/YYYY") : ""), new { @class = "form-control" })
+                                @Html.ValidationMessage("FromDateString")
+                                @*<span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-time"></span>
+                                    </span>*@
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldname">Event Start Time</td>
+                    <td>
+                        <div class="form-group">
+                            <div class='input-group date' id='datetimepicker3'>
+                                @Html.TextBox("StartEventTime", (Model != null && Model.StartEventTime != DateTime.MinValue ? Model.StartEventTime.ToString("HH:mm") : ""), new { id = "StartTime", @class = "form-control" })
+                                @Html.ValidationMessage("StartEventTime")
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-time"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldname">Event End Time</td>
+                    <td>
+                        <div class="form-group">
+                            <div class='input-group date' id='datetimepicker5'>
+                                @Html.TextBox("EndEventTime", (Model != null && Model.EndEventTime != DateTime.MinValue ? Model.EndEventTime.ToString("HH:mm") : ""), new { id = "Endtime", @class = "form-control" })
+                                @Html.ValidationMessage("EndEventTime")
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-time"></span>
+                                </span>
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldname">Venue</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Venue, new { placeholder = "Type your Title here" })
+                        @Html.ValidationMessageFor(m => m.Venue)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldname">Short Description</td>
+                    <td>
+                        @Html.TextAreaFor(m => m.ShortDescription, new { placeholder = "Type your Title here" })
+                        @Html.ValidationMessageFor(m => m.ShortDescription)
+                        <div class="wordCount">Word count: <label id="wordCount">0</label>  / 200</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldname">Thumbnail Image <span class="importantNote">(500px by 280px)</span></td>
+                    <td>
+                        <div class="upload">
+                            <input type="button" class="uploadBtn" value="Choose File">
+                            <input type="file" id="ThumbnailImage" name="ThumbnailImage" data-imageWidth="" data-imageHeight="" />
+                            <label>
+                                @Html.TextBox("ThumbnailImageFileName", (Model != null && !string.IsNullOrEmpty(Model.ThumbnailImageGUID) ? Model.ThumbnailImageName + "." + Model.ThumbnailImageExtension.Trim('.') : ""), new { @type = "text", @placeholder = "No file chosen", @readonly = "true" })
+                                @Html.HiddenFor(m => m.GUID)
+                                @Html.HiddenFor(m => m.ThumbnailImageGUID)
+                                @Html.HiddenFor(m => m.ThumbnailImageName)
+                                @Html.HiddenFor(m => m.ThumbnailImageExtension)
+                            </label>
+                        </div>
+                        @Html.ValidationMessage("ThumbnailImage")
+                        <div class="imgPreview"><img id="ThumbnailImageFilePath" src="@appPath/Resources/Images/Events/@(Model.ThumbnailImageGUID!=null? Model.ThumbnailImageGUID:"").@(Model.ThumbnailImageExtension!=null ? Model.ThumbnailImageExtension:"" )"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldname">Thumbnail Image Alt Tag</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.ThumbnailImageAltTag, new { placeholder = "Type your Title here" })
+                        @Html.ValidationMessageFor(m => m.ThumbnailImageAltTag)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldname">Large Image</td>
+                    <td>
+                        <div class="upload">
+                            <input type="button" class="uploadBtn" value="Choose File">
+                            <input type="file" id="LargeImage" name="LargeImage" data-imageWidth="" data-imageHeight="" />
+                            <label>
+                                @Html.TextBox("LargeImageFileName", (Model != null && !string.IsNullOrEmpty(Model.LargeImageGUID) ? Model.LargeImageName + "." + Model.LargeImageExtension.Trim('.') : ""), new { @type = "text", @placeholder = "No file chosen", @readonly = "true" })
+                                @Html.HiddenFor(m => m.LargeImageGUID)
+                                @Html.HiddenFor(m => m.LargeImageName)
+                                @Html.HiddenFor(m => m.LargeImageExtension)
+                            </label>
+                        </div>
+                        @Html.ValidationMessage("LargeImage")
+                        <div class="imgPreview"><img id="LargeImageFilePath" src="@appPath/Resources/Images/Events/@(Model.LargeImageGUID!=null? Model.LargeImageGUID:"").@(Model.LargeImageExtension!=null ? Model.LargeImageExtension:"" )"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldname">Large Image Alt Tag</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.LargeImageAltTag, new { placeholder = "Type your Title here" })
+                        @Html.ValidationMessageFor(m => m.LargeImageAltTag)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldname" colspan="2">Contents</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        @Html.TextAreaFor(m => m.Contents, new { @class = "ckeditor", placeholder = "Type your Contents here" })
+                        @Html.ValidationMessageFor(m => m.Contents)
+                    </td>
+                </tr>
+            </table>
+            <div class="padding10"></div>
+            <div class="floatRight">
+                <input type="submit" class="submitBtn" value="Save">&nbsp;
+                <input type="button" class="resetBtn" value="Back" onClick="location.href='@appPath/Admin/ViewEvents'">
+            </div>
+            <div class="clear"></div>
+        </div>
+    }
+</div>
+
+
+@section scripts{
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+    <script src="@appPath/Contents/Admin/js/jqueryValidate/jquery.validate.js"></script>
+    <script src="@appPath/Contents/Admin/js/jqueryValidate/additional-methods.js"></script>
+    <script src="@appPath/Contents/Admin/js/ckeditor/ckeditor.js"></script>
+    <script src="~/Contents/Admin/js/Custom/Event-edit-.js"></script>
+
+    <script>
+        $('input[name=uploadAttach_1]').change(function () {
+            document.getElementById("uploadFile_1").value = $(this).val();
+        });
+
+        $('input[name=uploadAttach_2]').change(function () {
+            document.getElementById("uploadFile_2").value = $(this).val();
+        });
+    </script>
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#AddEvents").attr("style", 'height:45px !important')
+    });
+</script>

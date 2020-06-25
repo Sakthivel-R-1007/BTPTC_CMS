@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "BTPTCIntro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+     var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+    <div class="mainContents">
+        <div class="contactDetails desktopOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Num, Font size adjustment and Social Media)-->
+        <div class="contactDetails mobileOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Numbers)-->
+
+        <div class="pageBanner"><img src="@appPath/Contents/images/btptc-intro/banner-img.jpg" alt=""></div>
+
+        <div class="btptcIntro">
+            <div class="pageContents">
+                <div class="container">
+                    <div class="topBar">
+                        <div class="breadcrumb"><a href="@appPath/">Home</a><span></span><a href="javascript:void()">About Us</a><span></span>Bishan-Toa Payoh Town Council</div>
+                        <div class="socialShareBtns">
+                            <ul>
+                                <li>Share:</li>
+                                <li><a href="http://www.facebook.com/sharer.php?u=http://btptc.medialabsstreaming.com/btptc-intro.html" target="_blank"><img src="@appPath/Contents/images/common/fb-share-btn.png" alt=""></a></li>
+                                <li><a href="https://twitter.com/share?text=Bishan-Toa Payoh Town Council,;url=http://btptc.medialabsstreaming.com/btptc-intro.html" target="_blank"><img src="@appPath/Contents/images/common/twitter-share-btn.png" alt=""></a></li>
+                                <!--li><a href="#" target="_blank"><img src="images/common/google-share-btn.png" alt="" target="_blank"></a></li-->
+                                <li><a href="mailto:?subject=Bishan-Toa Payoh Town Council&Body=I thought you might be interested in this article: http://btptc.medialabsstreaming.com/btptc-intro.html"><img src="@appPath/Contents/images/common/email-share-btn.png" alt="" target="_blank"></a></li>
+                                <li class="print"><a href="#" onclick="window.print();"><img src="@appPath/Contents/images/common/print-btn.png" alt="" target="_blank"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="btptcIntroContainer">
+                        <h1>Welcome to Bishan-Toa Payoh Town Council.</h1>
+
+                        <p>We were formed in January 1997 as a result of two previous GRCs (Group Representation Constituencies) merging into Bishan-Toa Payoh GRC.</p>
+
+                        <p>Geographically, the Town spreads over three main estates; Toa Payoh, Bishan and Thomson.</p>
+
+                        <p>Toa Payoh, being the oldest estate at 30+ years, has been rejuvenated over the last few years. The old rental blocks have made way for towering modern residential blocks with spanking new facilities. The rest of the estate has been MUP (Main Upgrading Programme) or is in the process of it.</p>
+
+                        <p>Bishan estate spans both Bishan East and Bishan North areas. Its central location with many good schools makes it an attractive place for Singaporeans to settle here.</p>
+
+                        <p>Thomson covers the Shunfu and Sin Ming sectors. The estate is interspersed with an abundance of eating houses and automobile services.</p>
+
+                        <p>We manage and maintain the common areas of HDB estates. Put it simply, we look after the areas outside the HDB residents units. Kindly browse our web site and we look forward to your comments and suggestions. Have a pleasant time.</p>
+
+                        <h2>Our Logo</h2>
+
+                        <p><img src="@appPath/Contents/images/common/logo.png" style="width:80px;" alt="Bishan-Toa Payoh Town Council Logo"></p>
+
+                        <p>The logo depicts both the distinctive architecture of Bishan's Housing Development Board(HDB) flats and the Viewing Tower of Toa Payoh Garden.</p>
+
+                        <p>The blue (Pantone 285C) and green (Pantone 376C) colors represent a fresh, clean and healthy environment within community. </p>
+
+                        <div class="clear"></div>
+
+                        <h2>Our Mission</h2>
+
+                        <p>"Our mission is to provide a clean, green, well maintained and healthy environment for the residents, through close co-operation with the residents, grassroots organisations and related government agencies."</p>
+
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--End Roles & Responsibilities-->
+    </div>
+

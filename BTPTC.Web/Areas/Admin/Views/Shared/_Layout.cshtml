@@ -1,0 +1,33 @@
+﻿
+
+@{
+
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bishan-Toa Payoh Town Council | @ViewBag.Title</title>
+  
+    @Styles.Render("~/Adminlayoutcss")
+    @RenderSection("Style", false)
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            @Html.Partial("_header", null)
+        </header>
+        @RenderBody()
+    </div>
+    <footer>Copyright © @DateTime.Now.Year Bishan-Toa Payoh Town Council. All Rights Reserved.</footer>
+
+    @RenderSection("Popup", false)
+    <script type="text/javascript">
+		var apppath = '@ApplicationInstance.Application["ApplicationPath"]';
+    </script>
+    <script type="text/javascript" src="@BundleTable.Bundles.ResolveBundleUrl("~/Adminlayoutjs")"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

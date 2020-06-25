@@ -1,0 +1,154 @@
+﻿
+
+@{
+    ViewBag.Title = "OURTOWN";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+@model EventContents
+
+
+<div class="mainContents">
+    <div class="contactDetails desktopOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Num, Font size adjustment and Social Media)-->
+    <div class="contactDetails mobileOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Numbers)-->
+
+    <div class="pageBanner"><img src="@appPath/Contents/images/events/banner-img.jpg" alt=""></div>
+
+    <div class="events">
+        <div class="pageContents">
+            <div class="container">
+                <div class="topBar">
+                    <div class="breadcrumb"><a href="@appPath">Home</a><span></span><a href="javascript:void(0)">Our Town</a><span></span>Our Events</div>
+                    <div class="socialShareBtns">
+                        <ul>
+                            <li>Share:</li>
+                            <li><a href="http://www.facebook.com/sharer.php?u=http://btptc.medialabsstreaming.com/our-events.html" target="_blank"><img src="@appPath/contents/images/common/fb-share-btn.png" alt=""></a></li>
+                            <li><a href="https://twitter.com/share?text=Our Events - Bishan-Toa Payoh Town Council, http://btptc.medialabsstreaming.com/our-events.html" target="_blank"><img src="@appPath/contents/images/common/twitter-share-btn.png" alt=""></a></li>
+                            <!--li><a href="#" target="_blank"><img src="@appPath/contents/images/common/google-share-btn.png" alt="" target="_blank"></a></li-->
+                            <li><a href="mailto:?subject=Our Events | Bishan-Toa Payoh Town Council&Body=I thought you might be interested in this article: http://btptc.medialabsstreaming.com/our-events.html"><img src="@appPath/contents/images/common/email-share-btn.png" alt="" target="_blank"></a></li>
+                            <li class="print"><a href="javascript:void(0)" onclick="window.print();"><img src="@appPath/contents/images/common/print-btn.png" alt="" target="_blank"></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="eventsContainer">
+                    <h1>Our Events</h1>
+
+                    <ul class="eventsType">
+                        <!--li><a href="#" rel="upcoming" class="active btn01" onclick="return false;">Upcoming Events</a></li-->
+                        <li><a href="javascript:void(0)" rel="upcoming" class="active btn02" onclick="return false;">Upcoming Events</a></li>
+                        <li><a href="javascript:void(0)" rel="past" class="active btn02" onclick="return false;">Past Events</a></li>
+
+                    </ul>
+
+                    <div class="eventsTypeMobile">
+                        <!--div class="btnStatus">Upcoming Events</div-->
+                        <div class="btnStatus">Past Events</div>
+                        <ul>
+                            <li><a href="javascript:void(0)" rel="upcoming" onclick="return false;">Upcoming Events</a></li>
+                            <li><a href="javascript:void(0)" rel="past" onclick="return false;">Past Events</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="eventsContent" id="upcoming">
+                        <!--h2>Upcoming Events</h2-->
+                        <ul>
+                            <li>
+                                @if (Model != null)
+                                {
+                                    foreach (var UP in Model.UpcomingEvents)
+                                    {
+                                        <a href="@appPath/OurTown/EventDetails/@UP.GUID">
+                                            <div class="imgContainer"><img src="@appPath/Resources/images/Events/@UP.ThumbnailImageGUID.@UP.ThumbnailImageExtension" alt=""></div>
+                                            <div class="textContainer">
+                                                <p class="date">@UP.EventDateString</p>
+                                                <h3>@UP.EventTitle</h3>
+                                                <p>@UP.ShortDescription</p>
+                                            </div>
+                                        </a>
+                                    }
+                                }
+                        </ul>
+
+
+
+                    </div>
+                    <div class="eventsContent" id="past">
+                        <!--h2>Past Events</h2-->
+                        <ul>
+                            <li>
+
+                                @if (Model != null)
+                                {
+                                    foreach (var PE in Model.PastEvents)
+                                    {
+                                        <a href="@appPath/OurTown/EventDetails/@PE.GUID">
+
+                                            <div class="imgContainer"><img src="@appPath/Resources/images/Events/@PE.ThumbnailImageGUID.@PE.ThumbnailImageExtension" alt=""></div>
+                                            <div class="textContainer">
+                                                <p class="date">@PE.EventDateString</p>
+                                                <h3>@PE.EventTitle</h3>
+                                                <p>@PE.ShortDescription</p>
+                                            </div>
+                                        </a>
+                                    }
+                                }
+
+                            </li>
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--End Our Events-->
+</div><!-- End Main Contents -->
+
+@section scripts{
+
+    <script>
+        $(document).ready(function () {
+            /*$(".eventsContent").hide();*/
+            $(".eventsContent:first").hide();
+            $(".eventsType a").click(function () {
+                $(".eventsContent").hide();
+                var currentTab = $(this).attr("rel");
+                $("#" + currentTab).fadeIn();
+                $(".eventsType a").removeClass("active");
+                $(this).addClass("active");
+
+                if (currentTab == "upcoming") {
+                    $(".eventsTypeMobile .btnStatus").text("Upcoming Events");
+                }
+                else if (currentTab == "past") {
+                    $(".eventsTypeMobile .btnStatus").text("Past Events");
+                }
+            });
+
+            $(".eventsTypeMobile .btnStatus").click(function () {
+                $(".eventsTypeMobile ul").slideToggle(200);
+            });
+
+            $(".eventsTypeMobile a").click(function () {
+                $(".eventsContent").hide();
+                var currentTab = $(this).attr("rel");
+                $("#" + currentTab).fadeIn();
+                $(".eventsTypeMobile ul").hide(0);
+                $(".eventsType a").removeClass("active");
+                if (currentTab == "upcoming") {
+                    $(".eventsTypeMobile .btnStatus").text("Upcoming Events");
+                    $(".eventsType .btn01").addClass("active");
+                }
+                else if (currentTab == "past") {
+                    $(".eventsTypeMobile .btnStatus").text("Past Events");
+                    $(".eventsType .btn02").addClass("active");
+                }
+            });
+        });
+    </script>
+}
+
+

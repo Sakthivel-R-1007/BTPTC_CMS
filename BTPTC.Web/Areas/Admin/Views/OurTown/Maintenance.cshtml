@@ -1,0 +1,158 @@
+﻿
+@{
+    ViewBag.Title = "Maintance";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+
+
+<style>
+    #ErrorTbl td, th {
+        padding:10px;
+    }
+    #ErrorTbl  th {
+        padding: 10px;
+    }
+</style>
+
+@model MaintenanceSchedule
+
+
+<body>
+    <div class="wrapper">
+        <header></header>
+        <div class="maincontents">
+            @using (Html.BeginForm("Maintenance", "OurTown", FormMethod.Post, new { area= "Admin", enctype = "multipart/form-data", id = "MaintenanceForm" }))
+            {
+            <form action="">
+                <h1>Maintenance Schedule</h1>
+                <div class="homepage">
+                    <h2>Update Schedule</h2>
+                    <div class="clear padding5"></div>
+
+                    <table cellpadding="0" cellspacing="0" border="0" class="tblcreate">
+                        <tr>
+                        <tr>
+                            <td class="fieldname">
+                                Upload Excel File
+                                <span class="importantNote">(Add ";;" to display next line)</span>
+                            </td>
+                            <td>
+
+                                <div class="upload">
+                                    <input type="button" class="uploadBtn" value="Choose File">
+                                    <input type="file" name="uploadAttach_1" />
+                                    <label><input type="text" name="uploadFile_1" id="uploadFile_1" value="" placeholder="No file chosen"></label>
+                                </div>
+                                @Html.ValidationMessage("uploadAttach_1")
+                                <a href="@appPath/Resources/Project listing & Maintenance Schedule.xlsx">Download Format</a>
+                            </td>
+
+                        </tr>
+                    </table>
+
+
+                    @if (ViewData["ErrorMsg"] != null && ViewData["ErrorMsg"] != "")
+                    {
+                    int SNo = 1;
+                    <table style="width: 70% !important" id="ErrorTbl">
+                        <tr>
+                            <th>SNO</th>
+                            <th>Row</th>
+                            <th>ErrorMsg</th>
+
+                        </tr>
+                        <tbody>
+
+                            @foreach (var std in  (List<ErrorMsg>)ViewData["ErrorMsg"])
+                                {
+                                <tr>
+                                    <td>@SNo</td>
+                                    <td>
+                                        <span style="color:red;">@std.Row </span>
+                                        <br />
+                                    </td>
+                                    <td>
+                                        <span style="color:red">@std.msg </span>
+                                        <br />
+                                    </td>
+
+                                </tr>
+                                SNo++;
+                                }
+
+
+                        </tbody>
+                    </table>
+                    }
+
+                    <div class="padding10"></div>
+                    <div class="floatRight">
+                        <input type="submit" class="submitBtn" value="Save">
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+            </form>
+            }
+        </div>
+    </div>
+    <footer></footer>
+
+
+
+    @section scripts{
+
+
+    <script src="@appPath/Contents/Admin/js/jqueryValidate/jquery.validate.js"></script>
+    <script src="@appPath/Contents/Admin/js/jqueryValidate/additional-methods.js"></script>
+
+    <script>
+      
+
+        $(document).on("click", ".submitBtn", function (e) {
+
+            if ($("#MaintenanceForm").valid()) {
+
+                $("#MaintenanceForm").submit()
+
+            }
+
+        });
+
+     
+
+     
+
+        $('input[name=uploadAttach_1]').change(function () {
+
+            
+            $('#ErrorTbl').hide();
+    
+            document.getElementById("uploadFile_1").value = $(this)[0].files[0].name
+           
+        });
+
+        $('#MaintenanceForm').validate({
+            rules: {
+                uploadAttach_1: {
+                    required: true,
+                    extension: "xlsx|xls"
+                }
+            },
+            messages: {
+                uploadAttach_1: {
+                    required: "file .xlsx, .xls only.",
+                    extension: "Please upload valid file formats .xlsx, .xls only."
+                }
+            }
+        });
+
+
+    </script>
+
+    }
+
+</body>
+

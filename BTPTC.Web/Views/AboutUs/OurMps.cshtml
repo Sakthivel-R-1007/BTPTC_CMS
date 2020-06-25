@@ -1,0 +1,371 @@
+﻿
+@{
+    ViewBag.Title = "OurMps";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+<div class="mainContents">
+    <div class="contactDetails desktopOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Num, Font size adjustment and Social Media)-->
+    <div class="contactDetails mobileOnly">@Html.Partial("_contactDetails", null)</div><!--End Contact Details (Contact Numbers)-->
+
+    <div class="pageBanner"><img src="@appPath/Contents/images/mps/banner-img.jpg" alt=""></div>
+
+    <div class="ourMPs">
+        <div class="pageContents">
+            <div class="container">
+                <div class="topBar">
+                    <div class="breadcrumb"><a href="@appPath/">Home</a><span></span><a href="#">About Us</a><span></span>Our MPs</div>
+                    <div class="socialShareBtns">
+                        <ul>
+                            <li>Share:</li>
+                            <li><a href="http://www.facebook.com/sharer.php?u=http://btptc.medialabsstreaming.com/roles-responsibilities.html" target="_blank"><img src="@appPath/Contents/images/common/fb-share-btn.png" alt=""></a></li>
+                            <li><a href="https://twitter.com/share?text=Roles and Responsibilities - Bishan-Toa Payoh Town Council, http://btptc.medialabsstreaming.com/roles-responsibilities.html" target="_blank"><img src="@appPath/Contents/images/common/twitter-share-btn.png" alt=""></a></li>
+                            <!--li><a href="#" target="_blank"><img src="images/common/google-share-btn.png" alt="" target="_blank"></a></li-->
+                            <li><a href="mailto:?subject=Roles & Responsibilities | Bishan-Toa Payoh Town Council&Body=I thought you might be interested in this article: http://btptc.medialabsstreaming.com/roles-responsibilities.html"><img src="@appPath/Contents/images/common/email-share-btn.png" alt="" target="_blank"></a></li>
+                            <li class="print"><a href="#" onclick="window.print();"><img src="@appPath/Contents/images/common/print-btn.png" alt="" target="_blank"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ourMPsContainer">
+                    <h1>Our MPs</h1>
+                    <div class="ourmpContent">
+                        <div class="detail">
+                            <div class="imgContainer"><img src="@appPath/Contents/images/mps/Ng-Eng-Hen.jpg" alt="Dr Ng Eng Hen"></div>
+                            <div class="textContainer">
+                                <h2>Dr Ng Eng Hen</h2>
+                                <p>
+                                    Minister for Defence<br />
+                                    MP for Bishan-Toa Payoh GRC<br />
+                                    Advisor of Bishan-Toa Payoh Town Council<br />
+                                    Advisor to Bishan-Toa Payoh Grassroots Organisations
+                                </p>
+
+                                <p>
+                                    Tel: 6253 8600<br />
+                                    Fax: 6253 1249<br />
+                                    Email: <a href="mailto:75_bsec@pap.org.sg">75_bsec@pap.org.sg</a>
+                                </p>
+
+                                <h3>Meet-The-People Session</h3>
+                                <p>
+                                    <strong>
+                                        Every Tuesday from 7.30pm<br />
+                                        (Except Public Holidays)
+                                    </strong><br />
+                                    Blk 178 Toa Payoh Central<br />
+                                    #01-238 Singapore 310178
+                                </p>
+                            </div>
+                        </div>
+                        <div class="videoSlider">
+                            <!--ol class="bxslider">
+                                <li>
+                                    <div class="videoWrapper vid" style="z-index:1;">
+                                        <iframe width="640" height="348" src="https://www.youtube.com/embed/syYSevBMaF8?rel=0&autoplay=0&wmode=transparent&enablejsapi=true" frameborder="0" wmode="transparent" allowfullscreen></iframe>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="videoWrapper vid" style="z-index:1;">
+                                        <iframe width="640" height="348" src="https://www.youtube.com/embed/syYSevBMaF8?rel=0&autoplay=0&wmode=transparent&enablejsapi=true" frameborder="0" wmode="transparent" allowfullscreen></iframe>
+                                    </div>
+                                </li>
+                            </ol-->
+                            <div class="videoWrapper vid" style="z-index:1;">
+                                <!--div id="ngenghen"></div-->
+                                <iframe frameborder="0" allowfullscreen="1" title="YouTube video player" width="300" height="200" src="https://www.youtube.com/embed/ChiCrawwC3E?enablejsapi=1"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ourmpContent">
+                        <div class="detail">
+                            <div class="imgContainer"><img src="@appPath/Contents/images/mps/Josephine-Teo.jpg" alt="Mrs Josephine Teo"></div>
+                            <div class="textContainer">
+                                <h2>Mrs Josephine Teo</h2>
+                                <p>
+                                    Minister for Manpower<br />
+                                    Second Minister for Home Affairs<br />
+                                    MP for Bishan-Toa Payoh GRC<br />
+                                    Elected Member of Bishan-Toa Payoh Town Council<br />
+                                    Advisor to Bishan-Toa Payoh Grassroots Organisations
+                                </p>
+
+                                <p>
+                                    Tel: 6452 4107<br />
+                                    Fax: 6454 9607<br />
+                                    Email: <a href="mailto:mps.bishannorth@gmail.com">mps.bishannorth@gmail.com</a>
+                                </p>
+
+                                <h3>Meet-The-People Session</h3>
+                                <p>
+                                    <strong>
+                                        Every Tuesday from 7.30pm<br />
+                                        (Except Public Holidays)
+                                    </strong><br />
+                                    Blk 231 Bishan St 23<br />
+                                    #01-03 Singapore 570231
+                                </p>
+                            </div>
+                        </div>
+                        <div class="videoSlider">
+                            <div class="videoWrapper vid" style="z-index:1;">
+                                <!--div id="josephineteo"></div-->
+                                <iframe frameborder="0" allowfullscreen="1" title="YouTube video player" width="300" height="200" src="https://www.youtube.com/embed/XgFalN8xwVw?enablejsapi=1&amp"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ourmpContent">
+                        <div class="detail">
+                            <div class="imgContainer"><img src="@appPath/Contents/images/mps/Chee-Hong-Tat.jpg" alt="Mr Chee Hong Tat"></div>
+                            <div class="textContainer">
+                                <h2>Mr Chee Hong Tat</h2>
+                                <p>
+                                    Senior Minister of State for Trade and Industry, and Education<br />
+                                    MP for Bishan-Toa Payoh GRC<br />
+                                    Vice-Chairman of Bishan-Toa Payoh Town Council<br />
+                                    Advisor to Bishan-Toa Payoh Grassroots Organisations
+                                </p>
+
+                                <p>
+                                    Tel: 6251 1500<br />
+                                    Fax: 6259 3182<br />
+                                    Email: <a href="mailto:chee_hong_tat@mti.gov.sg">chee_hong_tat@mti.gov.sg</a>
+                                </p>
+
+                                <h3>Meet-The-People Session</h3>
+                                <p>
+                                    <strong>
+                                        Every Tuesday from 7.30pm<br />
+                                        (Except Public Holidays)
+                                    </strong><br />
+                                    Blk 122 Lorong 2 Toa Payoh<br />
+                                    #01-18 Singapore 310122
+                                </p>
+                            </div>
+                        </div>
+                        <div class="videoSlider">
+                            <div class="videoWrapper vid" style="z-index:1;">
+                                <!--div id="cheehongtat"></div-->
+                                <iframe frameborder="0" allowfullscreen="1" title="YouTube video player" width="300" height="200" src="https://www.youtube.com/embed/njrgL878JdA?enablejsapi=1"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ourmpContent">
+                        <div class="detail">
+                            <div class="imgContainer"><img src="images/mps/Chong-Kee-Hiong.jpg"></div>
+                            <div class="textContainer">
+                                <h2>Mr Chong Kee Hiong</h2>
+                                <p>
+                                    MP for Bishan-Toa Payoh GRC<br />
+                                    Chairman of Bishan-Toa Payoh Town Council<br />
+                                    Advisor to Bishan-Toa Payoh Grassroots Organisations
+                                </p>
+
+                                <p>
+                                    Tel: 6259 0542<br />
+                                    Fax: 6353 8871<br />
+                                    Email: <a href="mailto:chongkeehiong@outlook.com">chongkeehiong@outlook.com</a>
+                                </p>
+
+                                <h3>Meet-The-People Session</h3>
+                                <p>
+                                    <strong>
+                                        Every Tuesday from 7.30pm<br />
+                                        (Except Public Holidays)
+                                    </strong><br />
+                                    Blk 196 Bishan Street 13<br />
+                                    #01-563 Singapore 570196
+                                </p>
+
+                                <p>
+                                    <strong>Every 1st Tuesday of the month</strong><br />
+                                    Blk 309 Shunfu Road <br />
+                                    #01-175, Singapore 570309
+                                </p>
+                            </div>
+                        </div>
+                        <div class="videoSlider">
+                            <div class="videoWrapper vid" style="z-index:1;">
+                                <!--div id="chongkeehiong"></div-->
+                                <iframe frameborder="0" allowfullscreen="1" title="YouTube video player" width="300" height="200" src="https://www.youtube.com/embed/TlRfwL4XrpU?enablejsapi=1"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ourmpContent">
+                        <div class="detail">
+                            <div class="imgContainer"><img src="@appPath/Contents/images/mps/Saktiandi-Supaat.jpg"></div>
+                            <div class="textContainer">
+                                <h2>Mr Saktiandi Supaat</h2>
+                                <p>
+                                    MP for Bishan-Toa Payoh GRC<br />
+                                    Vice-Chairman of Bishan-Toa Payoh Town Council<br />
+                                    Advisor to Bishan-Toa Payoh Grassroots Organisations
+                                </p>
+
+                                <p>
+                                    Tel: 6259 2881<br />
+                                    Fax: 6354 4912<br />
+                                    Email: <a href="mailto:tpeast@gmail.com">tpeast@gmail.com</a>
+                                </p>
+
+                                <h3>Meet-The-People Session</h3>
+                                <p>
+                                    <strong>
+                                        Every Tuesday from 7.30pm<br />
+                                        (Except Public Holidays)
+                                    </strong><br />
+                                    Blk 261A Toa Payoh East<br />
+                                    #01-02 Singapore 311261
+                                </p>
+                            </div>
+                        </div>
+                        <div class="videoSlider">
+                            <div class="videoWrapper vid" style="z-index:1;">
+                                <!--div id="saktiandi"></div-->
+                                <iframe frameborder="0" allowfullscreen="1" title="YouTube video player" width="300" height="200" src="https://www.youtube.com/embed/Ed3w1arl-7o?enablejsapi=1"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--End Our MPs-->
+</div><!-- End Main Contents -->
+@section scripts
+{
+
+    <script type="text/javascript" src="@appPath/Contents/scripts/bxslider/jquery.bxslider.js"></script>
+    <script src="https://www.youtube.com/player_api"></script>
+    <script>
+        // create youtube player
+        var tag = document.createElement('script');
+        tag.src = "//www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        //function onYouTubeIframeAPIReady() {
+        //    var $ = jQuery;
+        //    var players = [];
+        //    $('iframe').filter(function () { return this.src.indexOf('http://www.youtube.com/') == 0 }).each(function (k, v) {
+        //        if (!this.id) { this.id = 'embeddedvideoiframe' + k }
+        //        players.push(new YT.Player(this.id, {
+        //            events: {
+        //                'onStateChange': function (event) {
+        //                    if (event.data == YT.PlayerState.PLAYING) {
+        //                        $.each(players, function (k, v) {
+        //                            if (this.getPlayerState() == YT.PlayerState.PLAYING && this.getIframe().id != event.target.getIframe().id) {
+        //                                this.pauseVideo();
+        //                            }
+        //                        });
+        //                    }
+        //                }
+        //            }
+        //        }))
+        //    });
+        //}
+
+
+        var mpVideo01;
+        var mpVideo02;
+        var mpVideo03;
+        var mpVideo04;
+        var mpVideo05;
+        var vids = [];
+
+        function onYouTubePlayerAPIReady() {
+            mpVideo01 = new YT.Player('ngenghen', {
+                width: '560',
+                height: '315',
+                videoId: 'ChiCrawwC3E',
+                events: {
+                    onReady: onPlayerReady,
+                    onStateChange: onPlayerStateChange
+                }
+            });
+            vids.push(mpVideo01);
+
+            mpVideo02 = new YT.Player('josephineteo', {
+                width: '560',
+                height: '315',
+                videoId: '00000000000',
+                events: {
+                    onReady: onPlayerReady,
+                    onStateChange: onPlayerStateChange
+                }
+            });
+            vids.push(mpVideo02);
+
+            mpVideo03 = new YT.Player('cheehongtat', {
+                width: '560',
+                height: '315',
+                videoId: 'njrgL878JdA',
+                events: {
+                    onReady: onPlayerReady,
+                    onStateChange: onPlayerStateChange
+                }
+            });
+            vids.push(mpVideo03);
+
+            mpVideo04 = new YT.Player('chongkeehiong', {
+                width: '560',
+                height: '315',
+                videoId: 'TlRfwL4XrpU',
+                events: {
+                    onReady: onPlayerReady,
+                    onStateChange: onPlayerStateChange
+                }
+            });
+            vids.push(mpVideo04);
+
+            mpVideo05 = new YT.Player('saktiandi', {
+                width: '560',
+                height: '315',
+                videoId: 'Ed3w1arl-7o',
+                events: {
+                    onReady: onPlayerReady,
+                    onStateChange: onPlayerStateChange
+                }
+            });
+            vids.push(mpVideo05);
+        }
+        // autoplay video
+        function onPlayerReady(event) {
+            mpVideo01.stopVideo();
+            mpVideo02.stopVideo();
+            mpVideo03.stopVideo();
+            mpVideo04.stopVideo();
+            mpVideo05.stopVideo();
+        }
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING) {
+                stopVideo(event.target.a.id);
+            }
+        }
+
+        function stopVideo(player_id) {
+
+            for (var i = 0; i < vids.length; i++) {
+                if (player_id != vids[i].a.id)
+                    vids[i].stopVideo();
+            }
+        }
+
+
+        var slider = $('.bxslider').bxSlider({
+            auto: false,
+            autoHover: true,
+            onSlideAfter: function (slide, oldindex, currentSlide) {
+                oldSlide = $('.bxslider > li:nth-child(' + (oldindex + 1) + ')');
+                youtubeVideo = oldSlide.find('iframe[src*=youtube]');
+                if (youtubeVideo.length) {
+                    youtubeVideo.get(0).contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                }
+            }
+        });
+
+    </script>
+}

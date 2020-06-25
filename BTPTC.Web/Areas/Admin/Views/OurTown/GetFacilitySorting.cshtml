@@ -1,0 +1,48 @@
+﻿
+
+@{
+    ViewBag.Title = "Index";
+    //  Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    //var appPath = Convert.ToString(ApplicationInstance.Application["ApplicationPath"]);
+}
+
+@model IList<Facility>
+
+<div class="modal fade" id="sortSeq" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content editalert">
+            <div class="modal-header">
+                <div class="title">Sort Sequence</div>
+                <div class="close" data-dismiss="modal" aria-hidden="true">Close [X]</div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        int rowCount = 0;
+                    <ul id="sortable">
+                        @foreach (Facility SB in Model)
+                        {
+                            //var step1 = System.Text.RegularExpressions.Regex.Replace(SB.Name, @"<[^>]+>|&nbsp;", "").Trim();
+                            //string description = System.Text.RegularExpressions.Regex.Replace(step1, @"\s{2,}", " ");
+
+                        <li id="@("Set_" + rowCount)" data-id="@SB.GUID" value="@SB.GUID" class="SortingContact">
+                            @*<li id="@("Set_" + rowCount)" data-id="@SB.Name" value="@SB.Name" class="SortingContact"> </li>*@
+                            <span>"@SB.Name" </span>
+                        </li>
+                            rowCount++;
+                        }
+                    </ul>
+
+                        <div class="padding10"></div>
+                        <input type="button" class="submitBtn floatRight" value="Save">
+                        <div class="clear padding10"></div>
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

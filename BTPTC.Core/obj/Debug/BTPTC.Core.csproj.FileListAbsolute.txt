@@ -1,0 +1,15 @@
+D:\Projects\BTPTC_CMS\BTPTC.Core\bin\Debug\BTPTC.Core.dll
+D:\Projects\BTPTC_CMS\BTPTC.Core\bin\Debug\BTPTC.Core.pdb
+D:\Projects\BTPTC_CMS\BTPTC.Core\obj\Debug\BTPTC.Core.dll
+D:\Projects\BTPTC_CMS\BTPTC.Core\obj\Debug\BTPTC.Core.pdb
+D:\Projects\BTPTC_CMS\BTPTC.Core\obj\Debug\BTPTC.Core.csprojAssemblyReference.cache
+G:\Projects\BTPTC_CMS\BTPTC.Core\bin\Debug\BTPTC.Core.dll
+G:\Projects\BTPTC_CMS\BTPTC.Core\bin\Debug\BTPTC.Core.pdb
+G:\Projects\BTPTC_CMS\BTPTC.Core\obj\Debug\BTPTC.Core.dll
+G:\Projects\BTPTC_CMS\BTPTC.Core\obj\Debug\BTPTC.Core.pdb
+G:\Projects\BTPTC_CMS\BTPTC.Core\obj\Debug\BTPTC.Core.csproj.CoreCompileInputs.cache
+D:\Repositeries\BTPTC_CMS\BTPTC.Core\bin\Debug\BTPTC.Core.dll
+D:\Repositeries\BTPTC_CMS\BTPTC.Core\bin\Debug\BTPTC.Core.pdb
+D:\Repositeries\BTPTC_CMS\BTPTC.Core\obj\Debug\BTPTC.Core.dll
+D:\Repositeries\BTPTC_CMS\BTPTC.Core\obj\Debug\BTPTC.Core.pdb
+G:\Projects\BTPTC_CMS\BTPTC.Core\obj\Debug\BTPTC.Core.csprojAssemblyReference.cache
